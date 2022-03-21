@@ -3,3 +3,5 @@
  - How organizations can accelerate machine learning from research to production while preserving the flexibility and agility of data scientists and modern business use cases demand.
 
 **How to deploy machine learning models into production** [link](https://www.youtube.com/watch?v=-UYyyeYJAoQ)
+
+**Walk Thru Tutorial Django** [link](https://www.youtube.com/watch?v=_3xj9B0qqps)
