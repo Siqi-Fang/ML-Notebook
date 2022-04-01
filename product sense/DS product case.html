@@ -1,0 +1,2954 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<title>DS product case的细节总结和tips|一亩三分地求职（非面经）版</title>
+<link rel="shortcut icon" href="https://www.1point3acres.com/bbs/favicon.ico" />
+<link href="https://www.1point3acres.com/bbs/thread-780970-1-1.html" rel="canonical" />
+<meta name="keywords" content="求职（非面经）,数据科学" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+<meta name="description" content="最近在准备跳槽product ds，花了很多时间准备case，刚刚面完最后一个onsite，终于可以稍微闲下来一些，想把平时学到的和思考的东西分享给大家，顺便一起讨论交流。因为板上 ..." />
+<meta name="generator" content="1Point3Acres" />
+<meta name="author" content="1Point3Acres Team" />
+<meta name="copyright" content="2009-2021 一亩三分地 at 1Point3Acres " />
+<meta property="og:site_name" content="一亩三分地 1Point3Acres" />
+<meta property="og:title" content="DS product case的细节总结和tips|一亩三分地求职（非面经）版" />
+<meta property="og:url" content="https://www.1point3acres.com/bbs/thread-780970-1-1.html" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://www.1point3acres.com/bbs/static/image/common/mu_logo.jpg" />
+<meta property="og:description" content="最近在准备跳槽product ds，花了很多时间准备case，刚刚面完最后一个onsite，终于可以稍微闲下来一些，想把平时学到的和思考的东西分享给大家，顺便一起讨论交流。因为板上 ..." />
+<meta name="MSSmartTagsPreventParsing" content="True" />
+<meta http-equiv="MSThemeCompatible" content="Yes" />
+<meta name="application-groupid" content="12" />
+<meta name="application-adid" content="0" />
+<base href="https://www.1point3acres.com/bbs/" />
+<link rel="stylesheet" type="text/css" href="static/css/custom.css?ROu" />
+<link rel="stylesheet" type="text/css" href="static/css/tailwind.css?$ROu" />
+<link rel="stylesheet" type="text/css" href="static/alicdn/iconfont.css?ROu" /><link rel="stylesheet" type="text/css" href="data/cache/style_5_common.css?ROu" /><link rel="stylesheet" type="text/css" href="data/cache/style_5_forum_viewthread.css?ROu" /><script type="text/javascript">var STYLEID = '5', STATICURL = 'static/', IMGDIR = 'static/image/common', VERHASH = 'ROu', charset = 'gbk', discuz_uid = '662772', cookiepre = '4Oaf_61d6_', cookiedomain = '.1point3acres.com', cookiepath = '/', showusercard = '1', attackevasive = '0', disallowfloat = '', creditnotice = '1|大米|颗 ,2|萝卜|根,3|人参|枚,4|水井|尺,5|蓝莓|颗,6|小米|粒,7|鳄梨|个,8|学分|个', defaultstyle = '', REPORTURL = 'aHR0cDovL3d3dy4xcG9pbnQzYWNyZXMuY29tL2Jicy9mb3J1bS5waHA/bW9kPXZpZXd0aHJlYWQmdGlkPTc4MDk3MCZjdGlkPTIyOTM4Mw==', SITEURL = 'https://www.1point3acres.com/bbs/', JSPATH = 'data/cache/', DYNAMICURL = '';</script>
+<script src="data/cache/common.js?ROu" type="text/javascript"></script>
+<script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="text/javascript" async crossorigin="anonymous"></script>
+<script data-cfasync="false" type="text/javascript">
+(function(w, d) {
+w.addEventListener("load", function() {
+var s = d.createElement('script');
+s.src = '//cdn.adpushup.com/42547/adpushup.js';
+s.crossOrigin='anonymous'; 
+s.type = 'text/javascript'; s.async = true;
+(d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(s);
+w.adpushup = w.adpushup || {que:[]};
+});
+})(window, document);
+</script>
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" type="text/javascript" async></script>
+<script src="data/cache/shortcut.js?ROu" type="text/javascript" async></script>
+<meta NAME="ROBOTS" content="noarchive">
+<meta name="application-name" content="一亩三分地" />
+<meta name="msapplication-tooltip" content="一亩三分地" />
+<meta name="msapplication-task" content="name=门户;action-uri=https://www.1point3acres.com/bbs/portal.php;icon-uri=https://www.1point3acres.com/bbs/static/image/common/portal.ico" /><meta name="msapplication-task" content="name=论坛;action-uri=https://www.1point3acres.com/bbs/forum.php;icon-uri=https://www.1point3acres.com/bbs/static/image/common/bbs.ico" />
+<meta name="msapplication-task" content="name=;action-uri=https://www.1point3acres.com/bbs/group.php;icon-uri=https://www.1point3acres.com/bbs/static/image/common/group.ico" /><meta name="msapplication-task" content="name=家园;action-uri=https://www.1point3acres.com/bbs/home.php;icon-uri=https://www.1point3acres.com/bbs/static/image/common/home.ico" /><link rel="stylesheet" id="css_widthauto" type="text/css" href="data/cache/style_5_widthauto.css?ROu" />
+<script type="text/javascript">HTMLNODE.className += ' widthauto'</script>
+<script src="data/cache/forum.js?ROu" type="text/javascript"></script>
+</head>
+<body id="nv_forum" class="pg_viewthread" onkeydown="if(event.keyCode==27) return false;">
+<div id="append_parent"></div><div id="ajaxwaitid"></div>
+<ul id="myprompt_menu" class="p_pop" style="display: none;">
+<li><a href="home.php?mod=space&amp;do=pm" id="pm_ntc" style="background-repeat: no-repeat; background-position: 0 50%;"><em class="prompt_news_0"></em>消息</a></li>
+<li><a href="home.php?mod=follow&amp;do=follower"><em class="prompt_follower_0"></em>新听众</a></li>
+<li class="ignore_noticeli"><a href="javascript:;" onclick="setcookie('ignore_notice', 1);hideMenu('myprompt_menu')" title="暂不提醒"><em class="ignore_notice"></em></a></li>
+</ul>
+<div id="qmenu_menu" class="p_pop " style="display: none;">
+<div class="w-full bg-#e6f1f6">
+<div class="flex p-2">
+<div class="avt"><img src="https://avatar.1point3acres.cn/000/66/27/72_avatar_small.jpg!c?m=1" /></div>
+<div class="w-full">
+<strong><a href="space-uid-662772.html" target="_blank" title="访问我的空间" class="text-#497b89 text-base border-none hover:text-active no-underline pl-1" onmouseover="$('user-menu').style.display = 'block';setTimeout(function() { $('user-menu').style.display = 'none'; }, 2000);">siqif</a></strong>
+<div class="w-full flex justify-between">
+<div>
+<a href="home.php?mod=spacecp&amp;ac=usergroup" id="g_upmine" class="inline pl-1 text-#2e2e2e border-none">用户组: 中级农民</a>
+<a href="home.php?mod=spacecp&amp;ac=credit&amp;showcredit=1" id="extcreditmenu" class="inline pl-2 text-#2e2e2e border-none">积分: 136</a>
+</div>
+<a href="home.php?mod=spacecp" class="inline self-end text-#2e2e2e border-none">设置</a></li>
+</div>
+</div>
+</div>
+</div>
+<ul class="cl nav"><li><a itemprop="url" href="https://pay.1point3acres.com/bbs/vip" target="_blank" style="background-image:url(https://oss.1point3acres.cn/common/cf/154930rsv0vt5vv3s543b0.png?bIdi42) !important">解锁权限</a></li>
+<li><a itemprop="url" href="misc.php?mod=faq" title="站点帮助" target="_blank" style="background-image:url(https://oss.1point3acres.cn/tag/202107/14/192945inmamh9idsn7e0dt.png!d) !important">帮助</a></li>
+<li><a itemprop="url" href="forum.php?mod=guide" style="background-image:url(https://www.1point3acres.com/bbs/static/image/feed/guide_b.png) !important">导读</a></li>
+<li><a itemprop="url" href="https://www.1point3acres.com/bbs/plugin.php?id=dsu_paulsign:sign" style="background-image:url(https://www.1point3acres.com/bbs/source/plugin/dsu_paulsign/img/emot/kx.gif) !important">签到中心</a></li>
+<li><a itemprop="url" href="home.php?mod=space&do=favorite&view=me" style="background-image:url(https://www.1point3acres.com/bbs/static/image/feed/favorite_b.png) !important">收藏</a></li>
+<li><a itemprop="url" href="forum.php?mod=collection&op=my" style="background-image:url(https://www.1point3acres.com/bbs/static/image/feed/collection_b.png) !important">淘帖</a></li>
+<li><a itemprop="url" href="home.php?mod=space&do=blog" style="background-image:url(https://www.1point3acres.com/bbs/static/image/feed/blog_b.png) !important">日志</a></li>
+<li><a itemprop="url" href="home.php?mod=space&do=album" style="background-image:url(https://www.1point3acres.com/bbs/static/image/feed/album_b.png) !important">相册</a></li>
+<li><a itemprop="url" href="home.php" style="background-image:url(https://www.1point3acres.com/bbs/static/image/feed/feed_b.png) !important">动态</a></li>
+<li><a itemprop="url" href="home.php?mod=space&do=doing" style="background-image:url(https://www.1point3acres.com/bbs/static/image/feed/doing_b.png) !important">记录</a></li>
+<li><a itemprop="url" href="home.php?mod=space&do=wall" style="background-image:url(https://www.1point3acres.com/bbs/static/image/feed/wall_b.png) !important">留言板</a></li>
+<li><a itemprop="url" href="home.php?mod=space&do=friend" style="background-image:url(https://www.1point3acres.com/bbs/static/image/feed/friend_b.png) !important">好友</a></li>
+<li><a itemprop="url" href="forum.php?mod=guide&view=my" style="background-image:url(https://www.1point3acres.com/bbs/static/image/feed/thread_b.png) !important">帖子</a></li>
+<li><a itemprop="url" href="home.php?mod=magic" style="background-image:url(https://www.1point3acres.com/bbs/static/image/feed/magic_b.png) !important">道具</a></li>
+<li><a itemprop="url" href="home.php?mod=medal" style="background-image:url(https://www.1point3acres.com/bbs/static/image/feed/medal_b.png) !important">勋章</a></li>
+<li><a itemprop="url" href="home.php?mod=task" style="background-image:url(https://www.1point3acres.com/bbs/static/image/feed/task_b.png) !important">任务</a></li>
+<li><a itemprop="url" href="https://www.1point3acres.com/bbs/plugin.php?id=xcvow:xcvows" style="background-image:url(https://oss.1point3acres.cn/common/cf/153806cuu5dkd665u8qquq.png?Xts2G7) !important">许愿墙</a></li>
+</ul>
+<div id="fjump_menu" class="btda"></div>
+</div>
+<div id="hd"><div id="nv" class="flex items-center h-16 bg-primary border-none min-w-960px overflow-visible hover:opacity-100">
+<div class="flex items-center justify-between border-none container-1p3a">
+<div class="flex items-center">
+<a href="./" title="首页">
+<img src="static/image/common/logo-1p3a.png" height="60px" />
+</a>
+<ul class="flex overflow-auto mr-2"><li class="font-semibold text-sm flex-shrink-0 xl:mx-1" id="mn_forum" onmouseover="showMenu({'ctrlid':this.id,'ctrlclass':'hover','duration':2})">
+<a class="flex items-center text-#333 no-underline hover:bg-transparent hover:text-active px-1 " href="forum.php?mod=guide" hidefocus="true" title="Guide">导读<span>Guide</span>
+</a></li>
+<li class="font-semibold text-sm flex-shrink-0 xl:mx-1" id="mn_N6a2b" onmouseover="showMenu({'ctrlid':this.id,'ctrlclass':'hover','duration':2})">
+<a class="flex items-center text-#333 no-underline hover:bg-transparent hover:text-active px-1 " href="https://pay.1point3acres.com/bbs/vip" hidefocus="true" target="_blank">解锁权限
+</a></li>
+<li class="font-semibold text-sm flex-shrink-0 xl:mx-1" id="mn_N7d05" onmouseover="showMenu({'ctrlid':this.id,'ctrlclass':'hover','duration':2})">
+<a class="flex items-center text-#333 no-underline hover:bg-transparent hover:text-active px-1 " href="tools.php" hidefocus="true">功能中心
+</a></li>
+<li class="font-semibold text-sm flex-shrink-0 xl:mx-1" id="mn_N9280" onmouseover="showMenu({'ctrlid':this.id,'ctrlclass':'hover','duration':2})">
+<a class="flex items-center text-#333 no-underline hover:bg-transparent hover:text-active px-1 " href="https://www.1point3acres.com/bbs/offer" hidefocus="true" target="_blank" style="font-weight: bold;">留学
+</a></li>
+<li class="font-semibold text-sm flex-shrink-0 xl:mx-1" id="mn_Nfeeb" onmouseover="showMenu({'ctrlid':this.id,'ctrlclass':'hover','duration':2})">
+<a class="flex items-center text-#333 no-underline hover:bg-transparent hover:text-active px-1 " href="tag.html" hidefocus="true">标签
+</a></li>
+<li class="font-semibold text-sm flex-shrink-0 xl:mx-1" id="mn_N8e60" onmouseover="showMenu({'ctrlid':this.id,'ctrlclass':'hover','duration':2})">
+<a class="flex items-center text-#333 no-underline hover:bg-transparent hover:text-active px-1 " href="https://learn.1point3acres.com" hidefocus="true">网课
+</a></li>
+<li class="font-semibold text-sm flex-shrink-0 xl:mx-1" id="mn_N8155" onmouseover="showMenu({'ctrlid':this.id,'ctrlclass':'hover','duration':2})">
+<a class="flex items-center text-#333 no-underline hover:bg-transparent hover:text-active px-1 " href="https://instant.1point3acres.com/" hidefocus="true">攻略
+</a></li>
+<li class="font-semibold text-sm flex-shrink-0 xl:mx-1" id="mn_Nb60e" onmouseover="showMenu({'ctrlid':this.id,'ctrlclass':'hover','duration':2})">
+<a class="flex items-center text-#333 no-underline hover:bg-transparent hover:text-active px-1 " href="https://www.1point3acres.com/bbs/misc.php?mod=faq	" hidefocus="true" target="_blank">帮助
+</a></li>
+</ul>
+<div class="group relative">
+<a href="/bbs/search.php" class="no-underline" id="nav-search-box">
+<div class="bg-#fafafa rounded-2xl h-7 flex items-center px-3 text-sm group-hover:bg-active box-border  whitespace-nowrap">
+<i class="iconfont icon-icons-search text-#6e6e6e group-hover:text-white"></i>
+<span class="text-#4e4e4e ml-2 group-hover:text-white">搜索</span>
+<div class="flex ml-4 w-10 shortcut-help" style="opacity: 0;">
+<kbd class="w-4 h-4 mr-1 group-hover:bg-white cmd-kbd" style="display: none;">&#8984;</kbd>
+<kbd class="h-4 mr-1 group-hover:bg-white ctrl-kbd" style="display: none;">Ctrl</kbd>
+<kbd class=" w-4 h-4 group-hover:bg-white">k</kbd>
+</div>
+</div>
+</a>
+<div id="nav-search-menu" class="invisible group-hover:visible flex flex-col space-y-1 absolute top-full -left-2 whitespace-nowrap text-center shadow px-2 py-3 text-sm bg-white" style="z-index:301;">
+<a href="/bbs/search.php" target="_blank" class="no-underline leading-7 hover:text-active">站内搜索（扣大米）</a>
+<a href="https://instant.1point3acres.com/" target="_blank" class="no-underline leading-7 hover:text-active">Instant搜索</a>
+<a href="/bbs/google_search.php" target="_blank" class="no-underline leading-7 hover:text-active">Google搜索</a>
+</div>
+</div>
+</div>
+<div class="flex items-center text-sm">
+<a href="https://pay.1point3acres.com/bbs/vip" class="text-xs text-#497b89 mx-1 no-underline w-25px xl:w-auto" style="line-height:12px !important;">权限解锁</a>
+<div id="um" class="text-xs">
+<span class="ml-1"></span>
+<a href="home.php?mod=space&amp;do=notice" id="myprompt" onmouseover="showMenu({'ctrlid':'myprompt'});" class="no-underline relative align-middle">
+<i class="iconfont icon-bell text-xl text-active"></i>
+</a>
+<span id="myprompt_check"></span>
+<div class="inline relative group align-middle" id="userstatus-more-menu-item">
+<span class="ml-1"></span>
+<a class="cursor-pointer no-underline">
+<i class="iconfont icon-gear text-xl text-active"></i>
+</a>
+<div id="userstatus-more-tooltip" class="hidden absolute -left-2 top-4 w-24 group-hover:flex flex-col flex-wrap bg-white p-2 shadow-md z-10 justify-start">
+<span class="pipe">|</span><a href="home.php?mod=spacecp&amp;ac=usergroup">用户组: 中级农民</a>
+<span class="pipe">|</span><a href="https://www.1point3acres.com/bbs/thread-744233-1-1.html" target="_blank">暗色模式</a>
+<span class="pipe">|</span><a href="home.php?mod=spacecp&ac=plugin&id=nimba_majia:admincp" target="_blank"><span style="font: bold Verdana; color: #f15a29;">自由马甲</span></a><span class="pipe">|</span><a href="home.php?mod=spacecp">设置</a>
+<span class="pipe"> |</span><a href="member.php?mod=logging&amp;action=logout&amp;formhash=81a3a904">退出</a>
+</div>
+</div><div class="inline relative group align-middle" id="userstatus-products-menu-item">
+<span class="ml-1"></span>
+<a class="cursor-pointer no-underline">
+<i class="iconfont icon-grid text-xl text-active"></i>
+</a>
+<div id="userstatus-products-tooltip" class="hidden group-hover:flex absolute justify-end -right-5 top-4 p-3 shadow-md z-10 bg-white"><div class="w-72 grid grid-cols-3 gap-y-2 text-sm"><a href="https://www.1point3acres.com/" class="no-underline">
+<div class="w-auto text-xs text-center p-2 border-solid border-0 no-underline top-nav-item hover:bg-#e6f1f6 rounded-lg">
+<img data-src="https://oss.1point3acres.cn/static/image/common/logo_home.png!ss" class="lazyload" />
+<span class="m-0.5 block">首页</span>
+</div>
+</a>
+<a href="https://www.1point3acres.com/bbs/" class="no-underline">
+<div class="w-auto text-xs text-center p-2 border-solid border-0 no-underline top-nav-item hover:bg-#e6f1f6 rounded-lg">
+<img data-src="https://oss.1point3acres.cn/static/image/common/logo_bbs.png!ss" class="lazyload" />
+<span class="m-0.5 block">论坛</span>
+</div>
+</a>
+<a href="https://offer.1point3acres.com/" class="no-underline">
+<div class="w-auto text-xs text-center p-2 border-solid border-0 no-underline top-nav-item hover:bg-#e6f1f6 rounded-lg">
+<img data-src="https://oss.1point3acres.cn/static/image/common/logo_offer.png!ss" class="lazyload" />
+<span class="m-0.5 block">Offer多多</span>
+</div>
+</a>
+<a href="https://jobs.1point3acres.com/" class="no-underline">
+<div class="w-auto text-xs text-center p-2 border-solid border-0 no-underline top-nav-item hover:bg-#e6f1f6 rounded-lg">
+<img data-src="https://oss.1point3acres.cn/static/image/common/logo_jobs.png!ss" class="lazyload" />
+<span class="m-0.5 block">Job多多</span>
+</div>
+</a>
+<a href="https://www.salarytics.com/" class="no-underline">
+<div class="w-auto text-xs text-center p-2 border-solid border-0 no-underline top-nav-item hover:bg-#e6f1f6 rounded-lg">
+<img data-src="https://oss.1point3acres.cn/static/image/common/logo_salarytics.png!ss" class="lazyload" />
+<span class="m-0.5 block">Salarytics</span>
+</div>
+</a>
+<a href="https://visa.1point3acres.com/" class="no-underline">
+<div class="w-auto text-xs text-center p-2 border-solid border-0 no-underline top-nav-item hover:bg-#e6f1f6 rounded-lg">
+<img data-src="https://oss.1point3acres.cn/static/image/common/logo_visa.png!ss" class="lazyload" />
+<span class="m-0.5 block">Visa Tracker</span>
+</div>
+</a>
+<a href="https://coronavirus.1point3acres.com/zh" class="no-underline">
+<div class="w-auto text-xs text-center p-2 border-solid border-0 no-underline top-nav-item hover:bg-#e6f1f6 rounded-lg">
+<img data-src="https://oss.1point3acres.cn/static/image/common/logo_coronavirus.png!ss" class="lazyload" />
+<span class="m-0.5 block">新冠疫情</span>
+</div>
+</a>
+<a href="https://match.1point3acres.com/" class="no-underline">
+<div class="w-auto text-xs text-center p-2 border-solid border-0 no-underline top-nav-item hover:bg-#e6f1f6 rounded-lg">
+<img data-src="https://oss.1point3acres.cn/static/image/common/logo_jiaoyou.png!ss" class="lazyload" />
+<span class="m-0.5 block">交友</span>
+</div>
+</a>
+<a href="https://news.1point3acres.com?utm_source=bbs&amp;utm_medium=user_menu" class="no-underline">
+<div class="w-auto text-xs text-center p-2 border-solid border-0 no-underline top-nav-item hover:bg-#e6f1f6 rounded-lg">
+<img data-src="https://oss.1point3acres.cn/static/image/common/logo_news.png!ss" class="lazyload" />
+<span class="m-0.5 block">指尖新闻</span>
+</div>
+</a>
+<a href="https://instant.1point3acres.com/" class="no-underline">
+<div class="w-auto text-xs text-center p-2 border-solid border-0 no-underline top-nav-item hover:bg-#e6f1f6 rounded-lg">
+<img data-src="https://oss.1point3acres.cn/static/image/common/logo_instant.png!ss" class="lazyload" />
+<span class="m-0.5 block">Instant</span>
+</div>
+</a>
+<a href="https://learn.1point3acres.com/" class="no-underline">
+<div class="w-auto text-xs text-center p-2 border-solid border-0 no-underline top-nav-item hover:bg-#e6f1f6 rounded-lg">
+<img data-src="https://oss.1point3acres.cn/static/image/common/logo_learn.png!ss" class="lazyload" />
+<span class="m-0.5 block">精品网课</span>
+</div>
+</a>
+<a href="https://blog.1point3acres.com/" class="no-underline">
+<div class="w-auto text-xs text-center p-2 border-solid border-0 no-underline top-nav-item hover:bg-#e6f1f6 rounded-lg">
+<img data-src="https://oss.1point3acres.cn/static/image/common/logo_blog.png!ss" class="lazyload" />
+<span class="m-0.5 block">生活攻略</span>
+</div>
+</a>
+<a href="https://www.1point3acres.com/bbs/app.php" class="no-underline">
+<div class="w-auto text-xs text-center p-2 border-solid border-0 no-underline top-nav-item hover:bg-#e6f1f6 rounded-lg">
+<img data-src="https://oss.1point3acres.cn/static/image/common/logo_app.png!ss" class="lazyload" />
+<span class="m-0.5 block">手机APP</span>
+</div>
+</a>
+<a href="https://www.1point3acres.com/business" target="_blank" class="no-underline">
+<div class="w-auto text-xs text-center p-2 border-solid border-0 no-underline top-nav-item hover:bg-#e6f1f6 rounded-lg">
+<img data-src="https://oss.1point3acres.cn/static/image/common/logo_business.png!ss" class="lazyload" />
+<span class="m-0.5 block">商务合作</span>
+</div>
+</a>
+<a href="https://act.1point3acres.com/" class="no-underline">
+<div class="w-auto text-xs text-center p-2 border-solid border-0 no-underline top-nav-item hover:bg-#e6f1f6 rounded-lg">
+<img data-src="https://oss.1point3acres.cn/static/image/common/logo_act.png!ss" class="lazyload" />
+<span class="m-0.5 block">维权</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div id="user_side_menu" class="group fixed z-10 right-0 bottom-260px w-6 xl:w-8 hover:pt-1 xl:pt-1 bg-white shadow-md rounded-l">
+<div class="xl:hidden group-hover:hidden fixed right-0 bottom-400px bg-#568f9f shadow-md rounded-l">
+<div class="my-8 text-white">
+&lt;
+</div>
+</div>
+<div class="hidden group-hover:block xl:block group">
+<a class="text-center no-underline" href="home.php?mod=space&amp;uid=662772">
+<div class="avts mb-2"><img src="https://avatar.1point3acres.cn/000/66/27/72_avatar_small.jpg!c?m=1" /></div>
+</a>
+<a class="text-center no-underline" href="forum.php?mod=post&amp;action=newthread&amp;fid=28">
+<div><i class="iconfont icon-icons-pencil text-#497b89"></i></div>
+<div class="text-10px text-#497b89 leading-tight mb-2">发帖</div>
+</a>
+<a class="text-center no-underline" href="/bbs/dsu_paulsign-sign.html">
+<div><i class="iconfont icon-icons-check-in text-#497b89"></i></div>
+<div class="text-10px text-#497b89 leading-tight mb-2">签到</div>
+</a>
+<a class="text-center no-underline cursor-pointer" onclick="showWindow('pop','plugin.php?id=ahome_dayquestion:pop')">
+<div><i class="iconfont icon-icons-award text-#497b89"></i></div>
+<div class="text-10px text-#497b89 leading-tight mb-2">答题</div>
+</a>
+<a class="text-center no-underline" href="home.php?mod=space&amp;do=pm">
+<div><i class="iconfont icon-icons-inbox-messages text-#497b89"></i></div>
+<div class="text-10px text-#497b89 leading-tight mb-2">消息</div>
+</a>
+<a class="text-center no-underline" href="https://pay.1point3acres.com/bbs/vip">
+<div><i class="iconfont icon-vip text-#497b89"></i></div>
+<div class="text-10px text-#497b89 leading-tight mb-2">升级</div>
+</a>
+<div id="qrcode-container" class="hidden xl:block group-hover:block relative text-center my-1">
+<div><i class="iconfont icon-icons-qr-code text-#497b89"></i></div>
+<div class="text-10px text-#497b89 leading-tight mb-2">关注</div>
+<div id="qrcode-tooltip" class="hidden absolute w-40rem -left-40rem top-0 bg-white shadow-md justify-center">
+<div class="w-32 m-3">
+<img class="w-32 h-32 lazyload" data-src="https://oss.1point3acres.cn/static/image/common/wq_warald.jpg" />
+<figcaption>微信公众号</figcaption>
+</div>
+<div class="w-32 m-3">
+<img class="w-32 h-32 lazyload" data-src="https://oss.1point3acres.cn/static/image/common/wq_liuxue.jpg" />
+<figcaption>留学申请公众号</figcaption>
+</div>
+<div class="w-32 m-3">
+<img class="w-32 h-32 lazyload" data-src="https://oss.1point3acres.cn/static/image/common/wq_invest.jpg" />
+<figcaption>投资理财公众号</figcaption>
+</div>
+<div class="w-32 m-3">
+<img class="w-32 h-32 lazyload" data-src="https://oss.1point3acres.cn/static/image/common/wq_career.jpg" />
+<figcaption>职场求职公众号</figcaption>
+</div>
+</div>
+</div>
+<a class="text-center no-underline" href="misc.php?mod=faq">
+<div><i class="iconfont icon-icons-question text-#497b89"></i></div>
+<div class="text-10px text-#497b89 leading-tight mb-2">帮助</div>
+</a>
+<div class="bg-#568f9f hover:bg-#497b89 text-center text-xs text-white h-6 xl:h-8 leading-6 xl:leading-8 cursor-pointer rounded-bl" onclick="window.scrollTo(0,0);">TOP</div>
+</div>
+</div>
+<a href="javascript:;" id="qmenu" class="h-8" style="margin-right:0;padding-right:0;" onmouseover="delayShow(this, function () {showMenu({'ctrlid':'qmenu','pos':'34!','ctrlclass':'a','duration':2});showForummenu(28);}, 0)">
+<div class="avts w-10 h-7 bg-#fafafa rounded-2xl px-1 pt-1 hover:bg-active"><img src="https://avatar.1point3acres.cn/000/66/27/72_avatar_small.jpg!c?m=1" /><i class="iconfont icon-icons-menu-expand pl-1 text-5px text-#4e4e4e"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+<ul class="p_pop h_pop" id="plugin_menu" style="display: none"> <li><a href="dsu_paulsign-sign.html" id="mn_plink_sign">每日签到</a></li>
+</ul>
+<ul class="p_pop h_pop shadow-md border-none" id="mn_forum_menu" style="display: none"><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="forum.php?mod=guide&view=digest" hidefocus="true">置顶话题</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="forum.php?mod=guide&view=new" hidefocus="true">最新回复</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="forum.php?mod=guide&view=newthread" hidefocus="true">最新主题</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="forum.php?mod=guide" hidefocus="true">最新热门</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="thread-71069-1-1.html" hidefocus="true">获取积分</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="start.php" hidefocus="true">新手指南</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="forum.php?mod=collection" hidefocus="true">淘贴</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="home.php?mod=space&do=doing" hidefocus="true">记录</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="misc.php?mod=ranklist" hidefocus="true">排行榜</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="forum.php?mod=guide&view=feed" hidefocus="true">我的订阅</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="forum.php?mod=guide&view=my" hidefocus="true">我的帖子</a></li></ul><ul class="p_pop h_pop shadow-md border-none" id="mn_N6a2b_menu" style="display: none"><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://pay.1point3acres.com/bbs/vip" hidefocus="true" target="_blank" style="color: red">VIP通行证</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://pay.1point3acres.com/bbs/points" hidefocus="true" target="_blank" style="color: red">购买蓝莓</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://pay.1point3acres.com/bbs/company" hidefocus="true" target="_blank">企业招聘广告</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://www.1point3acres.com/business" hidefocus="true" target="_blank">移民律师专栏</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://airtable.com/shrpQwAaB5k2OvgfI" hidefocus="true">洽谈其他合作</a></li></ul><div class="p_pop h_pop" id="mn_userapp_menu" style="display: none"></div><ul class="p_pop h_pop shadow-md border-none" id="mn_N7d05_menu" style="display: none"><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="home.php?mod=magic" hidefocus="true" target="_blank" style="color: red">道具[匿名/删除/提升/关闭/等]</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://www.1point3acres.com/bbs/exam.html" hidefocus="true" target="_blank">考试</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="plugin.php?id=attachcenter" hidefocus="true" target="_blank">附件</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="home.php?mod=medal" hidefocus="true">勋章</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="plugin.php?id=xcvow:xcvows" hidefocus="true" style="color: red">许愿墙</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://tools.1point3acres.com/ads" hidefocus="true">去广告</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://www.1point3acres.com/bbs/plugin.php?id=e6_qmjc" hidefocus="true">全民竞猜</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="plugin.php?id=dsu_paulsign:sign" hidefocus="true" target="_blank">每日签到</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="plugin.php?id=ahome_dayquestion:index" hidefocus="true" target="_blank">每日答题</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://tools.1point3acres.com/thread" hidefocus="true" target="_blank" style="color: orange">超级匿名</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://tools.1point3acres.com/wechat" hidefocus="true" style="color: orange">微信解绑</a></li></ul><ul class="p_pop h_pop shadow-md border-none" id="mn_N9280_menu" style="display: none"><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://www.1point3acres.com/bbs/offer" hidefocus="true">留学申请入口</a></li></ul><ul class="p_pop h_pop shadow-md border-none" id="mn_Nfeeb_menu" style="display: none"><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="tag.html?category=1" hidefocus="true">话题</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="tag.html?category=2" hidefocus="true">学校</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="tag.html?category=3" hidefocus="true">公司</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="tag.html?category=4" hidefocus="true">地区</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="tag.html?category=5" hidefocus="true">证券</a></li></ul><ul class="p_pop h_pop shadow-md border-none" id="mn_N8e60_menu" style="display: none"><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://learn.1point3acres.com/courses/ds501-analytics/" hidefocus="true" target="_blank" style="color: blue">DS501 数据科学面试40+真题讲解</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://learn.1point3acres.com/courses/shawn_algorithm/" hidefocus="true" target="_blank" style="color: red">瞄准秋招：暑假跟着Shawn老师刷题！</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://learn.1point3acres.com/courses/ds601-ab-test/" hidefocus="true" target="_blank" style="color: blue">DS601 AB Test从入门到精通</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://learn.1point3acres.com/courses/cs601_system_design/" hidefocus="true" target="_blank" style="color: green">CS601 谷歌工程师讲系统设计</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://learn.1point3acres.com/courses/ds401-cracking-data-science-interview/" hidefocus="true" target="_blank">DS401 资深数据科学家教你破解DS面试</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://learn.1point3acres.com/courses/cs401_succeed_in_google_interview/" hidefocus="true" target="_blank" style="color: green">CS401 谷歌招聘委员会成员讲解如何准备面试</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://learn.1point3acres.com/courses/ds402-resume-workshop/" hidefocus="true" target="_blank">DS402 Resume Workshop</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://learn.1point3acres.com/courses/ds404a-technical-interview-for-data-science/" hidefocus="true" target="_blank">DS401A 模拟面试-数据科学</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://learn.1point3acres.com/courses/ds404b-technical-interview-for-machine-learning/" hidefocus="true" target="_blank">DS404B 模拟面试-机器学习</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://learn.1point3acres.com/courses/cs404a-mock-interview-algorithm/" hidefocus="true" target="_blank" style="color: green">CS404A 模拟面试-算法</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://learn.1point3acres.com/courses/cs404b-mock-interview-system-design/" hidefocus="true" target="_blank" style="color: green">CS404B 模拟面试-系统设计</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://learn.1point3acres.com/courses/zenglaw-h1b/" hidefocus="true" target="_blank">锦晖律师事务所H1B签证申请讲座</a></li></ul><ul class="p_pop h_pop shadow-md border-none" id="mn_N8155_menu" style="display: none"><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="portal/5" hidefocus="true">CS入门攻略</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="portal/2" hidefocus="true">CS求职攻略</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="portal/9" hidefocus="true">PM求职攻略</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="portal/8" hidefocus="true">系统设计攻略</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="portal/6" hidefocus="true">数据科学攻略</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://www.1point3acres.com/bbs/thread-530349-1-1.html" hidefocus="true" style="color: blue">回国礼物礼品最全清单</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://www.1point3acres.com/bbs/thread-422103-1-1.html" hidefocus="true" style="color: blue">如何在新城市快速省心安家</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://www.1point3acres.com/bbs/thread-81269-1-1.html" hidefocus="true">车盲如何购买二手车</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://www.1point3acres.com/bbs/thread-464027-1-1.html" hidefocus="true">收到医院的天价账单怎么办</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://blog.1point3acres.com/" hidefocus="true">更多</a></li></ul><ul class="p_pop h_pop shadow-md border-none" id="mn_home_menu" style="display: none"><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://appsto.re/us/EesS8.i" hidefocus="true">苹果应用商店</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://goo.gl/g7Rfnq" hidefocus="true">谷歌应用商店</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://pan.baidu.com/s/1DAWIozLBPAd-xoD5jDJHTg" hidefocus="true">百度网盘apk</a></li></ul><ul class="p_pop h_pop shadow-md border-none" id="mn_Nb60e_menu" style="display: none"><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://www.1point3acres.com/contact" hidefocus="true">商务合作</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://www.1point3acres.com/bbs/misc.php?mod=faq	" hidefocus="true">常见问题</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="thread-71069-1-1.html" hidefocus="true" target="_blank">新手上路</a></li></ul><ul class="p_pop h_pop shadow-md border-none" id="mn_N12a7_menu" style="display: none"><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://www.1point3acres.com/bbs/misc.php?mod=ranklist&type=thread&view=replies&orderby=thisweek" hidefocus="true">帖子</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://www.1point3acres.com/bbs/misc.php?mod=ranklist&type=poll&view=heats&orderby=thisweek" hidefocus="true">投票</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://www.1point3acres.com/bbs/misc.php?mod=ranklist&type=activity&view=heats&orderby=thismonth" hidefocus="true">活动</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://www.1point3acres.com/bbs/misc.php?mod=ranklist&type=forum&view=threads" hidefocus="true">版块</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://www.1point3acres.com/bbs/misc.php?mod=ranklist&type=group&view=credit" hidefocus="true">群组</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://www.1point3acres.com/bbs/misc.php?mod=ranklist&type=blog&view=heats&orderby=thisweek" hidefocus="true">日志</a></li><li><a class=" text-center text-sm border-none hover:text-active hover:bg-transparent leading-7 " href="https://www.1point3acres.com/bbs/misc.php?mod=ranklist&type=member" hidefocus="true">用户</a></li></ul><div id="mu" class="cl">
+<ul class="cl " id="snav_mn_userapp" style="display:none">
+</ul>
+</div></div>
+<script type="text/javascript" src="./source/plugin/saya_frontjs/sayaquery.js"></script>
+<script type="text/javascript">sayaQuery.noConflict();</script>
+<div id="wp" class="wp">
+<script type="application/ld+json">
+[{"@context":"https:\/\/schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"WebPage","@id":"https:\/\/www.1point3acres.com\/bbs\/forum-38-1.html","url":"https:\/\/www.1point3acres.com\/bbs\/forum-38-1.html","name":"海外求职"}},{"@type":"ListItem","position":2,"item":{"@type":"WebPage","@id":"https:\/\/www.1point3acres.com\/bbs\/forum-28-1.html","url":"https:\/\/www.1point3acres.com\/bbs\/forum-28-1.html","name":"求职（非面经）"}}]}]</script>
+<script type="text/javascript">var fid = parseInt('28'), tid = parseInt('780970');</script>
+<script src="data/cache/forum_viewthread.js?ROu" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="data/cache/style_5_viewthread.css?ROu" />
+<script type="text/javascript">zoomstatus = parseInt(1);var imagemaxwidth = '700';var aimgcount = new Array();</script>
+<style id="diy_style" type="text/css">#portal_block_479 {  margin-top:5px !important;margin-bottom:5px !important;}</style>
+<div id="diynavtop" class="area"></div>
+<div id="pt" class="bm cl">
+<div class="z">
+<a href="./" class="nvhm" title="首页">一亩三分地</a><em>&raquo;</em><a href="">论坛</a> <em>&rsaquo;</em> <a href="forum.php?gid=38">海外求职</a> <em>&rsaquo;</em> <a href="forum-28-1.html">求职（非面经）</a> <em>&rsaquo;</em> <a href="thread-780970-1-1.html">DS product case的细节总结和tips</a>
+</div>
+</div>
+<div class="wp a_t"><table cellpadding="0" cellspacing="1" style="border-collapse: separate;border-spacing: 0 0;"><tr><td width="100%"><div id="ad-page-header" style="text-align:center;margin:5px 0px;">
+<script>
+        if (typeof(tid) !== 'number' || tid % 8 < 7) {
+            (function(){
+                var adDiv = document.createElement('div');
+                adDiv.id = '9c0ffdfc-c1c1-4ab5-8612-a7b654fa71f5';
+                adDiv.className = '_ap_apex_ad';
+                adDiv.style = 'height:90px;';
+                document.getElementById('ad-page-header').appendChild(adDiv);
+            })();
+            var adpushup = window.adpushup  = window.adpushup || {que:[]};
+            adpushup.que.push(function() {
+                adpushup.triggerAd('9c0ffdfc-c1c1-4ab5-8612-a7b654fa71f5');
+            });
+        } else {
+            (function(){
+                var ins = document.createElement('ins');
+                ins.className = 'adsbygoogle';
+                ins.style = 'display:block;width:728px;height:90px;margin:auto;';
+                ins.dataset.adClient = 'ca-pub-4132348358369185';
+                ins.dataset.adSlot = '4983834106';
+                document.getElementById('ad-page-header').appendChild(ins);
+            })();
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        }
+    </script>
+</div></td></tr>
+</table></div><style id="diy_style" type="text/css">#portal_block_479 {  margin-top:5px !important;margin-bottom:5px !important;}</style>
+<div class="wp">
+<div id="diy1" class="area"></div>
+</div>
+<div id="ct" class="wp cl  ct2 cty">
+<div class="mn">
+<div id="pgt" class="pgs mbm cl ">
+<div class="pgt"></div>
+<span class="y pgb" id="visitedforums" onmouseover="$('visitedforums').id = 'visitedforumstmp';this.id = 'visitedforums';showMenu({'ctrlid':this.id,'pos':'34'})"><a href="forum-28-1.html">返回列表</a></span>
+<a id="newspecial" onmouseover="$('newspecial').id = 'newspecialtmp';this.id = 'newspecial';showMenu({'ctrlid':this.id})" onclick="location.href='forum.php?mod=post&action=newthread&fid=28';return false;" href="javascript:;" title="发新帖"><img src="static/image/common/pn_post.png" alt="发新帖" /></a><a id="post_reply" onclick="showWindow('reply', 'forum.php?mod=post&action=reply&fid=28&tid=780970')" href="javascript:;" title="回复"><img src="static/image/common/pn_reply.png" alt="回复" /></a>
+</div>
+<ul class="p_pop" id="newspecial_menu" style="display: none">
+<li><a href="forum.php?mod=post&amp;action=newthread&amp;fid=28">发表帖子</a></li></ul>
+<div id="postlist" class="pl bm" itemid="tid780970">
+<table cellspacing="0" cellpadding="0">
+<tr>
+<td class="pls ptn pbn">
+<div class="hm ptn">
+<span class="xg1">查看:</span> <span class="xi1">5542</span><span class="pipe">|</span><span class="xg1">回复:</span> <span class="xi1">7</span>
+</div>
+</td>
+<td class="plc ptm pbn">
+<div id="fj" class="y mt-px">
+<label class="z">直达</label>
+<input type="text" class="px p_fre z" size="2" onkeyup="$('fj_btn').href='forum.php?mod=redirect&ptid=780970&authorid=0&postno='+this.value" onkeydown="if(event.keyCode==13) {window.location=$('fj_btn').href;return false;}" title="跳转到指定楼层" />
+<a href="javascript:;" id="fj_btn" class="z" title="跳转到指定楼层"><img src="static/image/common/fj_btn.png" alt="跳转到指定楼层" class="vm" /></a>
+</div>
+<div class="y">
+<a href="forum.php?mod=redirect&amp;goto=nextoldset&amp;tid=780970" title="上一主题"><img src="static/image/common/thread-prev.png" alt="上一主题" class="vm" /></a>
+<a href="forum.php?mod=redirect&amp;goto=nextnewset&amp;tid=780970" title="下一主题"><img src="static/image/common/thread-next.png" alt="下一主题" class="vm" /></a>
+</div>
+<span class="xg1 side_btn">
+<a onclick="setcookie('close_leftinfo', 1);location.reload();" title="收起左侧" class="btn_s_close" href="javascript:;"><img src="static/image/common/control_l.png" alt="收起左侧" class="vm" /></a>
+</span>
+<h1 class="ts">
+<a href="forum.php?mod=forumdisplay&amp;fid=28&amp;filter=typeid&amp;typeid=35">[找工就业]</a>
+<a href="forum.php?mod=forumdisplay&amp;fid=28&amp;filter=sortid&amp;sortid=192">[工作信息]</a>
+<span id="thread_subject">DS product case的细节总结和tips</span>
+</h1>
+<span class="xg1">
+&nbsp;<img src="static/image/common/recommend_2.gif" alt="" title="评价指数 15" />
+&nbsp;<img src="static/image/common/hot_3.gif" alt="" title="热度: 285" />
+</span>
+<span class="pipe">|</span><a class="instant_link" href="https://instant.1point3acres.com/thread/780970" target='_blank'>只看干货</a>
+<div class="text-#555 flex flex-wrap space-x-2 bg-white mt-1" data-v="2kpj27JJvF5JFy1vdV8VMw==">
+<a href="tag-138-1.html" target="_blank" class="taglink bg-#c4c4c4 bg-opacity-20 h-4 p-1 flex items-center space-x-1 rounded m-px no-underline">
+<img src="static/image/icon/ticket.svg" class="h-full w-8 object-contain" />
+<span>数据科学</span>
+</a>
+<a href="tag-6471-1.html" target="_blank" class="taglink bg-#c4c4c4 bg-opacity-20 h-4 p-1 flex items-center space-x-1 rounded m-px no-underline">
+<img src="static/image/icon/ticket.svg" class="h-full w-8 object-contain" />
+<span>求职（非面经）</span>
+</a>
+</div>
+</td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="ad">
+<tr>
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</table><div id="post_15773776"><table id="pid15773776" class="plhin" summary="pid15773776" cellspacing="0" cellpadding="0" itemid="pid15773776" itemscope itemtype="http://schema.org/DiscussionForumPosting">
+<tr>
+<td class="pls" rowspan="2">
+<div id="favatar15773776" class="pls favatar">
+<div class="p_pop blk bui card_gender_2" id="userinfo15773776" style="display: none; ">
+<div class="m z">
+<div id="userinfo15773776_ma"></div>
+</div>
+<div class="i y">
+<div itemprop="author" itemscope itemtype="http://schema.org/Person">
+<strong><a itemprop="url" href="home.php?mod=space&amp;uid=79177" target="_blank" class="xi2" style="color: #7E1E7B"><span itemprop="name">emilieee</span></a></strong>
+<em>当前离线</em>
+</div><dl class="cl">
+<div class="tns xg2"><table cellspacing="0" cellpadding="0"><th><p><a href="home.php?mod=space&uid=79177&do=thread&type=thread&view=me&from=space" class="xi2">7</a></p>主题</th><th><p><a href="home.php?mod=space&uid=79177&do=thread&type=reply&view=me&from=space" class="xi2">29</a></p>帖子</th><td><p><a href="home.php?mod=space&uid=79177&do=profile" class="xi2">954</a></p>积分</td></table></div>
+<p><em><a href="home.php?mod=spacecp&amp;ac=usergroup&amp;gid=34" target="_blank"><font color="#7E1E7B">活跃农民</font></a></em></p>
+<dt>积分</dt><dd><a href="home.php?mod=space&uid=79177&do=profile" target="_blank" class="xi2">954</a></dd>
+<dt>大米</dt><dd>952 颗 </dd>
+<dt>鳄梨</dt><dd>0 个</dd>
+<dt>水井</dt><dd>0 尺</dd>
+<dt>蓝莓</dt><dd>0 颗</dd>
+<dt>萝卜</dt><dd>1 根</dd>
+<dt>小米</dt><dd>29 粒</dd>
+<dt>学分</dt><dd>0 个</dd>
+<dt>注册时间</dt><dd>2013-1-31</dd>
+<dt>最后登录</dt><dd>2022-2-23</dd>
+</dl><div class="imicn">
+<a href="home.php?mod=space&amp;uid=79177&amp;do=profile" target="_blank" title="查看详细资料"><img src="static/image/common/userinfo.gif" alt="查看详细资料" /></a>
+<a href="home.php?mod=magic&amp;mid=checkonline&amp;idtype=user&amp;id=emilieee" id="a_repent_15773776" class="xi2" onclick="showWindow(this.id, this.href)"><img src="static//image/magic/checkonline.small.gif" alt="" /> 狗仔卡</a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar" itemprop="image" itemscope itemtype="http://schema.org/URL" onmouseover="showauthor(this, 'userinfo15773776')"><a href="space-uid-79177.html" class="avtm" target="_blank"><img src="https://avatar.1point3acres.cn/000/07/91/77_avatar_middle.jpg!c" /></a></div>
+</div>
+<div class="tns xg2"><table cellspacing="0" cellpadding="0"><th><p><a href="home.php?mod=space&uid=79177&do=thread&type=thread&view=me&from=space" class="xi2">7</a></p>主题</th><th><p><a href="home.php?mod=space&uid=79177&do=thread&type=reply&view=me&from=space" class="xi2">29</a></p>帖子</th><td><p><a href="home.php?mod=space&uid=79177&do=profile" class="xi2">954</a></p>积分</td></table></div>
+<dl class="pil cl"></dl><ul class="xl xl2 o cl">
+<li class="pm2"><a href="home.php?mod=spacecp&amp;ac=pm&amp;op=showmsg&amp;handlekey=showmsg_79177&amp;touid=79177&amp;pmid=0&amp;daterange=2&amp;pid=15773776&amp;tid=780970" onclick="showWindow('sendpm', this.href);" title="发消息" class="xi2">发消息</a></li>
+</ul>
+</div>
+</td>
+<td class="plc">
+<div class="pi">
+<strong>
+<a href="thread-780970-1-1.html" id="postnum15773776" onclick="setCopy(this.href, '帖子地址复制成功');return false;">
+&#x1F517;
+</a>
+</strong>
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon15773776" src="static/image/common/online_member.gif" />
+<a href="space-uid-79177.html" target="_blank" class="xi2">emilieee</a>
+<span>
+<meta itemprop="datePublished" content="2021-7-20 22:07" />
+<time itemprop="dateModified" datetime="2022-2-16 09:20">
+2021-7-20 22:07:47</time>
+</span>
+<span class="pipe">|</span>
+<a href="forum.php?mod=viewthread&amp;tid=780970&amp;page=1&amp;authorid=79177" rel="nofollow">只看该作者</a>
+<span class="none"><img src="static/image/common/arw_r.gif" class="vm" alt="回帖奖励" /></span>
+<span class="pipe show">|</span><a href="forum.php?mod=viewthread&amp;tid=780970&amp;extra=&amp;ordertype=1" class="show">倒序浏览</a>
+<span class="pipe show">|</span><a href="javascript:;" onclick="readmode($('thread_subject').innerHTML, 15773776);" class="show">阅读模式</a>
+</div>
+</div>
+</div><div class="pct"><style type="text/css">.pcb{margin-right:0}</style><div class="pcb">
+<meta itemprop="headline" content="DS product case的细节总结和tips">
+<script src="./source/plugin/dxksst_credit/template/smartcome.js" type="text/javascript"></script><div id="dxksst_credit_hidden"></div>
+<!--googleoff: snippet-->
+<table width="100%" class="dxksst_table">
+<tr>
+<td align="right">本楼：</td>
+<td width="105px" align="right">
+<a id="recommend_add" href="forum.php?mod=misc&amp;action=recommend&amp;do=add&amp;tid=780970&amp;hash=81a3a904" onclick="ajaxmenu(this, 3000, 1, 0, '43', 'rec_update(15773776, true, 1)');return false;" onmouseover="this.title = $('recommendv_add').innerHTML + ' !activity_member_unit!好苗'" style="text-decoration: none;">
+<font class="local_vote_icon" color="#ff6600">&#128077;</font>
+</a>
+&nbsp;
+<i id="rec_add_percent_15773776">100%</i>&nbsp;<i color="#497B89">(<i id="rec_add_15773776">11</i>)</i>
+</td>
+<td align="center" width="120px;">
+<div class="dxksst_pbg_new" align="left">
+<div class="dxksst_pbr_left" id="rec_add_bar_15773776" style="width: 100%; background-color:#ff6600">&nbsp;</div>
+<div class="dxksst_pbr_right" id="rec_sub_bar_15773776" style="width: 0%; background-color:#497b89">&nbsp;</div>
+</div>
+</td>
+<td width="105px" align="left">
+<i id="rec_sub_percent_15773776">0%</i>&nbsp;<i color="#497B89">(<i id="rec_sub_15773776">0</i>)</i>
+&nbsp;
+<a id="recommend_subtract" href="forum.php?mod=misc&amp;action=recommend&amp;do=subtract&amp;tid=780970&amp;hash=81a3a904" onclick="ajaxmenu(this, 3000, 1, 0, '43', 'rec_update(15773776, true, -1)');return false;" onmouseover="this.title = $('recommendv_subtract').innerHTML + ' !activity_member_unit!杂草'" style="text-decoration: none;"><font class="local_vote_icon" color="#497b89">&#128078;</font></a>
+</td>
+</tr>
+<tr style="padding-top:10px;">
+<td align="right">全局：</td>
+<td width="140px" align="right">&#128077; &nbsp;&nbsp;<i id="upvote_percent_15773776">100%</i>&nbsp;<i color="#497B89">(<i id="upvote_15773776">46</i>)</i></td>
+<td align="center" width="120px;">
+<div class="dxksst_pbg_new" align="left" title="0%">
+<div class="dxksst_pbr_left" id="upvote_bar_15773776" style="width: 100%; background-color:#ff6600">&nbsp;</div>
+<div class="dxksst_pbr_right" id="downvote_bar_15773776" style="width: 0%; background-color:#497b89">&nbsp;</div>
+</div>
+</td>
+<td width="140px" align="left"><i id="downvote_percent_15773776">0%</i>&nbsp;<i color="#497B89">(<i id="downvote_15773776">0</i>)</i>&nbsp;&nbsp;&nbsp; &#128078;</td>
+</tr>
+</table>
+<div align="right">
+</div>
+<!--googleon: snippet-->
+<br /><span style="margin-top: 3px">
+<span style="margin-top: 3px"><font color="#666">2021(7-9月)</font>-<font color="#F60"><b>DataScience/Analytics</b></font><font color="blue">硕士</font>+3-5年 | Other| <u><b><font color="green">分析|数据科学类</font></b><b><font color="#ff6600">全职</font></b>@<b><font color="#00B2E8"></font></b></u>
+</span>
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tr><td class="t_f" id="postmessage_15773776" itemprop="articleBody">
+最近在准备跳槽product ds，花了很多时间准备case，刚刚面完最后一个onsite，终于可以稍微闲下来一些，想把平时学到的和思考的东西分享给大家，顺便一起讨论交流。因为板上关于case如何定框架找思路的分享已经很多了，我就写写给那些edge case和小细节，希望能帮已经准备得八九不离十的大家拿bonus分。disclaimer：只是我自己的思考和总结，肯定会有疏漏或者不对的地方，欢迎大家指出，一起讨论。 <font class="jammer"></font><br />
+<font class="jammer"></font><br />
+clarify环节<font class="jammer"></font><br />
+一般大家都会在听完product题后，先clarify一些ambiguous的表述，理解一遍产品和context，这一步的重要性大家都懂我就不提了。我想给的tips是，一般clarify完之后我会跟面试官重述一下我对这个TA描述的product的理解。这样一旦有理解错误的地方可以及时纠正。还有就是除了大家平时都会clarify 的这个新的feature是干嘛的之外，我们还可以从user 和use cases作clarification，这个有助于我们之后定针对哪个user的什么样的goal。这个也会暗示面试官你有全局观，不只是focus在individual user上。但是这个不用停留很久，一笔带过就可以。就比如说，如果在谷歌地图上加一个新feature，怎么看success，那这个时候除了clarify这个feature是什么，我们还可以follow up哪些groups（user, small business,advertiser)会用到这个feature, 怎么用这个feature。因为我们这个interview可能只有时间focus在一个group上你觉得我们先讨论individual user怎么样？然后就可以继续讨论goal了<font class="jammer">.--</font><br />
+&nbsp; &nbsp; 1. Users that use the product (small business owner vs user, creator vs follower, user and advertiser)<font class="jammer"></font><br />
+&nbsp; &nbsp; 2. Use cases of the product (private event vs public, small group vs large, view vs create)<font class="jammer"></font><br />
+<font class="jammer"></font><br />
+讨论goal的时候<font class="jammer"></font><br />
+Always circle back on the point that focuses on the company's mission. 比如FB is to connect and build community. Google is to organize the world's information and make it universally accessible and useful. 这个怎么应用呢，就比如说有一个feature，它的目的是想要增加user的group page engagement，但这个就是眼前的目标，答到这点对junior职位已经okay了，但是对senior职位来说，会需要联系到ecosystem的goal也就是要增加user的总体的Facebook engagement. 这个同样适合ab test 结果的trade off， 比如说story使用上升，post使用下降要怎么办的情况。<font class="jammer"></font><br />
+<font class="jammer"></font><br />
+AB test 的metrics<font class="jammer">. .и</font><br />
+看面经的时候，很多回答都定义了很好的goal metrics，但是其实我平时工作中跑ab test的时候不止会看这几个，我在这里拿fb举个例子。至于面试的时候，最基本要答到的就是goal metrics，其他你可以根据interviewer的节奏和是不是想深入聊metrics再展开。<font class="jammer"></font><br />
+1. Goal metrics (success metrics)<font class="jammer"></font><br />
+2. product/feature本身（这个是只有treatment 才有的metrics，比如说一个新feature的CTR，这个metrics不是为了比较control和treatment，而是如果这个experiment要launch to production那我们可以对整个population的反应有所估计）<font class="jammer"></font><br />
+3. ecosystem metrics（engagement/time spent/sessions/Retention/revenue 此处讨论对FB总体的impact）<font class="jammer"></font><br />
+4. engagement from other features (group，marketplace，public pages to understand potential Cannibalization)（此处讨论对ecosystem 的potential risk）<font class="jammer">.1point3acres</font><br />
+5. Guardrail metrics (something to watch out for, cancellation rate, bounce rate, friction rate, latency) （此处讨论这个feature的potential risk）<br />
+<span style="display:none"></span>6. sanity metric （此处确保launch的实施没有问题，这个udacity的AB testing的课也说了）<font class="jammer"></font><br />
+Bonus point是 metrics的prioritization和normalization<font class="jammer"></font><br />
+如果你列了所有metrics那false positive有可能变多，这种情况要做metrics p value的calibration (Bonferroni correction)这个知道就行，in case 面试官问<font class="jammer"></font><br />
+<br />
+<span style="display:none"></span>AB test 的流程<font class="jammer">.google&nbsp;&nbsp;и</font><br />
+1. know business goal<font class="jammer"></font><br />
+2. define goal metrics <font class="jammer"></font><br />
+3. Unit of diversion - views, users, or cookie<font class="jammer"></font><br />
+4. Population - to run experiment only on the population that will be affected (instead of all users, use users who initiate the checkout process for a checkout feature)<font class="jammer"></font><br />
+5. Sample size - based on the baseline, practical significant level, significance level, power<font class="jammer"></font><br />
+6. Duration - considering usage pattern, business cycle, and novelty effect, also if the experiment is risky or not reversible, should start with very small size and duration should be longer<font class="jammer"></font><br />
+7. Assignment - how to split control and treatment (random? Network effect?)<font class="jammer"></font><br />
+8. sanity check &amp; check if the result is significant to reject the null hypothesis and accept there’s a difference in control and experiment<font class="jammer"></font><br />
+其他：<font class="jammer"></font><br />
+Novelty/Primacy effect可以快速提到略过，最rigorous的方法就是直接test new users<font class="jammer">. .и</font><br />
+Simpson paradox可以在设计实验的时候就考虑进去，比如说condense的post可能不同文字上显示效果不同，所以不同文字可以分group test。不提没事，提了是bonus point。<font class="jammer">.google&nbsp;&nbsp;и</font><br />
+<font class="jammer"></font><br />
+了解一个已经发生事情的影响(without AB test)<font class="jammer"></font><br />
+- 如果是所有人都有access<font class="jammer"></font><br />
+1. 看key metrics前后对比，t/z test。 con: time effect，如果时间长的话，变量太多<font class="jammer">. Χ</font><br />
+2. Diff diff regression (两个group：assumption是这两个group的metrics有相同的trend)<font class="jammer"></font><br />
+3. 可以用time series预测不launch的baseline，做比较 <br />
+<span style="display:none"></span><a href="https://link.1point3acres.com/?url=https%3A%2F%2Fwww.unofficialgoogledatascience.com%2F2015%2F09%2Fcausal-attribution-in-era-of-big-time.html" rel="nofollow noopener" target="_blank">https://www.unofficialgoogledata ... ra-of-big-time.html</a><font class="jammer"></font><br />
+- 如果是launch to some users, 或者user自己opt in (有selection bias）<font class="jammer"></font><br />
+1. 可以用synthetic user (propensity score matching)去比较，然后做pseudo t/z test<font class="jammer"></font><br />
+其他资源（causal inference）<font class="jammer"></font><br />
+<a href="https://link.1point3acres.com/?url=https%3A%2F%2Fmedium.com%2Fteconomics-blog%2F5-tricks-when-ab-testing-is-off-the-table-f2637e9f15a5" rel="nofollow noopener" target="_blank">https://medium.com/teconomics-bl ... -table-f2637e9f15a5</a><font class="jammer"></font><br />
+<a href="https://link.1point3acres.com/?url=https%3A%2F%2Fcdn1.sph.harvard.edu%2Fwp-content%2Fuploads%2Fsites%2F1268%2F2021%2F03%2Fciwhatif_hernanrobins_30mar21.pdf" rel="nofollow noopener" target="_blank">https://cdn1.sph.harvard.edu/wp- ... nrobins_30mar21.pdf</a><font class="jammer"></font><br />
+<font class="jammer"></font><br />
+其他tips<font class="jammer">.1point3acres</font><br />
+很多情况没有正确答案 ，把问题当作一个工作中会遇到的情况，讨论pro and con而不是找正确答案<font class="jammer"></font><br />
+如果是survey results一定要讨论清楚提交的用户是不是representative（self selection bias的可能)<font class="jammer"></font><br />
+避免buzz word，如果建model，想清楚model的y是什么，因为interviewer真的会问得很细。制定一个可行的方案或者analytic methodology，对于DS analytics职位来说，logistics就很好用，甚至可以解决recommendation model的问题。<br />
+<span style="display:none"></span><font class="jammer"></font><br />
+面试一路过来收到很多贴子的启发，感恩！如果我的notes有帮到大家的话也请顺手加米 :P 祝大家面试一切顺利拿到最想去的offer！<font class="jammer"></font><br />
+</td></tr></table>
+</div>
+<div id="comment_15773776" class="cm">
+</div>
+<h3 class="psth xs1"><span class="icon_ring vm"></span>评分</h3>
+<dl id="ratelog_15773776" class="rate">
+<dd style="margin:0">
+<div id="post_rate_15773776"></div>
+<table class="ratl">
+<tr>
+<th class="xw1" width="120"><a href="forum.php?mod=misc&amp;action=viewratings&amp;tid=780970&amp;pid=15773776" onclick="showWindow('viewratings', this.href)" title="查看全部评分"> 参与人数 <span class="xi1">39</span></a></th><th class="xw1" width="80">大米 <i><span class="xi1">+162</span></i></th>
+<th>
+<a href="javascript:;" onclick="toggleRatelogCollapse('ratelog_15773776', this);" class="y xi2 op">收起</a>
+<i class="txt_h">理由</i>
+</th>
+</tr>
+<tbody class="ratl_l"><tr id="rate_15773776_725698">
+<td>
+<a href="space-uid-725698.html" target="_blank"><img src="https://avatar.1point3acres.cn/000/72/56/98_avatar_small.jpg!c" /></a> <a href="space-uid-725698.html" target="_blank">愁容骑士904</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">很有用的信息！</td>
+</tr>
+<tr id="rate_15773776_216869">
+<td>
+<a href="space-uid-216869.html" target="_blank"><img src="https://avatar.1point3acres.cn/000/21/68/69_avatar_small.jpg!c" /></a> <a href="space-uid-216869.html" target="_blank">简单喵</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">很有用的信息！</td>
+</tr>
+<tr id="rate_15773776_592173">
+<td>
+<a href="space-uid-592173.html" target="_blank"><img src="https://avatar.1point3acres.cn/000/59/21/73_avatar_small.jpg!c" /></a> <a href="space-uid-592173.html" target="_blank">mudi6029</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">欢迎分享你知道的情况，会给更多积分奖励！</td>
+</tr>
+<tr id="rate_15773776_784213">
+<td>
+<a href="space-uid-784213.html" target="_blank"><img src="https://avatar.1point3acres.cn/000/78/42/13_avatar_small.jpg!c" /></a> <a href="space-uid-784213.html" target="_blank">要不要面试</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">给你点个赞！</td>
+</tr>
+<tr id="rate_15773776_101807">
+<td>
+<a href="space-uid-101807.html" target="_blank"><img src="https://avatar.1point3acres.cn/000/10/18/07_avatar_small.jpg!c" /></a> <a href="space-uid-101807.html" target="_blank">galabananana</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">很有用的信息！</td>
+</tr>
+<tr id="rate_15773776_203927">
+<td>
+<a href="space-uid-203927.html" target="_blank"><img src="https://avatar.1point3acres.cn/000/20/39/27_avatar_small.jpg!c" /></a> <a href="space-uid-203927.html" target="_blank">hlbt</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">赞一个</td>
+</tr>
+<tr id="rate_15773776_414976">
+<td>
+<a href="space-uid-414976.html" target="_blank"><img src="https://avatar.1point3acres.cn/000/41/49/76_avatar_small.jpg!c" /></a> <a href="space-uid-414976.html" target="_blank">yswang9024</a>
+</td><td class="xi1"> + 2</td>
+<td class="xg1">给你点个赞！</td>
+</tr>
+<tr id="rate_15773776_690380">
+<td>
+<a href="space-uid-690380.html" target="_blank"><img src="https://avatar.1point3acres.cn/000/69/03/80_avatar_small.jpg!c" /></a> <a href="space-uid-690380.html" target="_blank">gkp</a>
+</td><td class="xi1"> + 1</td>
+<td class="xg1">赞一个</td>
+</tr>
+</tbody>
+</table>
+<p class="ratc">
+<a href="forum.php?mod=misc&amp;action=viewratings&amp;tid=780970&amp;pid=15773776" onclick="showWindow('viewratings', this.href)" title="查看全部评分" class="xi2">查看全部评分</a>
+</p>
+</dd>
+</dl>
+<br>上一篇：<a href="thread-780940-1-1.html" title="Dropbox SDE2 vs Zillow Senior 艰难选择" target="_blank"><font color="#497b89">Dropbox SDE2 vs Zillow Senior 艰难选择</font></a><br>下一篇：<a href="thread-780971-1-1.html" title="亚麻ng一轮vo timeline" target="_blank"><font color="#497b89">亚麻ng一轮vo timeline</font></a></div>
+</div>
+<div class="mtw mbw">
+<h3 class="pbm ptm" style="color: #FFFFFF; background-color: #497B89; padding-left: 10px;">相关帖子</h3>
+<ul class="xl2 cl viewthread_nge_list" style="background-color: #E5EDF2; padding: 5px; border: 1px solid #C2D5E3"><li><a href="thread-877370-1-1.html" title="对于mscs学位来说，summer实习选择data engineering合适吗" target="_blank">对于mscs学位来说，summer实习选择data engineering合适吗</a></li>
+<li><a href="thread-877360-1-1.html" title="文科生自学上岸BIE的可能性有多大?" target="_blank">文科生自学上岸BIE的可能性有多大?</a></li>
+<li><a href="thread-877359-1-1.html" title="求问邮箱是不是被亚麻冻了" target="_blank">求问邮箱是不是被亚麻冻了</a></li>
+<li><a href="thread-877352-1-1.html" title="华为数通怎么样" target="_blank">华为数通怎么样</a></li>
+<li><a href="thread-877344-1-1.html" title="[高盛数学OA]Hackerrank数学部分能否写代码计算,Goldman Sachs" target="_blank">[高盛数学OA]Hackerrank数学部分能否写代码计算,Goldman Sachs</a></li>
+<li><a href="thread-877320-1-1.html" title="亚麻 2022 summer sde intern现在还招人吗" target="_blank">亚麻 2022 summer sde intern现在还招人吗</a></li>
+<li><a href="thread-877319-1-1.html" title="New grad meta vs 水果" target="_blank">New grad meta vs 水果</a></li>
+<li><a href="thread-877264-1-1.html" title="Google 哪些组比较好？" target="_blank">Google 哪些组比较好？</a></li>
+<li><a href="thread-877158-1-1.html" title="分享一个被粉车HR连续ghost经历" target="_blank">分享一个被粉车HR连续ghost经历</a></li>
+<li><a href="thread-877144-1-1.html" title="Offer比较（Amazon vs ADI)" target="_blank">Offer比较（Amazon vs ADI)</a></li>
+<li><a href="thread-877094-1-1.html" title="找Python指导" target="_blank">找Python指导</a></li>
+<li><a href="thread-877075-1-1.html" title="亚麻AWS OFFER求建议 NON-TECH PM" target="_blank">亚麻AWS OFFER求建议 NON-TECH PM</a></li>
+<li><a href="thread-877070-1-1.html" title="Google Data Analyst 和 Data Scientist 的区别？" target="_blank">Google Data Analyst 和 Data Scientist 的区别？</a></li>
+<li><a href="thread-877065-1-1.html" title="ME实习全聚德-求建议" target="_blank">ME实习全聚德-求建议</a></li>
+<li><a href="thread-877064-1-1.html" title="Meta 选组问题" target="_blank">Meta 选组问题</a></li>
+<li><a href="thread-877036-1-1.html" title="Apple湾区实习return可以谈location吗" target="_blank">Apple湾区实习return可以谈location吗</a></li>
+<li><a href="thread-877026-1-1.html" title="求助 巨硬 换组建议" target="_blank">求助 巨硬 换组建议</a></li>
+<li><a href="thread-877015-1-1.html" title="狗家Recruiter 问期望薪资后续" target="_blank">狗家Recruiter 问期望薪资后续</a></li>
+<li><a href="thread-877004-1-1.html" title="面试自我感觉可以，但拿不到offer" target="_blank">面试自我感觉可以，但拿不到offer</a></li>
+<li><a href="thread-877002-1-1.html" title="实习被换到几乎不写code的组是否要中途跑路" target="_blank">实习被换到几乎不写code的组是否要中途跑路</a></li>
+</ul>
+</div>
+<div class="cm">
+<h3 class="psth xs1"><span class="icon_ring vm"></span>本帖被以下淘专辑推荐:</h3>
+<ul class="mbw xl xl2 cl"><li>&middot; <a href="forum.php?mod=collection&amp;action=view&amp;ctid=229383" title="DS/DA 找工求职经验" target="_blank" class="xi2 xw1">DS/DA 找工求职经验</a><span class="pipe">|</span><span class="xg1">主题: 204, 订阅: 316</span></li>
+</ul>
+</div>
+<div>
+您是从淘专辑 <a href="forum.php?mod=collection&amp;action=view&amp;ctid=229383" target="_blank" class="xi2">DS/DA 找工求职经验</a> 访问到本帖的，欢迎对专辑打分：
+<form action="forum.php?mod=collection&amp;action=comment&amp;ctid=229383&amp;tid=780970" method="POST" class="ptm pbm cl">
+<input type="hidden" name="ratescore" id="ratescore" />
+<span class="clct_ratestar">
+<span class="btn">
+<a href="javascript:;" onmouseover="rateStarHover('clct_ratestar_star',1)" onmouseout="rateStarHover('clct_ratestar_star',0)" onclick="rateStarSet('clct_ratestar_star',1,'ratescore')">1</a>
+<a href="javascript:;" onmouseover="rateStarHover('clct_ratestar_star',2)" onmouseout="rateStarHover('clct_ratestar_star',0)" onclick="rateStarSet('clct_ratestar_star',2,'ratescore')">2</a>
+<a href="javascript:;" onmouseover="rateStarHover('clct_ratestar_star',3)" onmouseout="rateStarHover('clct_ratestar_star',0)" onclick="rateStarSet('clct_ratestar_star',3,'ratescore')">3</a>
+<a href="javascript:;" onmouseover="rateStarHover('clct_ratestar_star',4)" onmouseout="rateStarHover('clct_ratestar_star',0)" onclick="rateStarSet('clct_ratestar_star',4,'ratescore')">4</a>
+<a href="javascript:;" onmouseover="rateStarHover('clct_ratestar_star',5)" onmouseout="rateStarHover('clct_ratestar_star',0)" onclick="rateStarSet('clct_ratestar_star',5,'ratescore')">5</a>
+</span>
+<span id="clct_ratestar_star" class="star star"></span>
+</span>
+&nbsp;<button type="submit" value="submit" class="pn"><span>评分</span></button>
+</form>
+</div>
+</td></tr>
+<tr><td class="plc plm">
+<div id="p_btn" class="mtw mbm hm cl">
+<a href="home.php?mod=spacecp&amp;ac=favorite&amp;type=thread&amp;id=780970" id="k_favorite" onclick="showWindow(this.id, this.href, 'get', 0);" onmouseover="this.title = $('favoritenumber').innerHTML + ' 人收藏'" title="收藏本帖"><i><img src="static/image/common/fav.gif" alt="收藏" />收藏<span id="favoritenumber">254</span></i></a>
+<a href="javascript:;" id="ak_rate" onclick="showWindow('rate', 'forum.php?mod=misc&action=rate&tid=780970&pid=15773776', 'get', -1);return false;" title="评分表立场"><i><img src="static/image/common/agree.gif" alt="评分" />评分</i></a>
+<a href="forum.php?mod=collection&amp;action=edit&amp;op=addthread&amp;tid=780970" id="k_collect" onclick="showWindow(this.id, this.href);return false;" onmouseover="this.title = $('collectionnumber').innerHTML + ' 人淘帖'" title="淘好帖进专辑"><i><img src="static/image/common/collection.png" alt="分享" />淘帖<span id="collectionnumber">1</span></i></a>
+<div style="display: none">
+<a id="recommend_add" href="forum.php?mod=misc&amp;action=recommend&amp;do=add&amp;tid=780970&amp;hash=81a3a904" onclick="ajaxmenu(this, 3000, 1, 0, '43', 'recommendupdate(1)');return false;" onmouseover="this.title = $('recommendv_add').innerHTML + ' 人好苗'" title="顶一下"><i><img src="static/image/common/rec_add.gif" alt="好苗" />好苗<span id="recommendv_add">11</span></i></a>
+<a id="recommend_subtract" href="forum.php?mod=misc&amp;action=recommend&amp;do=subtract&amp;tid=780970&amp;hash=81a3a904" onclick="ajaxmenu(this, 3000, 1, 0, '43', 'recommendupdate(-1)');return false;" onmouseover="this.title = $('recommendv_subtract').innerHTML + ' 人杂草'" title="踩一下"><i><img src="static/image/common/rec_subtract.gif" alt="杂草" />杂草<span id="recommendv_subtract" style="display:none">0</span></i></a>
+</div>
+</div>
+</td>
+</tr>
+<tr id="_postposition15773776"></tr>
+<tr>
+<td class="pls"></td>
+<td class="plc" style="overflow:visible;">
+<div class="po hin">
+<div class="pob cl">
+<em>
+<a class="fastre" href="forum.php?mod=post&amp;action=reply&amp;fid=28&amp;tid=780970&amp;reppost=15773776&amp;extra=&amp;page=1" onclick="showWindow('reply', this.href)">回复</a>
+<div style="display: none">
+</div>
+</em>
+<p>
+<a href="javascript:;" id="mgc_post_15773776" onmouseover="showMenu(this.id)" class="showmenu">使用道具</a>
+<a href="home.php?mod=space&amp;do=friend&amp;view=blacklist&amp;bname=emilieee" target="_blank">拉黑</a>
+<a href="javascript:;" onclick="showWindow('miscreport15773776', 'misc.php?mod=report&rtype=post&rid=15773776&tid=780970&fid=28', 'get', -1);return false;">举报</a>
+</p>
+<ul id="mgc_post_15773776_menu" class="p_pop mgcmn" style="display: none;">
+<li><a href="home.php?mod=magic&amp;mid=bump&amp;idtype=tid&amp;id=780970" id="a_bump" onclick="showWindow(this.id, this.href)"><img src="static/image/magic/bump.small.gif" />提升卡</a></li>
+<li><a href="home.php?mod=magic&amp;mid=stick&amp;idtype=tid&amp;id=780970" id="a_stick" onclick="showWindow(this.id, this.href)"><img src="static/image/magic/stick.small.gif" />置顶卡</a></li>
+<li><a href="home.php?mod=magic&amp;mid=close&amp;idtype=tid&amp;id=780970" id="a_stick" onclick="showWindow(this.id, this.href)"><img src="static/image/magic/close.small.gif" />关贴卡</a></li>
+<li><a href="home.php?mod=magic&amp;mid=open&amp;idtype=tid&amp;id=780970" id="a_stick" onclick="showWindow(this.id, this.href)"><img src="static/image/magic/open.small.gif" />开贴卡</a></li>
+<li><a href="home.php?mod=magic&amp;mid=highlight&amp;idtype=tid&amp;id=780970" id="a_stick" onclick="showWindow(this.id, this.href)"><img src="static/image/magic/highlight.small.gif" />变色卡</a></li>
+<li><a href="home.php?mod=magic&amp;mid=jack&amp;idtype=tid&amp;id=780970" id="a_jack" onclick="showWindow(this.id, this.href)"><img src="static/image/magic/jack.small.gif" />千斤顶</a></li>
+</ul>
+<script type="text/javascript" reload="1">checkmgcmn('post_15773776')</script>
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</table>
+</div>
+<div id="post_15776100"><table id="pid15776100" class="plhin" summary="pid15776100" cellspacing="0" cellpadding="0" itemid="pid15776100" itemscope itemtype="http://schema.org/DiscussionForumPosting">
+<tr>
+<td class="pls" rowspan="2">
+<div id="favatar15776100" class="pls favatar">
+<div class="p_pop blk bui card_gender_2" id="userinfo15776100" style="display: none; ">
+<div class="m z">
+<div id="userinfo15776100_ma"></div>
+</div>
+<div class="i y">
+<div itemprop="author" itemscope itemtype="http://schema.org/Person">
+<strong><a itemprop="url" href="home.php?mod=space&amp;uid=481284" target="_blank" class="xi2"><span itemprop="name">wendyUFEQ</span></a></strong>
+<em>当前离线</em>
+</div><dl class="cl">
+<div class="tns xg2"><table cellspacing="0" cellpadding="0"><th><p><a href="home.php?mod=space&uid=481284&do=thread&type=thread&view=me&from=space" class="xi2">3</a></p>主题</th><th><p><a href="home.php?mod=space&uid=481284&do=thread&type=reply&view=me&from=space" class="xi2">90</a></p>帖子</th><td><p><a href="home.php?mod=space&uid=481284&do=profile" class="xi2">287</a></p>积分</td></table></div>
+<p><em><a href="home.php?mod=spacecp&amp;ac=usergroup&amp;gid=12" target="_blank">中级农民</a></em></p>
+<dt>积分</dt><dd><a href="home.php?mod=space&uid=481284&do=profile" target="_blank" class="xi2">287</a></dd>
+<dt>大米</dt><dd>284 颗 </dd>
+<dt>鳄梨</dt><dd>0 个</dd>
+<dt>水井</dt><dd>0 尺</dd>
+<dt>蓝莓</dt><dd>0 颗</dd>
+<dt>萝卜</dt><dd>0 根</dd>
+<dt>小米</dt><dd>53 粒</dd>
+<dt>学分</dt><dd>0 个</dd>
+<dt>注册时间</dt><dd>2019-3-20</dd>
+<dt>最后登录</dt><dd>2022-3-28</dd>
+</dl><div class="imicn">
+<a href="home.php?mod=space&amp;uid=481284&amp;do=profile" target="_blank" title="查看详细资料"><img src="static/image/common/userinfo.gif" alt="查看详细资料" /></a>
+<a href="home.php?mod=magic&amp;mid=checkonline&amp;idtype=user&amp;id=wendyUFEQ" id="a_repent_15776100" class="xi2" onclick="showWindow(this.id, this.href)"><img src="static//image/magic/checkonline.small.gif" alt="" /> 狗仔卡</a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar" itemprop="image" itemscope itemtype="http://schema.org/URL" onmouseover="showauthor(this, 'userinfo15776100')"><a href="space-uid-481284.html" class="avtm" target="_blank"><img src="https://avatar.1point3acres.cn/000/48/12/84_avatar_middle.jpg!c" /></a></div>
+</div>
+<div class="tns xg2"><table cellspacing="0" cellpadding="0"><th><p><a href="home.php?mod=space&uid=481284&do=thread&type=thread&view=me&from=space" class="xi2">3</a></p>主题</th><th><p><a href="home.php?mod=space&uid=481284&do=thread&type=reply&view=me&from=space" class="xi2">90</a></p>帖子</th><td><p><a href="home.php?mod=space&uid=481284&do=profile" class="xi2">287</a></p>积分</td></table></div>
+<dl class="pil cl"></dl><ul class="xl xl2 o cl">
+<li class="pm2"><a href="home.php?mod=spacecp&amp;ac=pm&amp;op=showmsg&amp;handlekey=showmsg_481284&amp;touid=481284&amp;pmid=0&amp;daterange=2&amp;pid=15776100&amp;tid=780970" onclick="showWindow('sendpm', this.href);" title="发消息" class="xi2">发消息</a></li>
+</ul>
+</div>
+</td>
+<td class="plc">
+<div class="pi">
+<strong>
+<a href="forum.php?mod=redirect&goto=findpost&ptid=780970&pid=15776100" id="postnum15776100" onclick="setCopy(this.href, '帖子地址复制成功');return false;">
+&#x1F517;
+</a>
+</strong>
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon15776100" src="static/image/common/online_member.gif" />
+<a href="space-uid-481284.html" target="_blank" class="xi2">wendyUFEQ</a>
+<span>
+<meta itemprop="datePublished" content="2021-7-20 22:07" />
+2021-7-21 13:02:00</span>
+<span class="xg1"><a class="xi2" href='https://www.1point3acres.com/bbs/thread-446981-1-1.html' target="_blank">来自APP</a></span>
+<span class="pipe">|</span>
+<a href="forum.php?mod=viewthread&amp;tid=780970&amp;page=1&amp;authorid=481284" rel="nofollow">只看该作者</a>
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<meta itemprop="headline" content="DS product case的细节总结和tips">
+<!--googleoff: snippet-->
+<table width="100%" class="dxksst_table">
+<tr>
+<td align="right">本楼：</td>
+<td width="105px" align="right">
+<a href="forum.php?mod=misc&amp;action=postreview&amp;do=support&amp;tid=780970&amp;pid=15776100&amp;hash=81a3a904" onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;" onmouseover="this.title = ($('review_support_15776100').innerHTML ? $('review_support_15776100').innerHTML : 0) + ' !activity_member_unit! !support_reply!'" style="text-decoration: none;">
+<font class="local_vote_icon" color="#ff6600">&#128077;</font>
+</a>
+&nbsp;
+<i id="rec_add_percent_15776100">0%</i>&nbsp;<i color="#497B89">(<i id="rec_add_15776100">0</i>)</i>
+</td>
+<td align="center" width="120px;">
+<div class="dxksst_pbg_new" align="left">
+<div class="dxksst_pbr_left" id="rec_add_bar_15776100" style="width: 0%; background-color:#ff6600">&nbsp;</div>
+<div class="dxksst_pbr_right" id="rec_sub_bar_15776100" style="width: 0%; background-color:#497b89">&nbsp;</div>
+</div>
+</td>
+<td width="105px" align="left">
+<i id="rec_sub_percent_15776100">0%</i>&nbsp;<i color="#497B89">(<i id="rec_sub_15776100">0</i>)</i>
+&nbsp;
+<a href="forum.php?mod=misc&amp;action=postreview&amp;do=against&amp;tid=780970&amp;pid=15776100&amp;hash=81a3a904" onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;" onmouseover="this.title = ($('review_against_15776100').innerHTML ? $('review_against_15776100').innerHTML : 0) + ' !activity_member_unit! !against_reply!'" style="text-decoration: none;">
+<font class="local_vote_icon" color="#497b89">&#128078;</font>
+</a>
+</td>
+</tr>
+<tr style="padding-top:10px;">
+<td align="right">全局：</td>
+<td width="140px" align="right">&#128077; &nbsp;&nbsp;<i id="upvote_percent_15776100">100%</i>&nbsp;<i color="#497B89">(<i id="upvote_15776100">20</i>)</i></td>
+<td align="center" width="120px;">
+<div class="dxksst_pbg_new" align="left" title="0%">
+<div class="dxksst_pbr_left" id="upvote_bar_15776100" style="width: 100%; background-color:#ff6600">&nbsp;</div>
+<div class="dxksst_pbr_right" id="downvote_bar_15776100" style="width: 0%; background-color:#497b89">&nbsp;</div>
+</div>
+</td>
+<td width="140px" align="left"><i id="downvote_percent_15776100">0%</i>&nbsp;<i color="#497B89">(<i id="downvote_15776100">0</i>)</i>&nbsp;&nbsp;&nbsp; &#128078;</td>
+</tr>
+</table>
+<div align="right">
+</div>
+<!--googleon: snippet-->
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tr><td class="t_f" id="postmessage_15776100" itemprop="articleBody">
+赞！最近在转data~ Ab testing似懂非懂的~谢谢楼主分享！学习了&#128077;&#128077;</td></tr></table>
+</div>
+<div id="comment_15776100" class="cm">
+</div>
+<div id="post_rate_div_15776100"></div>
+</div>
+</div>
+</td></tr>
+<tr><td class="plc plm">
+</td>
+</tr>
+<tr id="_postposition15776100"></tr>
+<tr>
+<td class="pls"></td>
+<td class="plc" style="overflow:visible;">
+<div class="po hin">
+<div class="pob cl">
+<em>
+<a class="fastre" href="forum.php?mod=post&amp;action=reply&amp;fid=28&amp;tid=780970&amp;repquote=15776100&amp;extra=&amp;page=1" onclick="showWindow('reply', this.href)">回复</a>
+<div style="display: none">
+<a class="replyadd" href="forum.php?mod=misc&amp;action=postreview&amp;do=support&amp;tid=780970&amp;pid=15776100&amp;hash=81a3a904" onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;" onmouseover="this.title = ($('review_support_15776100').innerHTML ? $('review_support_15776100').innerHTML : 0) + ' 人 支持'">支持 <span id="review_support_15776100"></span></a>
+<a class="replysubtract" href="forum.php?mod=misc&amp;action=postreview&amp;do=against&amp;tid=780970&amp;pid=15776100&amp;hash=81a3a904" onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;" onmouseover="this.title = ($('review_against_15776100').innerHTML ? $('review_against_15776100').innerHTML : 0) + ' 人 反对'">反对 <span id="review_against_15776100"></span></a>
+</div>
+</em>
+<p>
+<a href="javascript:;" id="mgc_post_15776100" onmouseover="showMenu(this.id)" class="showmenu">使用道具</a>
+<a href="javascript:;" onclick="showWindow('rate', 'forum.php?mod=misc&action=rate&tid=780970&pid=15776100', 'get', -1);return false;">评分</a>
+<a href="home.php?mod=space&amp;do=friend&amp;view=blacklist&amp;bname=wendyUFEQ" target="_blank">拉黑</a>
+<a href="javascript:;" onclick="showWindow('miscreport15776100', 'misc.php?mod=report&rtype=post&rid=15776100&tid=780970&fid=28', 'get', -1);return false;">举报</a>
+</p>
+<ul id="mgc_post_15776100_menu" class="p_pop mgcmn" style="display: none;">
+</ul>
+<script type="text/javascript" reload="1">checkmgcmn('post_15776100')</script>
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</table>
+</div>
+<div id="post_15865554"><table id="pid15865554" class="plhin" summary="pid15865554" cellspacing="0" cellpadding="0" itemid="pid15865554" itemscope itemtype="http://schema.org/DiscussionForumPosting">
+<tr>
+<td class="pls" rowspan="2">
+<div id="favatar15865554" class="pls favatar">
+<div class="p_pop blk bui card_gender_1" id="userinfo15865554" style="display: none; ">
+<div class="m z">
+<div id="userinfo15865554_ma"></div>
+</div>
+<div class="i y">
+<div itemprop="author" itemscope itemtype="http://schema.org/Person">
+<strong><a itemprop="url" href="home.php?mod=space&amp;uid=55125" target="_blank" class="xi2" style="color: #7E1E7B"><span itemprop="name">seboy</span></a></strong>
+<em>当前离线</em>
+</div><dl class="cl">
+<div class="tns xg2"><table cellspacing="0" cellpadding="0"><th><p><a href="home.php?mod=space&uid=55125&do=thread&type=thread&view=me&from=space" class="xi2">8</a></p>主题</th><th><p><a href="home.php?mod=space&uid=55125&do=thread&type=reply&view=me&from=space" class="xi2">56</a></p>帖子</th><td><p><a href="home.php?mod=space&uid=55125&do=profile" class="xi2">316</a></p>积分</td></table></div>
+<p><em><a href="home.php?mod=spacecp&amp;ac=usergroup&amp;gid=34" target="_blank"><font color="#7E1E7B">活跃农民</font></a></em></p>
+<dt>积分</dt><dd><a href="home.php?mod=space&uid=55125&do=profile" target="_blank" class="xi2">316</a></dd>
+<dt>大米</dt><dd>309 颗 </dd>
+<dt>鳄梨</dt><dd>0 个</dd>
+<dt>水井</dt><dd>0 尺</dd>
+<dt>蓝莓</dt><dd>0 颗</dd>
+<dt>萝卜</dt><dd>10 根</dd>
+<dt>小米</dt><dd>122 粒</dd>
+<dt>学分</dt><dd>0 个</dd>
+<dt>注册时间</dt><dd>2012-3-8</dd>
+<dt>最后登录</dt><dd>2022-4-1</dd>
+</dl><div class="imicn">
+<a href="http://wpa.qq.com/msgrd?V=3&amp;Uin=16910976&amp;Site=一亩三分地&amp;Menu=yes&amp;from=discuz" target="_blank" title="QQ"><img src="static/image/common/qq.gif" alt="QQ" /></a><a href="http://www.xuxiaohaoloveyuxiaocong.com" target="_blank" title="查看个人网站"><img src="static/image/common/forumlink.gif" alt="查看个人网站" /></a><a href="home.php?mod=space&amp;uid=55125&amp;do=profile" target="_blank" title="查看详细资料"><img src="static/image/common/userinfo.gif" alt="查看详细资料" /></a>
+<a href="home.php?mod=magic&amp;mid=checkonline&amp;idtype=user&amp;id=seboy" id="a_repent_15865554" class="xi2" onclick="showWindow(this.id, this.href)"><img src="static//image/magic/checkonline.small.gif" alt="" /> 狗仔卡</a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar" itemprop="image" itemscope itemtype="http://schema.org/URL" onmouseover="showauthor(this, 'userinfo15865554')"><a href="space-uid-55125.html" class="avtm" target="_blank"><img src="https://avatar.1point3acres.cn/000/05/51/25_avatar_middle.jpg!c" /></a></div>
+</div>
+<div class="tns xg2"><table cellspacing="0" cellpadding="0"><th><p><a href="home.php?mod=space&uid=55125&do=thread&type=thread&view=me&from=space" class="xi2">8</a></p>主题</th><th><p><a href="home.php?mod=space&uid=55125&do=thread&type=reply&view=me&from=space" class="xi2">56</a></p>帖子</th><td><p><a href="home.php?mod=space&uid=55125&do=profile" class="xi2">316</a></p>积分</td></table></div>
+<p class="md_ctrl"><a href="home.php?mod=medal"><img id="md_15865554_18" src="static/image/common/cs.png" alt="cs" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_18_menu', 'pos':'12!'})" /><img id="md_15865554_38" src="static/image/common/west.png" alt="西岸" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_38_menu', 'pos':'12!'})" /></a></p>
+<dl class="pil cl"></dl><ul class="xl xl2 o cl">
+<li class="pm2"><a href="home.php?mod=spacecp&amp;ac=pm&amp;op=showmsg&amp;handlekey=showmsg_55125&amp;touid=55125&amp;pmid=0&amp;daterange=2&amp;pid=15865554&amp;tid=780970" onclick="showWindow('sendpm', this.href);" title="发消息" class="xi2">发消息</a></li>
+</ul>
+</div>
+</td>
+<td class="plc">
+<div class="pi">
+<strong>
+<a href="forum.php?mod=redirect&goto=findpost&ptid=780970&pid=15865554" id="postnum15865554" onclick="setCopy(this.href, '帖子地址复制成功');return false;">
+&#x1F517;
+</a>
+</strong>
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon15865554" src="static/image/common/online_member.gif" />
+<a href="space-uid-55125.html" target="_blank" class="xi2">seboy</a>
+<span>
+<meta itemprop="datePublished" content="2021-7-20 22:07" />
+2021-8-12 12:51:19</span>
+<span class="xg1"><a class="xi2" href='https://www.1point3acres.com/bbs/thread-446981-1-1.html' target="_blank">来自APP</a></span>
+<span class="pipe">|</span>
+<a href="forum.php?mod=viewthread&amp;tid=780970&amp;page=1&amp;authorid=55125" rel="nofollow">只看该作者</a>
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<meta itemprop="headline" content="DS product case的细节总结和tips">
+<!--googleoff: snippet-->
+<table width="100%" class="dxksst_table">
+<tr>
+<td align="right">本楼：</td>
+<td width="105px" align="right">
+<a href="forum.php?mod=misc&amp;action=postreview&amp;do=support&amp;tid=780970&amp;pid=15865554&amp;hash=81a3a904" onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;" onmouseover="this.title = ($('review_support_15865554').innerHTML ? $('review_support_15865554').innerHTML : 0) + ' !activity_member_unit! !support_reply!'" style="text-decoration: none;">
+<font class="local_vote_icon" color="#ff6600">&#128077;</font>
+</a>
+&nbsp;
+<i id="rec_add_percent_15865554">0%</i>&nbsp;<i color="#497B89">(<i id="rec_add_15865554">0</i>)</i>
+</td>
+<td align="center" width="120px;">
+<div class="dxksst_pbg_new" align="left">
+<div class="dxksst_pbr_left" id="rec_add_bar_15865554" style="width: 0%; background-color:#ff6600">&nbsp;</div>
+<div class="dxksst_pbr_right" id="rec_sub_bar_15865554" style="width: 0%; background-color:#497b89">&nbsp;</div>
+</div>
+</td>
+<td width="105px" align="left">
+<i id="rec_sub_percent_15865554">0%</i>&nbsp;<i color="#497B89">(<i id="rec_sub_15865554">0</i>)</i>
+&nbsp;
+<a href="forum.php?mod=misc&amp;action=postreview&amp;do=against&amp;tid=780970&amp;pid=15865554&amp;hash=81a3a904" onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;" onmouseover="this.title = ($('review_against_15865554').innerHTML ? $('review_against_15865554').innerHTML : 0) + ' !activity_member_unit! !against_reply!'" style="text-decoration: none;">
+<font class="local_vote_icon" color="#497b89">&#128078;</font>
+</a>
+</td>
+</tr>
+<tr style="padding-top:10px;">
+<td align="right">全局：</td>
+<td width="140px" align="right">&#128077; &nbsp;&nbsp;<i id="upvote_percent_15865554">100%</i>&nbsp;<i color="#497B89">(<i id="upvote_15865554">31</i>)</i></td>
+<td align="center" width="120px;">
+<div class="dxksst_pbg_new" align="left" title="0%">
+<div class="dxksst_pbr_left" id="upvote_bar_15865554" style="width: 100%; background-color:#ff6600">&nbsp;</div>
+<div class="dxksst_pbr_right" id="downvote_bar_15865554" style="width: 0%; background-color:#497b89">&nbsp;</div>
+</div>
+</td>
+<td width="140px" align="left"><i id="downvote_percent_15865554">0%</i>&nbsp;<i color="#497B89">(<i id="downvote_15865554">0</i>)</i>&nbsp;&nbsp;&nbsp; &#128078;</td>
+</tr>
+</table>
+<div align="right">
+</div>
+<!--googleon: snippet-->
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tr><td class="t_f" id="postmessage_15865554" itemprop="articleBody">
+楼主写的很好 收藏了</td></tr></table>
+</div>
+<div id="comment_15865554" class="cm">
+</div>
+<div id="post_rate_div_15865554"></div>
+</div>
+</div>
+</td></tr>
+<tr><td class="plc plm">
+<div class="a_pb"><a href="https://www.educative.io/courses/coderust-hacking-the-coding-interview?affiliate_id=5749180081373184" target="_blank" rel="nofollow">
+<font color="blue">Coderust: Hacking the Coding Interview</font><br>
+<img src="https://www.1point3acres.com/bbs/data/attachment/common/cf/coderust.png" border="0" height="125" /></a>
+</div></td>
+</tr>
+<tr id="_postposition15865554"></tr>
+<tr>
+<td class="pls"></td>
+<td class="plc" style="overflow:visible;">
+<div class="po hin">
+<div class="pob cl">
+<em>
+<a class="fastre" href="forum.php?mod=post&amp;action=reply&amp;fid=28&amp;tid=780970&amp;repquote=15865554&amp;extra=&amp;page=1" onclick="showWindow('reply', this.href)">回复</a>
+<div style="display: none">
+<a class="replyadd" href="forum.php?mod=misc&amp;action=postreview&amp;do=support&amp;tid=780970&amp;pid=15865554&amp;hash=81a3a904" onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;" onmouseover="this.title = ($('review_support_15865554').innerHTML ? $('review_support_15865554').innerHTML : 0) + ' 人 支持'">支持 <span id="review_support_15865554"></span></a>
+<a class="replysubtract" href="forum.php?mod=misc&amp;action=postreview&amp;do=against&amp;tid=780970&amp;pid=15865554&amp;hash=81a3a904" onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;" onmouseover="this.title = ($('review_against_15865554').innerHTML ? $('review_against_15865554').innerHTML : 0) + ' 人 反对'">反对 <span id="review_against_15865554"></span></a>
+</div>
+</em>
+<p>
+<a href="javascript:;" id="mgc_post_15865554" onmouseover="showMenu(this.id)" class="showmenu">使用道具</a>
+<a href="javascript:;" onclick="showWindow('rate', 'forum.php?mod=misc&action=rate&tid=780970&pid=15865554', 'get', -1);return false;">评分</a>
+<a href="home.php?mod=space&amp;do=friend&amp;view=blacklist&amp;bname=seboy" target="_blank">拉黑</a>
+<a href="javascript:;" onclick="showWindow('miscreport15865554', 'misc.php?mod=report&rtype=post&rid=15865554&tid=780970&fid=28', 'get', -1);return false;">举报</a>
+</p>
+<ul id="mgc_post_15865554_menu" class="p_pop mgcmn" style="display: none;">
+</ul>
+<script type="text/javascript" reload="1">checkmgcmn('post_15865554')</script>
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</table>
+</div>
+<div id="post_15866741"><table id="pid15866741" class="plhin" summary="pid15866741" cellspacing="0" cellpadding="0" itemid="pid15866741" itemscope itemtype="http://schema.org/DiscussionForumPosting">
+<tr>
+<td class="pls" rowspan="2">
+<div id="favatar15866741" class="pls favatar">
+<div class="p_pop blk bui card_gender_0" id="userinfo15866741" style="display: none; ">
+<div class="m z">
+<div id="userinfo15866741_ma"></div>
+</div>
+<div class="i y">
+<div itemprop="author" itemscope itemtype="http://schema.org/Person">
+<strong><a itemprop="url" href="home.php?mod=space&amp;uid=791728" target="_blank" class="xi2"><span itemprop="name">xxxrrr0901</span></a></strong>
+<em>当前离线</em>
+</div><dl class="cl">
+<div class="tns xg2"><table cellspacing="0" cellpadding="0"><th><p><a href="home.php?mod=space&uid=791728&do=thread&type=thread&view=me&from=space" class="xi2">0</a></p>主题</th><th><p><a href="home.php?mod=space&uid=791728&do=thread&type=reply&view=me&from=space" class="xi2">44</a></p>帖子</th><td><p><a href="home.php?mod=space&uid=791728&do=profile" class="xi2">262</a></p>积分</td></table></div>
+<p><em><a href="home.php?mod=spacecp&amp;ac=usergroup&amp;gid=12" target="_blank">中级农民</a></em></p>
+<dt>积分</dt><dd><a href="home.php?mod=space&uid=791728&do=profile" target="_blank" class="xi2">262</a></dd>
+<dt>大米</dt><dd>260 颗 </dd>
+<dt>鳄梨</dt><dd>0 个</dd>
+<dt>水井</dt><dd>0 尺</dd>
+<dt>蓝莓</dt><dd>0 颗</dd>
+<dt>萝卜</dt><dd>0 根</dd>
+<dt>小米</dt><dd>36 粒</dd>
+<dt>学分</dt><dd>0 个</dd>
+<dt>注册时间</dt><dd>2021-8-7</dd>
+<dt>最后登录</dt><dd>2022-3-16</dd>
+</dl><div class="imicn">
+<a href="home.php?mod=space&amp;uid=791728&amp;do=profile" target="_blank" title="查看详细资料"><img src="static/image/common/userinfo.gif" alt="查看详细资料" /></a>
+<a href="home.php?mod=magic&amp;mid=checkonline&amp;idtype=user&amp;id=xxxrrr0901" id="a_repent_15866741" class="xi2" onclick="showWindow(this.id, this.href)"><img src="static//image/magic/checkonline.small.gif" alt="" /> 狗仔卡</a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar" itemprop="image" itemscope itemtype="http://schema.org/URL" onmouseover="showauthor(this, 'userinfo15866741')"><a href="space-uid-791728.html" class="avtm" target="_blank"><img src="https://avatar.1point3acres.cn/000/79/17/28_avatar_middle.jpg!c" /></a></div>
+</div>
+<div class="tns xg2"><table cellspacing="0" cellpadding="0"><th><p><a href="home.php?mod=space&uid=791728&do=thread&type=thread&view=me&from=space" class="xi2">0</a></p>主题</th><th><p><a href="home.php?mod=space&uid=791728&do=thread&type=reply&view=me&from=space" class="xi2">44</a></p>帖子</th><td><p><a href="home.php?mod=space&uid=791728&do=profile" class="xi2">262</a></p>积分</td></table></div>
+<dl class="pil cl"></dl><ul class="xl xl2 o cl">
+<li class="pm2"><a href="home.php?mod=spacecp&amp;ac=pm&amp;op=showmsg&amp;handlekey=showmsg_791728&amp;touid=791728&amp;pmid=0&amp;daterange=2&amp;pid=15866741&amp;tid=780970" onclick="showWindow('sendpm', this.href);" title="发消息" class="xi2">发消息</a></li>
+</ul>
+</div>
+</td>
+<td class="plc">
+<div class="pi">
+<strong>
+<a href="forum.php?mod=redirect&goto=findpost&ptid=780970&pid=15866741" id="postnum15866741" onclick="setCopy(this.href, '帖子地址复制成功');return false;">
+&#x1F517;
+</a>
+</strong>
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon15866741" src="static/image/common/online_member.gif" />
+<a href="space-uid-791728.html" target="_blank" class="xi2">xxxrrr0901</a>
+<span>
+<meta itemprop="datePublished" content="2021-7-20 22:07" />
+2021-8-12 18:33:39</span>
+<span class="pipe">|</span>
+<a href="forum.php?mod=viewthread&amp;tid=780970&amp;page=1&amp;authorid=791728" rel="nofollow">只看该作者</a>
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<meta itemprop="headline" content="DS product case的细节总结和tips">
+<!--googleoff: snippet-->
+<table width="100%" class="dxksst_table">
+<tr>
+<td align="right">本楼：</td>
+<td width="105px" align="right">
+<a href="forum.php?mod=misc&amp;action=postreview&amp;do=support&amp;tid=780970&amp;pid=15866741&amp;hash=81a3a904" onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;" onmouseover="this.title = ($('review_support_15866741').innerHTML ? $('review_support_15866741').innerHTML : 0) + ' !activity_member_unit! !support_reply!'" style="text-decoration: none;">
+<font class="local_vote_icon" color="#ff6600">&#128077;</font>
+</a>
+&nbsp;
+<i id="rec_add_percent_15866741">0%</i>&nbsp;<i color="#497B89">(<i id="rec_add_15866741">0</i>)</i>
+</td>
+<td align="center" width="120px;">
+<div class="dxksst_pbg_new" align="left">
+<div class="dxksst_pbr_left" id="rec_add_bar_15866741" style="width: 0%; background-color:#ff6600">&nbsp;</div>
+<div class="dxksst_pbr_right" id="rec_sub_bar_15866741" style="width: 0%; background-color:#497b89">&nbsp;</div>
+</div>
+</td>
+<td width="105px" align="left">
+<i id="rec_sub_percent_15866741">0%</i>&nbsp;<i color="#497B89">(<i id="rec_sub_15866741">0</i>)</i>
+&nbsp;
+<a href="forum.php?mod=misc&amp;action=postreview&amp;do=against&amp;tid=780970&amp;pid=15866741&amp;hash=81a3a904" onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;" onmouseover="this.title = ($('review_against_15866741').innerHTML ? $('review_against_15866741').innerHTML : 0) + ' !activity_member_unit! !against_reply!'" style="text-decoration: none;">
+<font class="local_vote_icon" color="#497b89">&#128078;</font>
+</a>
+</td>
+</tr>
+<tr style="padding-top:10px;">
+<td align="right">全局：</td>
+<td width="140px" align="right">&#128077; &nbsp;&nbsp;<i id="upvote_percent_15866741">100%</i>&nbsp;<i color="#497B89">(<i id="upvote_15866741">11</i>)</i></td>
+<td align="center" width="120px;">
+<div class="dxksst_pbg_new" align="left" title="0%">
+<div class="dxksst_pbr_left" id="upvote_bar_15866741" style="width: 100%; background-color:#ff6600">&nbsp;</div>
+<div class="dxksst_pbr_right" id="downvote_bar_15866741" style="width: 0%; background-color:#497b89">&nbsp;</div>
+</div>
+</td>
+<td width="140px" align="left"><i id="downvote_percent_15866741">0%</i>&nbsp;<i color="#497B89">(<i id="downvote_15866741">0</i>)</i>&nbsp;&nbsp;&nbsp; &#128078;</td>
+</tr>
+</table>
+<div align="right">
+</div>
+<!--googleon: snippet-->
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tr><td class="t_f" id="postmessage_15866741" itemprop="articleBody">
+感谢分享</td></tr></table>
+</div>
+<div id="comment_15866741" class="cm">
+</div>
+<div id="post_rate_div_15866741"></div>
+</div>
+</div>
+</td></tr>
+<tr><td class="plc plm">
+</td>
+</tr>
+<tr id="_postposition15866741"></tr>
+<tr>
+<td class="pls"></td>
+<td class="plc" style="overflow:visible;">
+<div class="po hin">
+<div class="pob cl">
+<em>
+<a class="fastre" href="forum.php?mod=post&amp;action=reply&amp;fid=28&amp;tid=780970&amp;repquote=15866741&amp;extra=&amp;page=1" onclick="showWindow('reply', this.href)">回复</a>
+<div style="display: none">
+<a class="replyadd" href="forum.php?mod=misc&amp;action=postreview&amp;do=support&amp;tid=780970&amp;pid=15866741&amp;hash=81a3a904" onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;" onmouseover="this.title = ($('review_support_15866741').innerHTML ? $('review_support_15866741').innerHTML : 0) + ' 人 支持'">支持 <span id="review_support_15866741"></span></a>
+<a class="replysubtract" href="forum.php?mod=misc&amp;action=postreview&amp;do=against&amp;tid=780970&amp;pid=15866741&amp;hash=81a3a904" onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;" onmouseover="this.title = ($('review_against_15866741').innerHTML ? $('review_against_15866741').innerHTML : 0) + ' 人 反对'">反对 <span id="review_against_15866741"></span></a>
+</div>
+</em>
+<p>
+<a href="javascript:;" id="mgc_post_15866741" onmouseover="showMenu(this.id)" class="showmenu">使用道具</a>
+<a href="javascript:;" onclick="showWindow('rate', 'forum.php?mod=misc&action=rate&tid=780970&pid=15866741', 'get', -1);return false;">评分</a>
+<a href="home.php?mod=space&amp;do=friend&amp;view=blacklist&amp;bname=xxxrrr0901" target="_blank">拉黑</a>
+<a href="javascript:;" onclick="showWindow('miscreport15866741', 'misc.php?mod=report&rtype=post&rid=15866741&tid=780970&fid=28', 'get', -1);return false;">举报</a>
+</p>
+<ul id="mgc_post_15866741_menu" class="p_pop mgcmn" style="display: none;">
+</ul>
+<script type="text/javascript" reload="1">checkmgcmn('post_15866741')</script>
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</table>
+</div>
+<div id="post_16031476"><table id="pid16031476" class="plhin" summary="pid16031476" cellspacing="0" cellpadding="0" itemid="pid16031476" itemscope itemtype="http://schema.org/DiscussionForumPosting">
+<tr>
+<td class="pls" rowspan="2">
+<div id="favatar16031476" class="pls favatar">
+<div class="p_pop blk bui card_gender_0" id="userinfo16031476" style="display: none; ">
+<div class="m z">
+<div id="userinfo16031476_ma"></div>
+</div>
+<div class="i y">
+<div itemprop="author" itemscope itemtype="http://schema.org/Person">
+<strong><a itemprop="url" href="home.php?mod=space&amp;uid=805563" target="_blank" class="xi2" style="color: #7E1E7B"><span itemprop="name">小亩_b0e57d5</span></a></strong>
+<em>当前离线</em>
+</div><dl class="cl">
+<div class="tns xg2"><table cellspacing="0" cellpadding="0"><th><p><a href="home.php?mod=space&uid=805563&do=thread&type=thread&view=me&from=space" class="xi2">1</a></p>主题</th><th><p><a href="home.php?mod=space&uid=805563&do=thread&type=reply&view=me&from=space" class="xi2">140</a></p>帖子</th><td><p><a href="home.php?mod=space&uid=805563&do=profile" class="xi2">373</a></p>积分</td></table></div>
+<p><em><a href="home.php?mod=spacecp&amp;ac=usergroup&amp;gid=34" target="_blank"><font color="#7E1E7B">活跃农民</font></a></em></p>
+<dt>积分</dt><dd><a href="home.php?mod=space&uid=805563&do=profile" target="_blank" class="xi2">373</a></dd>
+<dt>大米</dt><dd>366 颗 </dd>
+<dt>鳄梨</dt><dd>0 个</dd>
+<dt>水井</dt><dd>0 尺</dd>
+<dt>蓝莓</dt><dd>0 颗</dd>
+<dt>萝卜</dt><dd>0 根</dd>
+<dt>小米</dt><dd>142 粒</dd>
+<dt>学分</dt><dd>0 个</dd>
+<dt>注册时间</dt><dd>2021-9-6</dd>
+<dt>最后登录</dt><dd>2022-3-31</dd>
+</dl><div class="imicn">
+<a href="home.php?mod=space&amp;uid=805563&amp;do=profile" target="_blank" title="查看详细资料"><img src="static/image/common/userinfo.gif" alt="查看详细资料" /></a>
+<a href="home.php?mod=magic&amp;mid=checkonline&amp;idtype=user&amp;id=%D0%A1%C4%B6_b0e57d5" id="a_repent_16031476" class="xi2" onclick="showWindow(this.id, this.href)"><img src="static//image/magic/checkonline.small.gif" alt="" /> 狗仔卡</a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar" itemprop="image" itemscope itemtype="http://schema.org/URL" onmouseover="showauthor(this, 'userinfo16031476')"><a href="space-uid-805563.html" class="avtm" target="_blank"><img src="https://avatar.1point3acres.cn/000/80/55/63_avatar_middle.jpg!c" /></a></div>
+</div>
+<div class="tns xg2"><table cellspacing="0" cellpadding="0"><th><p><a href="home.php?mod=space&uid=805563&do=thread&type=thread&view=me&from=space" class="xi2">1</a></p>主题</th><th><p><a href="home.php?mod=space&uid=805563&do=thread&type=reply&view=me&from=space" class="xi2">140</a></p>帖子</th><td><p><a href="home.php?mod=space&uid=805563&do=profile" class="xi2">373</a></p>积分</td></table></div>
+<dl class="pil cl"></dl><ul class="xl xl2 o cl">
+<li class="pm2"><a href="home.php?mod=spacecp&amp;ac=pm&amp;op=showmsg&amp;handlekey=showmsg_805563&amp;touid=805563&amp;pmid=0&amp;daterange=2&amp;pid=16031476&amp;tid=780970" onclick="showWindow('sendpm', this.href);" title="发消息" class="xi2">发消息</a></li>
+</ul>
+</div>
+</td>
+<td class="plc">
+<div class="pi">
+<strong>
+<a href="forum.php?mod=redirect&goto=findpost&ptid=780970&pid=16031476" id="postnum16031476" onclick="setCopy(this.href, '帖子地址复制成功');return false;">
+&#x1F517;
+</a>
+</strong>
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon16031476" src="static/image/common/online_member.gif" />
+<a href="space-uid-805563.html" target="_blank" class="xi2">小亩_b0e57d5</a>
+<span>
+<meta itemprop="datePublished" content="2021-7-20 22:07" />
+2021-9-22 01:09:02</span>
+<span class="pipe">|</span>
+<a href="forum.php?mod=viewthread&amp;tid=780970&amp;page=1&amp;authorid=805563" rel="nofollow">只看该作者</a>
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<meta itemprop="headline" content="DS product case的细节总结和tips">
+<!--googleoff: snippet-->
+<table width="100%" class="dxksst_table">
+<tr>
+<td align="right">本楼：</td>
+<td width="105px" align="right">
+<a href="forum.php?mod=misc&amp;action=postreview&amp;do=support&amp;tid=780970&amp;pid=16031476&amp;hash=81a3a904" onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;" onmouseover="this.title = ($('review_support_16031476').innerHTML ? $('review_support_16031476').innerHTML : 0) + ' !activity_member_unit! !support_reply!'" style="text-decoration: none;">
+<font class="local_vote_icon" color="#ff6600">&#128077;</font>
+</a>
+&nbsp;
+<i id="rec_add_percent_16031476">0%</i>&nbsp;<i color="#497B89">(<i id="rec_add_16031476">0</i>)</i>
+</td>
+<td align="center" width="120px;">
+<div class="dxksst_pbg_new" align="left">
+<div class="dxksst_pbr_left" id="rec_add_bar_16031476" style="width: 0%; background-color:#ff6600">&nbsp;</div>
+<div class="dxksst_pbr_right" id="rec_sub_bar_16031476" style="width: 0%; background-color:#497b89">&nbsp;</div>
+</div>
+</td>
+<td width="105px" align="left">
+<i id="rec_sub_percent_16031476">0%</i>&nbsp;<i color="#497B89">(<i id="rec_sub_16031476">0</i>)</i>
+&nbsp;
+<a href="forum.php?mod=misc&amp;action=postreview&amp;do=against&amp;tid=780970&amp;pid=16031476&amp;hash=81a3a904" onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;" onmouseover="this.title = ($('review_against_16031476').innerHTML ? $('review_against_16031476').innerHTML : 0) + ' !activity_member_unit! !against_reply!'" style="text-decoration: none;">
+<font class="local_vote_icon" color="#497b89">&#128078;</font>
+</a>
+</td>
+</tr>
+<tr style="padding-top:10px;">
+<td align="right">全局：</td>
+<td width="140px" align="right">&#128077; &nbsp;&nbsp;<i id="upvote_percent_16031476">92%</i>&nbsp;<i color="#497B89">(<i id="upvote_16031476">302</i>)</i></td>
+<td align="center" width="120px;">
+<div class="dxksst_pbg_new" align="left" title="0%">
+<div class="dxksst_pbr_left" id="upvote_bar_16031476" style="width: 92%; background-color:#ff6600">&nbsp;</div>
+<div class="dxksst_pbr_right" id="downvote_bar_16031476" style="width: 7%; background-color:#497b89">&nbsp;</div>
+</div>
+</td>
+<td width="140px" align="left"><i id="downvote_percent_16031476">7%</i>&nbsp;<i color="#497B89">(<i id="downvote_16031476">23</i>)</i>&nbsp;&nbsp;&nbsp; &#128078;</td>
+</tr>
+</table>
+<div align="right">
+</div>
+<!--googleon: snippet-->
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tr><td class="t_f" id="postmessage_16031476" itemprop="articleBody">
+赞lz。onsite有结果了吗？最后去了哪里？</td></tr></table>
+</div>
+<div id="comment_16031476" class="cm">
+</div>
+<div id="post_rate_div_16031476"></div>
+</div>
+</div>
+</td></tr>
+<tr><td class="plc plm">
+</td>
+</tr>
+<tr id="_postposition16031476"></tr>
+<tr>
+<td class="pls"></td>
+<td class="plc" style="overflow:visible;">
+<div class="po hin">
+<div class="pob cl">
+<em>
+<a class="fastre" href="forum.php?mod=post&amp;action=reply&amp;fid=28&amp;tid=780970&amp;repquote=16031476&amp;extra=&amp;page=1" onclick="showWindow('reply', this.href)">回复</a>
+<div style="display: none">
+<a class="replyadd" href="forum.php?mod=misc&amp;action=postreview&amp;do=support&amp;tid=780970&amp;pid=16031476&amp;hash=81a3a904" onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;" onmouseover="this.title = ($('review_support_16031476').innerHTML ? $('review_support_16031476').innerHTML : 0) + ' 人 支持'">支持 <span id="review_support_16031476"></span></a>
+<a class="replysubtract" href="forum.php?mod=misc&amp;action=postreview&amp;do=against&amp;tid=780970&amp;pid=16031476&amp;hash=81a3a904" onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;" onmouseover="this.title = ($('review_against_16031476').innerHTML ? $('review_against_16031476').innerHTML : 0) + ' 人 反对'">反对 <span id="review_against_16031476"></span></a>
+</div>
+</em>
+<p>
+<a href="javascript:;" id="mgc_post_16031476" onmouseover="showMenu(this.id)" class="showmenu">使用道具</a>
+<a href="javascript:;" onclick="showWindow('rate', 'forum.php?mod=misc&action=rate&tid=780970&pid=16031476', 'get', -1);return false;">评分</a>
+<a href="home.php?mod=space&amp;do=friend&amp;view=blacklist&amp;bname=小亩_b0e57d5" target="_blank">拉黑</a>
+<a href="javascript:;" onclick="showWindow('miscreport16031476', 'misc.php?mod=report&rtype=post&rid=16031476&tid=780970&fid=28', 'get', -1);return false;">举报</a>
+</p>
+<ul id="mgc_post_16031476_menu" class="p_pop mgcmn" style="display: none;">
+</ul>
+<script type="text/javascript" reload="1">checkmgcmn('post_16031476')</script>
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</table>
+</div>
+<div id="post_16074840"><table id="pid16074840" class="plhin" summary="pid16074840" cellspacing="0" cellpadding="0" itemid="pid16074840" itemscope itemtype="http://schema.org/DiscussionForumPosting">
+<tr>
+<td class="pls" rowspan="2">
+<div id="favatar16074840" class="pls favatar">
+<div class="p_pop blk bui card_gender_1" id="userinfo16074840" style="display: none; ">
+<div class="m z">
+<div id="userinfo16074840_ma"></div>
+</div>
+<div class="i y">
+<div itemprop="author" itemscope itemtype="http://schema.org/Person">
+<strong><a itemprop="url" href="home.php?mod=space&amp;uid=339453" target="_blank" class="xi2" style="color: #7E1E7B"><span itemprop="name">mr_mashimaro</span></a></strong>
+<em>当前离线</em>
+</div><dl class="cl">
+<div class="tns xg2"><table cellspacing="0" cellpadding="0"><th><p><a href="home.php?mod=space&uid=339453&do=thread&type=thread&view=me&from=space" class="xi2">4</a></p>主题</th><th><p><a href="home.php?mod=space&uid=339453&do=thread&type=reply&view=me&from=space" class="xi2">73</a></p>帖子</th><td><p><a href="home.php?mod=space&uid=339453&do=profile" class="xi2">304</a></p>积分</td></table></div>
+<p><em><a href="home.php?mod=spacecp&amp;ac=usergroup&amp;gid=34" target="_blank"><font color="#7E1E7B">活跃农民</font></a></em></p>
+<dt>积分</dt><dd><a href="home.php?mod=space&uid=339453&do=profile" target="_blank" class="xi2">304</a></dd>
+<dt>大米</dt><dd>301 颗 </dd>
+<dt>鳄梨</dt><dd>0 个</dd>
+<dt>水井</dt><dd>0 尺</dd>
+<dt>蓝莓</dt><dd>0 颗</dd>
+<dt>萝卜</dt><dd>0 根</dd>
+<dt>小米</dt><dd>50 粒</dd>
+<dt>学分</dt><dd>0 个</dd>
+<dt>注册时间</dt><dd>2017-11-15</dd>
+<dt>最后登录</dt><dd>2022-4-1</dd>
+</dl><div class="imicn">
+<a href="home.php?mod=space&amp;uid=339453&amp;do=profile" target="_blank" title="查看详细资料"><img src="static/image/common/userinfo.gif" alt="查看详细资料" /></a>
+<a href="home.php?mod=magic&amp;mid=checkonline&amp;idtype=user&amp;id=mr_mashimaro" id="a_repent_16074840" class="xi2" onclick="showWindow(this.id, this.href)"><img src="static//image/magic/checkonline.small.gif" alt="" /> 狗仔卡</a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar" itemprop="image" itemscope itemtype="http://schema.org/URL" onmouseover="showauthor(this, 'userinfo16074840')"><a href="space-uid-339453.html" class="avtm" target="_blank"><img src="https://avatar.1point3acres.cn/000/33/94/53_avatar_middle.jpg!c" /></a></div>
+</div>
+<div class="tns xg2"><table cellspacing="0" cellpadding="0"><th><p><a href="home.php?mod=space&uid=339453&do=thread&type=thread&view=me&from=space" class="xi2">4</a></p>主题</th><th><p><a href="home.php?mod=space&uid=339453&do=thread&type=reply&view=me&from=space" class="xi2">73</a></p>帖子</th><td><p><a href="home.php?mod=space&uid=339453&do=profile" class="xi2">304</a></p>积分</td></table></div>
+<dl class="pil cl"></dl><ul class="xl xl2 o cl">
+<li class="pm2"><a href="home.php?mod=spacecp&amp;ac=pm&amp;op=showmsg&amp;handlekey=showmsg_339453&amp;touid=339453&amp;pmid=0&amp;daterange=2&amp;pid=16074840&amp;tid=780970" onclick="showWindow('sendpm', this.href);" title="发消息" class="xi2">发消息</a></li>
+</ul>
+</div>
+</td>
+<td class="plc">
+<div class="pi">
+<strong>
+<a href="forum.php?mod=redirect&goto=findpost&ptid=780970&pid=16074840" id="postnum16074840" onclick="setCopy(this.href, '帖子地址复制成功');return false;">
+&#x1F517;
+</a>
+</strong>
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon16074840" src="static/image/common/online_member.gif" />
+<a href="space-uid-339453.html" target="_blank" class="xi2">mr_mashimaro</a>
+<span>
+<meta itemprop="datePublished" content="2021-7-20 22:07" />
+2021-10-1 01:49:46</span>
+<span class="pipe">|</span>
+<a href="forum.php?mod=viewthread&amp;tid=780970&amp;page=1&amp;authorid=339453" rel="nofollow">只看该作者</a>
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<meta itemprop="headline" content="DS product case的细节总结和tips">
+<!--googleoff: snippet-->
+<table width="100%" class="dxksst_table">
+<tr>
+<td align="right">本楼：</td>
+<td width="105px" align="right">
+<a href="forum.php?mod=misc&amp;action=postreview&amp;do=support&amp;tid=780970&amp;pid=16074840&amp;hash=81a3a904" onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;" onmouseover="this.title = ($('review_support_16074840').innerHTML ? $('review_support_16074840').innerHTML : 0) + ' !activity_member_unit! !support_reply!'" style="text-decoration: none;">
+<font class="local_vote_icon" color="#ff6600">&#128077;</font>
+</a>
+&nbsp;
+<i id="rec_add_percent_16074840">0%</i>&nbsp;<i color="#497B89">(<i id="rec_add_16074840">0</i>)</i>
+</td>
+<td align="center" width="120px;">
+<div class="dxksst_pbg_new" align="left">
+<div class="dxksst_pbr_left" id="rec_add_bar_16074840" style="width: 0%; background-color:#ff6600">&nbsp;</div>
+<div class="dxksst_pbr_right" id="rec_sub_bar_16074840" style="width: 0%; background-color:#497b89">&nbsp;</div>
+</div>
+</td>
+<td width="105px" align="left">
+<i id="rec_sub_percent_16074840">0%</i>&nbsp;<i color="#497B89">(<i id="rec_sub_16074840">0</i>)</i>
+&nbsp;
+<a href="forum.php?mod=misc&amp;action=postreview&amp;do=against&amp;tid=780970&amp;pid=16074840&amp;hash=81a3a904" onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;" onmouseover="this.title = ($('review_against_16074840').innerHTML ? $('review_against_16074840').innerHTML : 0) + ' !activity_member_unit! !against_reply!'" style="text-decoration: none;">
+<font class="local_vote_icon" color="#497b89">&#128078;</font>
+</a>
+</td>
+</tr>
+<tr style="padding-top:10px;">
+<td align="right">全局：</td>
+<td width="140px" align="right">&#128077; &nbsp;&nbsp;<i id="upvote_percent_16074840">95%</i>&nbsp;<i color="#497B89">(<i id="upvote_16074840">20</i>)</i></td>
+<td align="center" width="120px;">
+<div class="dxksst_pbg_new" align="left" title="0%">
+<div class="dxksst_pbr_left" id="upvote_bar_16074840" style="width: 95%; background-color:#ff6600">&nbsp;</div>
+<div class="dxksst_pbr_right" id="downvote_bar_16074840" style="width: 4%; background-color:#497b89">&nbsp;</div>
+</div>
+</td>
+<td width="140px" align="left"><i id="downvote_percent_16074840">4%</i>&nbsp;<i color="#497B89">(<i id="downvote_16074840">1</i>)</i>&nbsp;&nbsp;&nbsp; &#128078;</td>
+</tr>
+</table>
+<div align="right">
+</div>
+<!--googleon: snippet-->
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tr><td class="t_f" id="postmessage_16074840" itemprop="articleBody">
+谢谢楼主的总结！！感觉受益良多！！</td></tr></table>
+</div>
+<div id="comment_16074840" class="cm">
+</div>
+<div id="post_rate_div_16074840"></div>
+</div>
+</div>
+</td></tr>
+<tr><td class="plc plm">
+</td>
+</tr>
+<tr id="_postposition16074840"></tr>
+<tr>
+<td class="pls"></td>
+<td class="plc" style="overflow:visible;">
+<div class="po hin">
+<div class="pob cl">
+<em>
+<a class="fastre" href="forum.php?mod=post&amp;action=reply&amp;fid=28&amp;tid=780970&amp;repquote=16074840&amp;extra=&amp;page=1" onclick="showWindow('reply', this.href)">回复</a>
+<div style="display: none">
+<a class="replyadd" href="forum.php?mod=misc&amp;action=postreview&amp;do=support&amp;tid=780970&amp;pid=16074840&amp;hash=81a3a904" onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;" onmouseover="this.title = ($('review_support_16074840').innerHTML ? $('review_support_16074840').innerHTML : 0) + ' 人 支持'">支持 <span id="review_support_16074840"></span></a>
+<a class="replysubtract" href="forum.php?mod=misc&amp;action=postreview&amp;do=against&amp;tid=780970&amp;pid=16074840&amp;hash=81a3a904" onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;" onmouseover="this.title = ($('review_against_16074840').innerHTML ? $('review_against_16074840').innerHTML : 0) + ' 人 反对'">反对 <span id="review_against_16074840"></span></a>
+</div>
+</em>
+<p>
+<a href="javascript:;" id="mgc_post_16074840" onmouseover="showMenu(this.id)" class="showmenu">使用道具</a>
+<a href="javascript:;" onclick="showWindow('rate', 'forum.php?mod=misc&action=rate&tid=780970&pid=16074840', 'get', -1);return false;">评分</a>
+<a href="home.php?mod=space&amp;do=friend&amp;view=blacklist&amp;bname=mr_mashimaro" target="_blank">拉黑</a>
+<a href="javascript:;" onclick="showWindow('miscreport16074840', 'misc.php?mod=report&rtype=post&rid=16074840&tid=780970&fid=28', 'get', -1);return false;">举报</a>
+</p>
+<ul id="mgc_post_16074840_menu" class="p_pop mgcmn" style="display: none;">
+</ul>
+<script type="text/javascript" reload="1">checkmgcmn('post_16074840')</script>
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</table>
+</div>
+<div id="post_16624941"><table id="pid16624941" class="plhin" summary="pid16624941" cellspacing="0" cellpadding="0" itemid="pid16624941" itemscope itemtype="http://schema.org/DiscussionForumPosting">
+<tr>
+<td class="pls" rowspan="2">
+<div id="favatar16624941" class="pls favatar">
+<div class="p_pop blk bui card_gender_2" id="userinfo16624941" style="display: none; ">
+<div class="m z">
+<div id="userinfo16624941_ma"></div>
+</div>
+<div class="i y">
+<div itemprop="author" itemscope itemtype="http://schema.org/Person">
+<strong><a itemprop="url" href="home.php?mod=space&amp;uid=661848" target="_blank" class="xi2"><span itemprop="name">Jasmineyfy</span></a></strong>
+<em>当前离线</em>
+</div><dl class="cl">
+<div class="tns xg2"><table cellspacing="0" cellpadding="0"><th><p><a href="home.php?mod=space&uid=661848&do=thread&type=thread&view=me&from=space" class="xi2">0</a></p>主题</th><th><p><a href="home.php?mod=space&uid=661848&do=thread&type=reply&view=me&from=space" class="xi2">317</a></p>帖子</th><td><p><a href="home.php?mod=space&uid=661848&do=profile" class="xi2">215</a></p>积分</td></table></div>
+<p><em><a href="home.php?mod=spacecp&amp;ac=usergroup&amp;gid=12" target="_blank">中级农民</a></em></p>
+<dt>积分</dt><dd><a href="home.php?mod=space&uid=661848&do=profile" target="_blank" class="xi2">215</a></dd>
+<dt>大米</dt><dd>200 颗 </dd>
+<dt>鳄梨</dt><dd>0 个</dd>
+<dt>水井</dt><dd>0 尺</dd>
+<dt>蓝莓</dt><dd>0 颗</dd>
+<dt>萝卜</dt><dd>0 根</dd>
+<dt>小米</dt><dd>300 粒</dd>
+<dt>学分</dt><dd>0 个</dd>
+<dt>注册时间</dt><dd>2020-8-23</dd>
+<dt>最后登录</dt><dd>2022-3-31</dd>
+</dl><div class="imicn">
+<a href="home.php?mod=space&amp;uid=661848&amp;do=profile" target="_blank" title="查看详细资料"><img src="static/image/common/userinfo.gif" alt="查看详细资料" /></a>
+<a href="home.php?mod=magic&amp;mid=checkonline&amp;idtype=user&amp;id=Jasmineyfy" id="a_repent_16624941" class="xi2" onclick="showWindow(this.id, this.href)"><img src="static//image/magic/checkonline.small.gif" alt="" /> 狗仔卡</a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar" itemprop="image" itemscope itemtype="http://schema.org/URL" onmouseover="showauthor(this, 'userinfo16624941')"><a href="space-uid-661848.html" class="avtm" target="_blank"><img src="https://avatar.1point3acres.cn/000/66/18/48_avatar_middle.jpg!c" /></a></div>
+</div>
+<div class="tns xg2"><table cellspacing="0" cellpadding="0"><th><p><a href="home.php?mod=space&uid=661848&do=thread&type=thread&view=me&from=space" class="xi2">0</a></p>主题</th><th><p><a href="home.php?mod=space&uid=661848&do=thread&type=reply&view=me&from=space" class="xi2">317</a></p>帖子</th><td><p><a href="home.php?mod=space&uid=661848&do=profile" class="xi2">215</a></p>积分</td></table></div>
+<dl class="pil cl"></dl><ul class="xl xl2 o cl">
+<li class="pm2"><a href="home.php?mod=spacecp&amp;ac=pm&amp;op=showmsg&amp;handlekey=showmsg_661848&amp;touid=661848&amp;pmid=0&amp;daterange=2&amp;pid=16624941&amp;tid=780970" onclick="showWindow('sendpm', this.href);" title="发消息" class="xi2">发消息</a></li>
+</ul>
+</div>
+</td>
+<td class="plc">
+<div class="pi">
+<strong>
+<a href="forum.php?mod=redirect&goto=findpost&ptid=780970&pid=16624941" id="postnum16624941" onclick="setCopy(this.href, '帖子地址复制成功');return false;">
+&#x1F517;
+</a>
+</strong>
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon16624941" src="static/image/common/online_member.gif" />
+<a href="space-uid-661848.html" target="_blank" class="xi2">Jasmineyfy</a>
+<span>
+<meta itemprop="datePublished" content="2021-7-20 22:07" />
+2022-2-3 20:33:37</span>
+<span class="pipe">|</span>
+<a href="forum.php?mod=viewthread&amp;tid=780970&amp;page=1&amp;authorid=661848" rel="nofollow">只看该作者</a>
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<meta itemprop="headline" content="DS product case的细节总结和tips">
+<!--googleoff: snippet-->
+<table width="100%" class="dxksst_table">
+<tr>
+<td align="right">本楼：</td>
+<td width="105px" align="right">
+<a href="forum.php?mod=misc&amp;action=postreview&amp;do=support&amp;tid=780970&amp;pid=16624941&amp;hash=81a3a904" onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;" onmouseover="this.title = ($('review_support_16624941').innerHTML ? $('review_support_16624941').innerHTML : 0) + ' !activity_member_unit! !support_reply!'" style="text-decoration: none;">
+<font class="local_vote_icon" color="#ff6600">&#128077;</font>
+</a>
+&nbsp;
+<i id="rec_add_percent_16624941">0%</i>&nbsp;<i color="#497B89">(<i id="rec_add_16624941">0</i>)</i>
+</td>
+<td align="center" width="120px;">
+<div class="dxksst_pbg_new" align="left">
+<div class="dxksst_pbr_left" id="rec_add_bar_16624941" style="width: 0%; background-color:#ff6600">&nbsp;</div>
+<div class="dxksst_pbr_right" id="rec_sub_bar_16624941" style="width: 0%; background-color:#497b89">&nbsp;</div>
+</div>
+</td>
+<td width="105px" align="left">
+<i id="rec_sub_percent_16624941">0%</i>&nbsp;<i color="#497B89">(<i id="rec_sub_16624941">0</i>)</i>
+&nbsp;
+<a href="forum.php?mod=misc&amp;action=postreview&amp;do=against&amp;tid=780970&amp;pid=16624941&amp;hash=81a3a904" onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;" onmouseover="this.title = ($('review_against_16624941').innerHTML ? $('review_against_16624941').innerHTML : 0) + ' !activity_member_unit! !against_reply!'" style="text-decoration: none;">
+<font class="local_vote_icon" color="#497b89">&#128078;</font>
+</a>
+</td>
+</tr>
+<tr style="padding-top:10px;">
+<td align="right">全局：</td>
+<td width="140px" align="right">&#128077; &nbsp;&nbsp;<i id="upvote_percent_16624941">95%</i>&nbsp;<i color="#497B89">(<i id="upvote_16624941">23</i>)</i></td>
+<td align="center" width="120px;">
+<div class="dxksst_pbg_new" align="left" title="0%">
+<div class="dxksst_pbr_left" id="upvote_bar_16624941" style="width: 95%; background-color:#ff6600">&nbsp;</div>
+<div class="dxksst_pbr_right" id="downvote_bar_16624941" style="width: 4%; background-color:#497b89">&nbsp;</div>
+</div>
+</td>
+<td width="140px" align="left"><i id="downvote_percent_16624941">4%</i>&nbsp;<i color="#497B89">(<i id="downvote_16624941">1</i>)</i>&nbsp;&nbsp;&nbsp; &#128078;</td>
+</tr>
+</table>
+<div align="right">
+</div>
+<!--googleon: snippet-->
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tr><td class="t_f" id="postmessage_16624941" itemprop="articleBody">
+感谢楼主！</td></tr></table>
+</div>
+<div id="comment_16624941" class="cm">
+</div>
+<div id="post_rate_div_16624941"></div>
+</div>
+</div>
+</td></tr>
+<tr><td class="plc plm">
+</td>
+</tr>
+<tr id="_postposition16624941"></tr>
+<tr>
+<td class="pls"></td>
+<td class="plc" style="overflow:visible;">
+<div class="po hin">
+<div class="pob cl">
+<em>
+<a class="fastre" href="forum.php?mod=post&amp;action=reply&amp;fid=28&amp;tid=780970&amp;repquote=16624941&amp;extra=&amp;page=1" onclick="showWindow('reply', this.href)">回复</a>
+<div style="display: none">
+<a class="replyadd" href="forum.php?mod=misc&amp;action=postreview&amp;do=support&amp;tid=780970&amp;pid=16624941&amp;hash=81a3a904" onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;" onmouseover="this.title = ($('review_support_16624941').innerHTML ? $('review_support_16624941').innerHTML : 0) + ' 人 支持'">支持 <span id="review_support_16624941"></span></a>
+<a class="replysubtract" href="forum.php?mod=misc&amp;action=postreview&amp;do=against&amp;tid=780970&amp;pid=16624941&amp;hash=81a3a904" onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;" onmouseover="this.title = ($('review_against_16624941').innerHTML ? $('review_against_16624941').innerHTML : 0) + ' 人 反对'">反对 <span id="review_against_16624941"></span></a>
+</div>
+</em>
+<p>
+<a href="javascript:;" id="mgc_post_16624941" onmouseover="showMenu(this.id)" class="showmenu">使用道具</a>
+<a href="javascript:;" onclick="showWindow('rate', 'forum.php?mod=misc&action=rate&tid=780970&pid=16624941', 'get', -1);return false;">评分</a>
+<a href="home.php?mod=space&amp;do=friend&amp;view=blacklist&amp;bname=Jasmineyfy" target="_blank">拉黑</a>
+<a href="javascript:;" onclick="showWindow('miscreport16624941', 'misc.php?mod=report&rtype=post&rid=16624941&tid=780970&fid=28', 'get', -1);return false;">举报</a>
+</p>
+<ul id="mgc_post_16624941_menu" class="p_pop mgcmn" style="display: none;">
+</ul>
+<script type="text/javascript" reload="1">checkmgcmn('post_16624941')</script>
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</table>
+</div>
+<div id="post_16692117"><table id="pid16692117" class="plhin" summary="pid16692117" cellspacing="0" cellpadding="0" itemid="pid16692117" itemscope itemtype="http://schema.org/DiscussionForumPosting">
+<tr>
+<td class="pls" rowspan="2">
+<div id="favatar16692117" class="pls favatar">
+<a name="lastpost"></a><div class="p_pop blk bui card_gender_2" id="userinfo16692117" style="display: none; ">
+<div class="m z">
+<div id="userinfo16692117_ma"></div>
+</div>
+<div class="i y">
+<div itemprop="author" itemscope itemtype="http://schema.org/Person">
+<strong><a itemprop="url" href="home.php?mod=space&amp;uid=625055" target="_blank" class="xi2"><span itemprop="name">Maggie-----zy</span></a></strong>
+<em>当前离线</em>
+</div><dl class="cl">
+<div class="tns xg2"><table cellspacing="0" cellpadding="0"><th><p><a href="home.php?mod=space&uid=625055&do=thread&type=thread&view=me&from=space" class="xi2">0</a></p>主题</th><th><p><a href="home.php?mod=space&uid=625055&do=thread&type=reply&view=me&from=space" class="xi2">49</a></p>帖子</th><td><p><a href="home.php?mod=space&uid=625055&do=profile" class="xi2">236</a></p>积分</td></table></div>
+<p><em><a href="home.php?mod=spacecp&amp;ac=usergroup&amp;gid=12" target="_blank">中级农民</a></em></p>
+<dt>积分</dt><dd><a href="home.php?mod=space&uid=625055&do=profile" target="_blank" class="xi2">236</a></dd>
+<dt>大米</dt><dd>234 颗 </dd>
+<dt>鳄梨</dt><dd>0 个</dd>
+<dt>水井</dt><dd>0 尺</dd>
+<dt>蓝莓</dt><dd>0 颗</dd>
+<dt>萝卜</dt><dd>0 根</dd>
+<dt>小米</dt><dd>34 粒</dd>
+<dt>学分</dt><dd>0 个</dd>
+<dt>注册时间</dt><dd>2020-5-8</dd>
+<dt>最后登录</dt><dd>2022-4-1</dd>
+</dl><div class="imicn">
+<a href="home.php?mod=space&amp;uid=625055&amp;do=profile" target="_blank" title="查看详细资料"><img src="static/image/common/userinfo.gif" alt="查看详细资料" /></a>
+<a href="home.php?mod=magic&amp;mid=checkonline&amp;idtype=user&amp;id=Maggie-----zy" id="a_repent_16692117" class="xi2" onclick="showWindow(this.id, this.href)"><img src="static//image/magic/checkonline.small.gif" alt="" /> 狗仔卡</a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar" itemprop="image" itemscope itemtype="http://schema.org/URL" onmouseover="showauthor(this, 'userinfo16692117')"><a href="space-uid-625055.html" class="avtm" target="_blank"><img src="https://avatar.1point3acres.cn/000/62/50/55_avatar_middle.jpg!c" /></a></div>
+</div>
+<div class="tns xg2"><table cellspacing="0" cellpadding="0"><th><p><a href="home.php?mod=space&uid=625055&do=thread&type=thread&view=me&from=space" class="xi2">0</a></p>主题</th><th><p><a href="home.php?mod=space&uid=625055&do=thread&type=reply&view=me&from=space" class="xi2">49</a></p>帖子</th><td><p><a href="home.php?mod=space&uid=625055&do=profile" class="xi2">236</a></p>积分</td></table></div>
+<dl class="pil cl"></dl><ul class="xl xl2 o cl">
+<li class="pm2"><a href="home.php?mod=spacecp&amp;ac=pm&amp;op=showmsg&amp;handlekey=showmsg_625055&amp;touid=625055&amp;pmid=0&amp;daterange=2&amp;pid=16692117&amp;tid=780970" onclick="showWindow('sendpm', this.href);" title="发消息" class="xi2">发消息</a></li>
+</ul>
+</div>
+</td>
+<td class="plc">
+<div class="pi">
+<strong>
+<a href="forum.php?mod=redirect&goto=findpost&ptid=780970&pid=16692117" id="postnum16692117" onclick="setCopy(this.href, '帖子地址复制成功');return false;">
+&#x1F517;
+</a>
+</strong>
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon16692117" src="static/image/common/online_member.gif" />
+<a href="space-uid-625055.html" target="_blank" class="xi2">Maggie-----zy</a>
+<span>
+<meta itemprop="datePublished" content="2021-7-20 22:07" />
+2022-2-16 09:20:41</span>
+<span class="pipe">|</span>
+<a href="forum.php?mod=viewthread&amp;tid=780970&amp;page=1&amp;authorid=625055" rel="nofollow">只看该作者</a>
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<meta itemprop="headline" content="DS product case的细节总结和tips">
+<!--googleoff: snippet-->
+<table width="100%" class="dxksst_table">
+<tr>
+<td align="right">本楼：</td>
+<td width="105px" align="right">
+<a href="forum.php?mod=misc&amp;action=postreview&amp;do=support&amp;tid=780970&amp;pid=16692117&amp;hash=81a3a904" onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;" onmouseover="this.title = ($('review_support_16692117').innerHTML ? $('review_support_16692117').innerHTML : 0) + ' !activity_member_unit! !support_reply!'" style="text-decoration: none;">
+<font class="local_vote_icon" color="#ff6600">&#128077;</font>
+</a>
+&nbsp;
+<i id="rec_add_percent_16692117">0%</i>&nbsp;<i color="#497B89">(<i id="rec_add_16692117">0</i>)</i>
+</td>
+<td align="center" width="120px;">
+<div class="dxksst_pbg_new" align="left">
+<div class="dxksst_pbr_left" id="rec_add_bar_16692117" style="width: 0%; background-color:#ff6600">&nbsp;</div>
+<div class="dxksst_pbr_right" id="rec_sub_bar_16692117" style="width: 0%; background-color:#497b89">&nbsp;</div>
+</div>
+</td>
+<td width="105px" align="left">
+<i id="rec_sub_percent_16692117">0%</i>&nbsp;<i color="#497B89">(<i id="rec_sub_16692117">0</i>)</i>
+&nbsp;
+<a href="forum.php?mod=misc&amp;action=postreview&amp;do=against&amp;tid=780970&amp;pid=16692117&amp;hash=81a3a904" onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;" onmouseover="this.title = ($('review_against_16692117').innerHTML ? $('review_against_16692117').innerHTML : 0) + ' !activity_member_unit! !against_reply!'" style="text-decoration: none;">
+<font class="local_vote_icon" color="#497b89">&#128078;</font>
+</a>
+</td>
+</tr>
+<tr style="padding-top:10px;">
+<td align="right">全局：</td>
+<td width="140px" align="right">&#128077; &nbsp;&nbsp;<i id="upvote_percent_16692117">100%</i>&nbsp;<i color="#497B89">(<i id="upvote_16692117">1</i>)</i></td>
+<td align="center" width="120px;">
+<div class="dxksst_pbg_new" align="left" title="0%">
+<div class="dxksst_pbr_left" id="upvote_bar_16692117" style="width: 100%; background-color:#ff6600">&nbsp;</div>
+<div class="dxksst_pbr_right" id="downvote_bar_16692117" style="width: 0%; background-color:#497b89">&nbsp;</div>
+</div>
+</td>
+<td width="140px" align="left"><i id="downvote_percent_16692117">0%</i>&nbsp;<i color="#497B89">(<i id="downvote_16692117">0</i>)</i>&nbsp;&nbsp;&nbsp; &#128078;</td>
+</tr>
+</table>
+<div align="right">
+</div>
+<!--googleon: snippet-->
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tr><td class="t_f" id="postmessage_16692117" itemprop="articleBody">
+楼主写的好详细！赞！</td></tr></table>
+</div>
+<div id="comment_16692117" class="cm">
+</div>
+<div id="post_rate_div_16692117"></div>
+</div>
+</div>
+</td></tr>
+<tr><td class="plc plm">
+</td>
+</tr>
+<tr id="_postposition16692117"></tr>
+<tr>
+<td class="pls"></td>
+<td class="plc" style="overflow:visible;">
+<div class="po hin">
+<div class="pob cl">
+<em>
+<a class="fastre" href="forum.php?mod=post&amp;action=reply&amp;fid=28&amp;tid=780970&amp;repquote=16692117&amp;extra=&amp;page=1" onclick="showWindow('reply', this.href)">回复</a>
+<div style="display: none">
+<a class="replyadd" href="forum.php?mod=misc&amp;action=postreview&amp;do=support&amp;tid=780970&amp;pid=16692117&amp;hash=81a3a904" onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;" onmouseover="this.title = ($('review_support_16692117').innerHTML ? $('review_support_16692117').innerHTML : 0) + ' 人 支持'">支持 <span id="review_support_16692117"></span></a>
+<a class="replysubtract" href="forum.php?mod=misc&amp;action=postreview&amp;do=against&amp;tid=780970&amp;pid=16692117&amp;hash=81a3a904" onclick="ajaxmenu(this, 3000, 1, 0, '43', '');return false;" onmouseover="this.title = ($('review_against_16692117').innerHTML ? $('review_against_16692117').innerHTML : 0) + ' 人 反对'">反对 <span id="review_against_16692117"></span></a>
+</div>
+</em>
+<p>
+<a href="javascript:;" id="mgc_post_16692117" onmouseover="showMenu(this.id)" class="showmenu">使用道具</a>
+<a href="javascript:;" onclick="showWindow('rate', 'forum.php?mod=misc&action=rate&tid=780970&pid=16692117', 'get', -1);return false;">评分</a>
+<a href="home.php?mod=space&amp;do=friend&amp;view=blacklist&amp;bname=Maggie-----zy" target="_blank">拉黑</a>
+<a href="javascript:;" onclick="showWindow('miscreport16692117', 'misc.php?mod=report&rtype=post&rid=16692117&tid=780970&fid=28', 'get', -1);return false;">举报</a>
+</p>
+<ul id="mgc_post_16692117_menu" class="p_pop mgcmn" style="display: none;">
+</ul>
+<script type="text/javascript" reload="1">checkmgcmn('post_16692117')</script>
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</table>
+</div>
+<div id="postlistreply" class="pl"><div id="post_new" class="viewthread_table" style="display: none"></div></div>
+</div>
+<form method="post" autocomplete="off" name="modactions" id="modactions">
+<input type="hidden" name="formhash" value="81a3a904" />
+<input type="hidden" name="optgroup" />
+<input type="hidden" name="operation" />
+<input type="hidden" name="listextra" value="" />
+<input type="hidden" name="page" value="1" />
+</form>
+<div class="pgs mtm mbm cl">
+<span class="pgb y" id="visitedforumstmp" onmouseover="$('visitedforums').id = 'visitedforumstmp';this.id = 'visitedforums';showMenu({'ctrlid':this.id,'pos':'21'})"><a href="forum-28-1.html">返回列表</a></span>
+<a id="newspecialtmp" onmouseover="$('newspecial').id = 'newspecialtmp';this.id = 'newspecial';showMenu({'ctrlid':this.id})" onclick="location.href='forum.php?mod=post&action=newthread&fid=28';return false;" href="javascript:;" title="发新帖"><img src="static/image/common/pn_post.png" alt="发新帖" /></a>
+<a id="post_replytmp" onclick="showWindow('reply', 'forum.php?mod=post&action=reply&fid=28&tid=780970')" href="javascript:;" title="回复"><img src="static/image/common/pn_reply.png" alt="回复" /></a>
+</div>
+<div id="diyfastposttop" class="area"></div>
+<script type="text/javascript">
+var postminchars = parseInt('8');
+var postmaxchars = parseInt('800000');
+var disablepostctrl = parseInt('0');
+</script>
+<div id="f_pst" class="pl bm bmw">
+<form method="post" autocomplete="off" id="fastpostform" action="forum.php?mod=post&amp;action=reply&amp;fid=28&amp;tid=780970&amp;extra=&amp;replysubmit=yes&amp;infloat=yes&amp;handlekey=fastpost" onSubmit="
+// TODO Howard 11/3/2015
+var sbtn = $('fastpostsubmit');
+sbtn.disabled = true;
+sbtn.innerHTML = ' <strong>回复发表中...</strong> ';
+sbtn.setAttribute('background', sbtn.style.background);  
+sbtn.setAttribute('bordercolor', sbtn.style.borderColor);
+sbtn.style.background = '#C7C7C7'; 
+sbtn.style.borderColor = '#8B8B8B'; 
+var form = this;
+
+var isValid = fastpostvalidate(form, null, 0);
+// if(!isValid) reoverBtn();
+setTimeout(function() { 
+  reoverBtn();
+}, 2000);
+
+return isValid;
+
+">
+<table cellspacing="0" cellpadding="0">
+<tr>
+<td class="pls">
+<div class="avatar avtm"><img src="https://avatar.1point3acres.cn/000/66/27/72_avatar_middle.jpg!c?m=1" /></div>
+<dl class="profile" style="padding-left:10px;">选择马甲发帖：<br>
+<select name="majiauid" id="majiauid" onchange="putValueTosoinput()">
+<option value=662772>siqif</option>
+</select>
+<input type="text" name="soinput" placeholder="-输入搜索马甲-" id="soinput" onchange="soinputValue()" style="width:80px; height: 13px; /*position: absolute;left: 8px;top: 8px;*/display:none; " />
+<div style="width:80px;border:1px solid #ccc;display:none; " id="soDIV"></div>
+</dl>
+<script type="text/javascript">
+function putValueTosoinput(){
+return '';
+var majiauid= document.getElementById("majiauid");
+var perpage=majiauid.options[majiauid.selectedIndex].text;
+var soinput=document.getElementById("soinput");
+soinput.value=perpage;
+}
+
+function soinputValue(){
+var soinput=document.getElementById("soinput").value;
+var majiauid= document.getElementById("majiauid");
+var options=majiauid.getElementsByTagName("option");
+var div=document.getElementById("soDIV");
+div.innerHTML="";
+var a = 0;
+for(var i=options.length-1;i>=1;i--){
+var optionText=options[i].text;
+if(optionText.indexOf(soinput) >= 0){
+div.style.display='block';
+div.innerHTML+="<span style='font-size: 12px;' onclick='getVlaue(this)'>"+optionText+"</span><br/>";
+a++;
+}
+}
+if(a==0){
+div.style.display='none';
+}
+}
+
+    function getVlaue(obj){
+var majiauid= document.getElementById("majiauid");
+var options=majiauid.getElementsByTagName("option");
+var div=document.getElementById("soDIV");
+for(var i=options.length-1;i>=1;i--){
+var optionText=options[i].text;
+var optionValue=options[i].value;
+if(obj.innerHTML==optionText){
+majiauid.value=optionValue;
+document.getElementById("soinput").value=optionText;
+div.style.display='none';
+div.innerHTML="";
+}
+        }   
+    }
+
+</script>
+<div style="height:10px;">&nbsp;</div>
+</td>
+<td class="plc">
+<span id="fastpostreturn"></span>
+<div class="cl">
+<div id="fastposteditor">
+<div class="tedt mtn">
+<div class="bar">
+<span class="y">
+<a href="forum.php?mod=post&amp;action=reply&amp;fid=28&amp;tid=780970" onclick="return switchAdvanceMode(this.href)">高级模式</a>
+</span><script src="data/cache/seditor.js?ROu" type="text/javascript"></script>
+<div class="fpd">
+<a href="javascript:;" title="文字加粗" class="fbld" onclick="seditor_insertunit('fastpost', '[b]', '[/b]');doane(event);">B</a>
+<a href="javascript:;" title="设置文字颜色" class="fclr" id="fastpostforecolor" onclick="showColorBox(this.id, 2, 'fastpost');doane(event);">Color</a>
+<a id="fastpostimg" href="javascript:;" title="图片" class="fmg" onclick="seditor_menu('fastpost', 'img');doane(event);">Image</a>
+<a id="fastposturl" href="javascript:;" title="添加链接" class="flnk" onclick="seditor_menu('fastpost', 'url');doane(event);">Link</a>
+<a id="fastpostquote" href="javascript:;" title="引用" class="fqt" onclick="seditor_menu('fastpost', 'quote');doane(event);">Quote</a>
+<a id="fastpostcode" href="javascript:;" title="代码" class="fcd" onclick="seditor_menu('fastpost', 'code');doane(event);">Code</a>
+<script src="data/cache/at.js?ROu" type="text/javascript"></script>
+<a id="fastpostat" href="javascript:;" title="@朋友" class="fat" onclick="seditor_menu('fastpost', 'at');doane(event);">@朋友</a>
+<span class="pipe z">|</span><span id="spanButtonPlaceholder">上传</span></div></div>
+<div class="area">
+<textarea rows="6" cols="80" name="message" id="fastpostmessage" onKeyDown="seditor_ctlent(event, 'fastpostvalidate($(\'fastpostform\'))');" tabindex="4" class="pt"></textarea>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+var editorid = '';
+var ATTACHNUM = {'imageused':0,'imageunused':0,'attachused':0,'attachunused':0}, ATTACHUNUSEDAID = new Array(), IMGUNUSEDAID = new Array();
+</script>
+<input type="hidden" name="posttime" id="posttime" value="1648824062" />
+<div class="upfl">
+<table cellpadding="0" cellspacing="0" border="0" id="attach_tblheader" style="display: none;">
+<tr>
+<td>点击附件文件名添加到帖子内容中</td>
+<td class="atds">描述</td>
+<td class="attv">
+阅读权限
+<img src="static/image/common/faq.gif" alt="Tip" class="vm" onmouseover="showTip(this)" tip="阅读权限按由高到低排列，高于或等于选中组的用户才可以阅读" />
+</td>
+<td class="attc"></td>
+</tr>
+</table>
+<div class="fieldset flash" id="attachlist"></div>
+<script src="data/cache/upload.js?ROu" type="text/javascript"></script><script type="text/javascript">
+var upload = new SWFUpload({
+upload_url: "https://www.1point3acres.com/bbs/misc.php?mod=swfupload&action=swfupload&operation=upload&fid=28",
+post_params: {"uid" : "662772", "hash":"56c48f1098c7f0703d773730d3528900"},
+file_size_limit : "10240",
+file_types : "*.xls;*.xlsx;*.doc;*.docx;*.ppt;*.pptx;*.pdf;*.zip;*.rar;*.tar;*.gz;*.bzip2;*.gif;*.jpg;*.jpeg;*.png",
+file_types_description : "All Support Formats",
+file_upload_limit : 100,
+file_queue_limit : 0,
+swfupload_preload_handler : preLoad,
+swfupload_load_failed_handler : loadFailed,
+file_dialog_start_handler : fileDialogStart,
+file_queued_handler : fileQueued,
+file_queue_error_handler : fileQueueError,
+file_dialog_complete_handler : fileDialogComplete,
+upload_start_handler : uploadStart,
+upload_progress_handler : uploadProgress,
+upload_error_handler : uploadError,
+upload_success_handler : uploadSuccess,
+upload_complete_handler : uploadComplete,
+button_image_url : "static/image/common/uploadbutton_small.png",
+button_placeholder_id : "spanButtonPlaceholder",
+button_width: 17,
+button_height: 25,
+button_cursor:SWFUpload.CURSOR.HAND,
+button_window_mode: "transparent",
+custom_settings : {
+progressTarget : "attachlist",
+uploadSource: 'forum',
+uploadType: 'attach',
+maxSizePerDay: 52428800,
+maxAttachNum: 100,
+uploadFrom: 'fastpost'
+},
+debug: false
+});
+</script>
+</div>
+<input type="hidden" name="formhash" value="81a3a904" />
+<input type="hidden" name="usesig" value="1" />
+<input type="hidden" name="subject" value="  " />
+<div style="line-height:15px; background:#fff7a0; border:#FF9A9A 1px dashed; border-radius:5px; font-size:12px;padding:5px 10px; clear:both; margin-top:10px;"><FONT color="#ff6600" size="2">隐私提醒：</FONT>
+<ul>
+<li>&#9745; 禁止发布广告，拉群，贴个人联系方式：找人请去&#128279;<a href="https://www.1point3acres.com/bbs/forum-70-1.html" target="_blank">同学同事飞友</a>，拉群请去&#128279;<a href="https://www.1point3acres.com/bbs/forum-142-1.html" target="_blank">拉群结伴</a>，广告请去&#128279;<a href="https://www.1point3acres.com/bbs/forum-225-1.html" target="_blank">跳蚤市场</a>,和 &#128279;<a href="https://www.1point3acres.com/bbs/forum-224-1.html" target="_blank">租房广告|找室友</a></li>
+<li>&#9745; 论坛内容在发帖 30 分钟内可以编辑，过后则不能删帖。为防止被骚扰甚至人肉，不要公开留微信等联系方式，如有需求请以论坛私信方式发送。</li>
+<li>&#9745; 干货版块可免费使用 &#128279;<a href="https://tools.1point3acres.com/thread" target="_blank">超级匿名</a>：面经（美国面经、中国面经、数科面经、PM面经），抖包袱（美国、中国）和录取汇报、定位选校版</li>
+<li>&#9745; 查阅全站 &#128279;<a href="http://www.1point3acres.com/bbs/thread-405991-1-1.html" target="_blank">各种匿名方法</a> </li>
+</ul>
+</div> <p class="ptm pnpost">
+<a href="home.php?mod=spacecp&amp;ac=credit&amp;op=rule&amp;fid=28" class="y" target="_blank">本版积分规则</a>
+<button type="submit" name="replysubmit" id="fastpostsubmit" class="pn pnc vm" value="replysubmit" tabindex="5"><strong>发表回复</strong></button>
+<input type="file" id="saya_uploader" multiple style="display: none;" onChange="sayauploadfunction(upload,'attach',this.files)">
+<script src="./static/js/forum_post.js?ROu" type="text/javascript"></script>
+<script type="text/javascript">
+if(sayaQuery("#SWFUpload_0").length>0){
+sayaQuery("#SWFUpload_0").replaceWith('<a href="#" onClick="return ul();" title="HTML5上传附件" style="background-position: 0 0; margin:2px 5px 0 0; width:20px; height:20px; background-image:url(./static/image/editor/icons/attach.png); background-size: contain; line-height:20px; overflow: hidden; text-indent:-9999px"></a>');
+}else{
+sayaQuery("#spanButtonPlaceholder").replaceWith('<a href="#" onClick="return ul();" title="HTML5上传附件" style="background-position: 0 0px; margin:2px 5px 0 0; width:20px; height:20px; background-image:url(./static/image/editor/icons/attach.png); background-size: contain; line-height:20px; overflow: hidden; text-indent:-9999px"></a>');
+}
+var imgexts = 'jpg, jpeg, gif, png';
+function ul(){
+sayaQuery('#saya_uploader').click();
+return false;
+}
+</script>
+<label for="fastpostrefresh"><input id="fastpostrefresh" type="checkbox" class="pc" />回帖后跳转到最后一页</label>
+<script type="text/javascript">if(getcookie('fastpostrefresh') == 1) {$('fastpostrefresh').checked=true;}</script>
+</p>
+</td>
+</tr>
+</table>
+</form>
+</div>
+<script type="text/javascript">$("postlist").innerHTML = $("postlist").innerHTML.replace(/<a\s.*?href="forum.php\?mod=attachment([^\"]+)"/ig, "<a href=\"plugin.php?id=attachcenter:goto$1\"");</script>
+<div id="visitedforums_menu" class="p_pop blk cl" style="display: none;">
+<table cellspacing="0" cellpadding="0">
+<tr>
+<td id="v_forums">
+<h3 class="mbn pbn bbda xg1">浏览过的版块</h3>
+<ul class="xl xl1">
+<li><a href="forum-259-1.html">数科面经</a></li><li><a href="forum-336-1.html">产品经理</a></li><li><a href="forum-128-1.html">公开课</a></li><li><a href="forum-172-1.html">数据科学</a></li><li><a href="forum-91-1.html">学习圈</a></li><li><a href="forum-302-1.html">机器学习</a></li><li><a href="forum-98-1.html">职场达人</a></li><li><a href="forum-80-1.html">缘来如此</a></li><li><a href="forum-255-1.html">学术学习</a></li></ul>
+</td>
+</tr>
+</table>
+</div>
+<div id="md_18_menu" class="tip tip_4" style="display: none;">
+<div class="tip_horn"></div>
+<div class="tip_c">
+<h4>cs</h4>
+<p>CS</p>
+</div>
+</div>
+<div id="md_38_menu" class="tip tip_4" style="display: none;">
+<div class="tip_horn"></div>
+<div class="tip_c">
+<h4>西岸</h4>
+<p>CA, WA, Oregon, Alaska, Hawaii</p>
+</div>
+</div>
+<script type="text/javascript">
+new lazyload();
+</script>
+<script type="text/javascript">document.onkeyup = function(e){keyPageScroll(e, 0, 0, 'forum.php?mod=viewthread&tid=780970', 1);}</script>
+</div>
+<div id="sd" class="sd overflow-visible">
+<div class="drag">
+<div id="diy2" class="area"><div id="frameDk9R4P" class=" frame move-span cl frame-1"><div id="frameDk9R4P_left" class="column frame-1-c"><div id="frameDk9R4P_left_temp" class="move-span temp"></div><div id="portal_block_455" class="block move-span"><div id="portal_block_455_content" class="dxb_bc"><div class="module cl slidebox carousel-1p3a" timestep="5000" style="height:220px">
+<ul class="slideshow"><li style="width: 100%; ">
+<a href="thread-876976-1-1.html" target="_blank"><picture>
+ <source type="image/webp" data-srcset="https://oss.1point3acres.cn/daily_top/202203/31/204554jjepvsfwgs4qxq4q.jpg!w" class="lazyload object-contain" width="100%" height="200" />
+<img data-src="https://oss.1point3acres.cn/daily_top/202203/31/204554jjepvsfwgs4qxq4q.jpg!d" class="lazyload object-contain" width="100%" height="221" />
+</picture>
+<span class="carousel-title">地里的『黑名单』功能介绍</span>
+</a>
+</li><li style="width: 100%; ">
+<a href="thread-876278-1-1.html" target="_blank"><picture>
+<source type="image/webp" data-srcset="https://oss.1point3acres.cn/daily_top/202203/31/111458co3fejuxwzivotuz.jpeg!w" class="lazyload object-contain" width="100%" height="200" />
+<img data-src="https://oss.1point3acres.cn/daily_top/202203/31/111458co3fejuxwzivotuz.jpeg!d" class="lazyload object-contain" width="100%" height="221" />
+</picture>
+<span class="carousel-title">【manager视角】谈谈我对亚麻performance management文化的看法</span>
+</a>
+</li><li style="width: 100%; ">
+<a href="thread-877095-1-1.html" target="_blank"><picture>
+<source type="image/webp" data-srcset="https://oss.1point3acres.cn/daily_top/202204/01/103016jnmgmi4sy8o46cbd.jpg!w" class="lazyload object-contain" width="100%" height="200" />
+<img data-src="https://oss.1point3acres.cn/daily_top/202204/01/103016jnmgmi4sy8o46cbd.jpg!d" class="lazyload object-contain" width="100%" height="221" />
+</picture>
+<span class="carousel-title">工作十三年第一次跳槽，谷歌L8 offer</span>
+</a>
+</li><li style="width: 100%; ">
+<a href="thread-877055-1-1.html" target="_blank"><picture>
+<source type="image/webp" data-srcset="https://oss.1point3acres.cn/daily_top/202204/01/102031rt11qidsddqnd2ky.jpg!w" class="lazyload object-contain" width="100%" height="200" />
+<img data-src="https://oss.1point3acres.cn/daily_top/202204/01/102031rt11qidsddqnd2ky.jpg!d" class="lazyload object-contain" width="100%" height="221" />
+</picture>
+<span class="carousel-title">Roblox加入补偿大军，给员工补发股票</span>
+</a>
+</li><li style="width: 100%; ">
+<a href="thread-875738-1-1.html" target="_blank"><picture>
+<source type="image/webp" data-srcset="https://oss.1point3acres.cn/daily_top/202111/17/019489wbnjvpgunihhykq.png!w" class="lazyload object-contain" width="100%" height="200" />
+<img data-src="https://oss.1point3acres.cn/daily_top/202111/17/019489wbnjvpgunihhykq.png!d" class="lazyload object-contain" width="100%" height="221" />
+</picture>
+<span class="carousel-title">默默掉眼泪 不是码农不是stem真的好难</span>
+</a>
+</li><li style="width: 100%; ">
+<a href="thread-876643-1-1.html" target="_blank"><picture>
+<source type="image/webp" data-srcset="https://oss.1point3acres.cn/daily_top/202110/12/234828xzdbeczogzev3ten.png!w" class="lazyload object-contain" width="100%" height="200" />
+<img data-src="https://oss.1point3acres.cn/daily_top/202110/12/234828xzdbeczogzev3ten.png!d" class="lazyload object-contain" width="100%" height="221" />
+</picture>
+<span class="carousel-title">Day 1 绿卡真的可以Day 1 吗 - PERM科普帖</span>
+</a>
+</li><li style="width: 100%; ">
+<a href="https://news.1point3acres.com/news/24856?utm_source=bbs&utm_medium=daily_top" target="_blank"><picture>
+<source type="image/webp" data-srcset="https://oss.1point3acres.cn/daily_top/202204/01/11124gphoeux9cyxetmqe.jpg!w" class="lazyload object-contain" width="100%" height="200" />
+<img data-src="https://oss.1point3acres.cn/daily_top/202204/01/11124gphoeux9cyxetmqe.jpg!d" class="lazyload object-contain" width="100%" height="221" />
+</picture>
+<span class="carousel-title">有钱人的隔离生活，确实没有想到</span>
+</a>
+</li><li style="width: 100%; ">
+<a href="thread-824121-1-1.html" target="_blank"><picture>
+<source type="image/webp" data-srcset="https://oss.1point3acres.cn/daily_top/202203/31/224923ho2ukswaa4sluif1.png!w" class="lazyload object-contain" width="100%" height="200" />
+<img data-src="https://oss.1point3acres.cn/daily_top/202203/31/224923ho2ukswaa4sluif1.png!d" class="lazyload object-contain" width="100%" height="221" />
+</picture>
+<span class="carousel-title">请问哪里有卖稍硬一点的床垫</span>
+</a>
+</li><li style="width: 100%; ">
+<a href="thread-875945-1-1.html" target="_blank"><picture>
+<source type="image/webp" data-srcset="https://oss.1point3acres.cn/daily_top/202203/31/105939q2bn1ox0u1tjb6pr.jpg!w" class="lazyload object-contain" width="100%" height="200" />
+<img data-src="https://oss.1point3acres.cn/daily_top/202203/31/105939q2bn1ox0u1tjb6pr.jpg!d" class="lazyload object-contain" width="100%" height="221" />
+</picture>
+<span class="carousel-title">湾区统计上大家真的都还买得起房吗</span>
+</a>
+</li><li style="width: 100%; ">
+<a href="thread-872233-1-1.html" target="_blank"><picture>
+<source type="image/webp" data-srcset="https://oss.1point3acres.cn/daily_top/202009/23/1645449zqq6zim62vuex4m.jpeg!w" class="lazyload object-contain" width="100%" height="200" />
+<img data-src="https://oss.1point3acres.cn/daily_top/202009/23/1645449zqq6zim62vuex4m.jpeg!d" class="lazyload object-contain" width="100%" height="221" />
+</picture>
+<span class="carousel-title">UIUC@MSIM转码推荐</span>
+</a>
+</li></ul>
+</div>
+<script type="text/javascript">
+runslideshow();
+</script></div></div><div id="portal_block_479" class="block move-span"><div id="portal_block_479_content" class="dxb_bc"><div class="portal_block_summary"><div style="margin:auto;text-align:center;height:250px;" id="ad-thread-side-small">
+<script>
+    if (typeof(tid) === 'number' && tid % 8 < 7) {
+        var apSmallId = document.getElementById('ad-thread-side-small').offsetWidth === 300 ? 'bfb5f1bc-0bf5-4da4-8b5b-b5963771d0f9' : '168d0333-b63e-403f-8759-58d655cdcbf9';
+        (function(){
+            var adDiv = document.createElement('div');
+            adDiv.id = apSmallId;
+            adDiv.className = '_ap_apex_ad';
+            document.getElementById('ad-thread-side-small').appendChild(adDiv);
+        })();
+        var adpushup = window.adpushup  = window.adpushup || {que:[]};
+        adpushup.que.push(function() {
+            adpushup.triggerAd(apSmallId);
+        });
+    } else {
+        (function(){
+            var ins = document.createElement('ins');
+            ins.className = 'adsbygoogle';
+            ins.style = 'display:block;width:100%;height:250px;';
+            ins.dataset.adClient = 'ca-pub-4132348358369185';
+            ins.dataset.adSlot = typeof(tid) === 'number' && tid % 3 === 2 && document.getElementById('ad-thread-side-small').offsetWidth === 300 ? '2999029167' : '1410211404';
+            document.getElementById('ad-thread-side-small').appendChild(ins);
+        })();
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    }
+</script>
+</div></div></div></div><div id="portal_block_507" class="block move-span"><div id="portal_block_507_content" class="dxb_bc"><div class="card-1p3a">
+<div class="title-1p3a" style="justify-content: space-between;">
+<div class="flex items-center">
+<a href="https://blog.1point3acres.com/" target="_blank"><img src="https://oss.1point3acres.cn/static/image/common/logo_wx.png!ss" class="w-6 h-6 mr-2" /></a>
+<strong class="font-semibold text-base text-#ff6600">留学公众号</strong>
+</div>
+<style>
+    .wx-widget-qr-container:hover #qrcode-tooltip {
+      display: flex !important;
+    }
+  </style>
+<div class="wx-widget-qr-container relative text-center my-1">
+<div class="leading-tight cursor-pointer">关注公众号 >></div>
+<div id="qrcode-tooltip" class="hidden absolute top-0 bg-white shadow-md flex justify-center" style="left:-60px;">
+<div class="w-32 m-3">
+<img class="w-32 h-32" src="https://oss.1point3acres.cn/static/image/common/wq_liuxue.jpg!p" />
+<figcaption>留学申请公众号</figcaption>
+</div>
+</div>
+</div>
+</div>
+<div class="module cl">
+<ol class="list-none space-y-2 p-3"><li class="flex items-center">
+<a href="https://blog.1point3acres.com/apply-phd/" target="_blank"><img src="https://blog.1point3acres.com/wp-content/uploads/2022/03/WKSMR1Wj-300x128.jpeg" class="w-10 h-10 rounded mr-1" /></a>
+<a href="https://blog.1point3acres.com/apply-phd/" target="_blank" class="text-xs hover:text-active ml-2">
+申请PhD被拒？再战顺利斩获offer！！
+</a>
+</li><li class="flex items-center">
+<a href="https://blog.1point3acres.com/wire-fraud-targeting-foreign-students/" target="_blank"><img src="https://blog.1point3acres.com/wp-content/uploads/2022/02/3rAg3bkZ-300x128.jpeg" class="w-10 h-10 rounded mr-1" /></a>
+<a href="https://blog.1point3acres.com/wire-fraud-targeting-foreign-students/" target="_blank" class="text-xs hover:text-active ml-2">
+专骗中国人？华人教授欺诈中国留学生，获利
+</a>
+</li><li class="flex items-center">
+<a href="https://blog.1point3acres.com/active-shooter-situation-prompts-shelter-place-order-virginia-college/" target="_blank"><img src="https://blog.1point3acres.com/wp-content/uploads/2022/02/NPNZCkib-300x128.jpeg" class="w-10 h-10 rounded mr-1" /></a>
+<a href="https://blog.1point3acres.com/active-shooter-situation-prompts-shelter-place-order-virginia-college/" target="_blank" class="text-xs hover:text-active ml-2">
+悲剧重演！弗吉尼亚理工发生大规模枪击案，
+</a>
+</li><li class="flex items-center">
+<a href="https://blog.1point3acres.com/how-i-get-into-top-ranked-college-phd-program/" target="_blank"><img src="https://blog.1point3acres.com/wp-content/uploads/2021/03/IlEpzHGx-300x128.jpeg" class="w-10 h-10 rounded mr-1" /></a>
+<a href="https://blog.1point3acres.com/how-i-get-into-top-ranked-college-phd-program/" target="_blank" class="text-xs hover:text-active ml-2">
+【干货分享】非名校本科生，我是如何拿下美
+</a>
+</li><li class="flex items-center">
+<a href="https://blog.1point3acres.com/gmat-preparation-og-guide-experience/" target="_blank"><img src="https://blog.1point3acres.com/wp-content/uploads/2021/03/GMAT封面-300x189.png" class="w-10 h-10 rounded mr-1" /></a>
+<a href="https://blog.1point3acres.com/gmat-preparation-og-guide-experience/" target="_blank" class="text-xs hover:text-active ml-2">
+最新 | 北美GMAT考试流程和备考经验分享！
+</a>
+</li><ol>
+</div>
+</div></div></div><div id="portal_block_482" class="block move-span"><div id="portal_block_482_content" class="dxb_bc"><div class="card-1p3a">
+<div class="title-1p3a" style="justify-content: space-between;">
+<a href="https://blog.1point3acres.com" target="_blank">
+<div class="flex items-center">
+<img src="https://oss.1point3acres.cn/static/image/common/logo_blog.png!ss" class="w-6 h-6 mr-2" />
+<strong class=" font-semibold text-base text-#ff6600">生活攻略</strong>
+</div>
+</a>
+<a href="https://blog.1point3acres.com" target="_blank">查看更多 >></span></a>
+</div>
+<div class="module cl">
+<ol class="list-none space-y-2 p-3"><li class="flex items-center">
+<a href="https://blog.1point3acres.com/retirement-apartment-recommendation-medical-insurance/" target="_blank"><img src="https://blog.1point3acres.com/wp-content/uploads/2021/07/封面-300x200.jpg" class="w-10 h-10 rounded mr-1" /></a>
+<a href="https://blog.1point3acres.com/retirement-apartment-recommendation-medical-insurance/" target="_blank" class="text-13px text-#424242 hover:text-active ml-2">
+美国养老问题：各州政策、医疗保险、养老机
+</a>
+</li><li class="flex items-center">
+<a href="https://blog.1point3acres.com/baby-staff-sleep-dinning/" target="_blank"><img src="https://blog.1point3acres.com/wp-content/uploads/2021/05/宝宝-300x200.png" class="w-10 h-10 rounded mr-1" /></a>
+<a href="https://blog.1point3acres.com/baby-staff-sleep-dinning/" target="_blank" class="text-13px text-#424242 hover:text-active ml-2">
+【超全】美国妈妈必备母婴用品（中篇）！睡
+</a>
+</li><li class="flex items-center">
+<a href="https://blog.1point3acres.com/covid-19-vaccine-instruction-recommendation/" target="_blank"><img src="https://blog.1point3acres.com/wp-content/uploads/2021/04/封面-1-300x200.jpeg" class="w-10 h-10 rounded mr-1" /></a>
+<a href="https://blog.1point3acres.com/covid-19-vaccine-instruction-recommendation/" target="_blank" class="text-13px text-#424242 hover:text-active ml-2">
+美国新冠疫苗对比：辉瑞、Moderna、强生，
+</a>
+</li><li class="flex items-center">
+<a href="https://blog.1point3acres.com/baby-things/" target="_blank"><img src="https://blog.1point3acres.com/wp-content/uploads/2021/05/封面-2-300x231.jpeg" class="w-10 h-10 rounded mr-1" /></a>
+<a href="https://blog.1point3acres.com/baby-things/" target="_blank" class="text-13px text-#424242 hover:text-active ml-2">
+【超全】美国妈妈必备母婴用品（上篇）！宝
+</a>
+</li><li class="flex items-center">
+<a href="https://blog.1point3acres.com/recommended-goods-for-self-defense/" target="_blank"><img src="https://blog.1point3acres.com/wp-content/uploads/2021/04/辣椒喷雾-300x289.png" class="w-10 h-10 rounded mr-1" /></a>
+<a href="https://blog.1point3acres.com/recommended-goods-for-self-defense/" target="_blank" class="text-13px text-#424242 hover:text-active ml-2">
+【超全】适合携带的防身物推荐！以及家中必
+</a>
+</li><ol>
+</div>
+</div></div></div><div id="portal_block_476" class="sticky-1p3a block move-span"><div id="portal_block_476_content" class="dxb_bc"><div class="portal_block_summary"><div style="height:20px;background-color:#f9f9f9;"></div>
+<div style="margin:auto;text-align:center;height:600px;" id="ad-thread-side-big">
+<script>
+    if (typeof(tid) === 'number' && tid % 8 < 7) {
+        var apLargeId = document.getElementById('ad-thread-side-big').offsetWidth === 300 ? 'fe3263af-e28b-4543-b59f-de7000291d78' : 'ef997e26-58d4-4b6a-8fd0-ac471680014d';
+        (function(){
+            var adDiv = document.createElement('div');
+            adDiv.id = apLargeId;
+            adDiv.className = '_ap_apex_ad';
+            document.getElementById('ad-thread-side-big').appendChild(adDiv);
+        })();
+        var adpushup = window.adpushup  = window.adpushup || {que:[]};
+		adpushup.que.push(function() {
+			adpushup.triggerAd(apLargeId);
+		});
+    } else {
+        (function(){
+            var ins = document.createElement('ins');
+            ins.className = 'adsbygoogle';
+            ins.style = 'display:block';
+            ins.dataset.adClient = 'ca-pub-4132348358369185';
+            ins.dataset.adSlot = '8834750756';
+            ins.dataset.adFormat = 'auto';
+            ins.dataset.fullWidthResponsive = 'true';
+            document.getElementById('ad-thread-side-big').appendChild(ins);
+        })();
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    }
+</script>
+</div></div></div></div></div></div></div>
+</div>
+</div>
+</div>
+<div class="wp mtn">
+<div id="diy3" class="area"></div>
+</div>
+<script type="text/javascript">
+var relatedlink = [];
+(function(){
+var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function() {
+if (this.readyState == 4 && this.status == 200) {
+relatedlink = JSON.parse(this.responseText);relatedlinks('postmessage_15773776');
+relatedlinks('postmessage_15776100');
+relatedlinks('postmessage_15865554');
+relatedlinks('postmessage_15866741');
+relatedlinks('postmessage_16031476');
+relatedlinks('postmessage_16074840');
+relatedlinks('postmessage_16624941');
+relatedlinks('postmessage_16692117');
+}
+};
+xhr.open("GET", "/bbs/data/cache/relatedlinks.json?ROu");
+xhr.send();
+})();
+</script>
+<script type="text/javascript">
+function succeedhandle_followmod(url, msg, values) {
+var fObj = $('followmod_'+values['fuid']);
+if(values['type'] == 'add') {
+fObj.innerHTML = '不收听';
+fObj.href = 'home.php?mod=spacecp&ac=follow&op=del&fuid='+values['fuid'];
+} else if(values['type'] == 'del') {
+fObj.innerHTML = '收听TA';
+fObj.href = 'home.php?mod=spacecp&ac=follow&op=add&hash=81a3a904&fuid='+values['fuid'];
+}
+}
+fixed_top_nv();
+</script> </div>
+<div><div id="sticky-ad-container" style="position:fixed;bottom:0px;left:0px;width:100%;background-color:rgba(255,255,255,0.8);">
+<div id="ad-bbs-sticky" style="width:728px;height:90px;margin:auto;margin-top:5px;">
+<div id="f4da85c2-7aab-40e8-a34f-c8a574313f7b" class="_ap_apex_ad">
+<script>
+                var adpushup = window.adpushup  = window.adpushup || {que:[]};
+                adpushup.que.push(function() {
+                    adpushup.triggerAd("f4da85c2-7aab-40e8-a34f-c8a574313f7b");
+                });
+            </script>
+</div>
+</div>
+</div>
+<script>
+    if (document.getElementById('ad-bbs-leaderboard-1') || document.getElementById('div-gpt-ad-1622785488118-0')) {
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+        var slotLeaderboard = null;
+
+        googletag.cmd.push(function() {
+            slotLeaderboard = googletag.defineSlot('21995909917/bbs-leaderboard', [[728, 90]], 'ad-bbs-leaderboard-1').setCollapseEmptyDiv(true, true).addService(googletag.pubads());
+            slotPostBottom = googletag.defineSlot('/21995909917/bbs-thread-bottom', [[728, 90], [600, 90]], 'div-gpt-ad-1622785488118-0').setCollapseEmptyDiv(true, true).addService(googletag.pubads());
+            googletag.pubads().disableInitialLoad();
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+
+        !function(a9,a,p,s,t,A,g){if(a[a9])return;function q(c,r){a[a9]._Q.push([c,r])}a[a9]={init:function(){q("i",arguments)},fetchBids:function(){q("f",arguments)},setDisplayBids:function(){},targetingKeys:function(){return[]},_Q:[]};A=p.createElement(s);A.async=!0;A.src=t;g=p.getElementsByTagName(s)[0];g.parentNode.insertBefore(A,g)}("apstag",window,document,"script","//c.amazon-adsystem.com/aax2/apstag.js");
+        apstag.init({
+            pubID: 'cac68d64-8bf9-4a6a-91ad-cc8aea2d6275',
+            adServer: 'googletag',
+            bidTimeout: 2e3
+        });
+        if (document.getElementById('ad-bbs-leaderboard-1')) {
+            apstag.fetchBids({
+                slots: [{
+                    slotID: 'ad-bbs-leaderboard-1',
+                    slotName: '21995909917/bbs-leaderboard',
+                    sizes: [[728, 90]]
+                }]
+            }, () => {
+                googletag.cmd.push(() => {
+                    apstag.setDisplayBids();
+                    googletag.pubads().refresh([slotLeaderboard, slotPostBottom]);
+                });
+            });
+        } else {
+            googletag.cmd.push(() => {
+                googletag.pubads().refresh([slotPostBottom]);
+            });
+        }
+
+        if (document.getElementById('ad-bbs-leaderboard-1')) {
+            googletag.cmd.push(function() {
+                googletag.display('ad-bbs-leaderboard-1');
+            });
+        }
+        if (document.getElementById('div-gpt-ad-1622785488118-0')) {
+            googletag.cmd.push(function() {
+                googletag.display('div-gpt-ad-1622785488118-0');
+            });
+        }
+    }
+</script></div><div><div id="4ae7a3f5-e154-4b89-8299-83a42cd0e6ca" class="_ap_apex_ad" max-height="250">
+<script>
+        var adpushup = window.adpushup  = window.adpushup || {que:[]};
+        adpushup.que.push(function() {
+            adpushup.triggerAd("4ae7a3f5-e154-4b89-8299-83a42cd0e6ca");
+        });
+    </script>
+</div></div>
+<ul id="wq_login_menu" class="p_pop" style="display: none;">
+</ul>
+<script type="text/javascript">
+if(document.getElementById('e_iframe')){
+document.getElementById('e_iframe').contentWindow.document.body.addEventListener('paste', function (event) {
+console.log(event.clipboardData.items);
+for (var i = 0, len = event.clipboardData.items.length; i < len; i++) {
+        var item = event.clipboardData.items[i];
+ 
+        if (item.kind === "string") {
+            item.getAsString(function (str) {
+                // str 鏄幏鍙栧埌鐨勫瓧绗︿覆
+console.log(i,str);
+            })
+        } else if (item.kind === "file") {
+            var pasteFile = item.getAsFile();
+console.log(i,pasteFile);
+            // pasteFile灏辨槸鑾峰彇鍒扮殑鏂囦欢
+        }
+    }
+    var items = event.clipboardData && event.clipboardData.items;
+    var file = null;
+    if (items && items.length) {
+        // 妫�绱㈠壀鍒囨澘items
+        for (var i = 0; i < items.length; i++) {
+            if (items[i].type.indexOf('image') !== -1) {
+                file = items[i].getAsFile();
+var filetypes=file.name.split(".");
+ 		var filetype=filetypes[filetypes.length-1];
+var fs=new Object();
+fs[0]=file;
+sayaQuery("#e_image").click();
+sayauploadfunction(imgUpload,"img",fs);
+                break;
+            }
+        }
+    }
+});
+}
+if(document.getElementById("fastpostmessage")){
+document.getElementById("fastpostmessage").addEventListener('paste', function (event) {
+    var items = event.clipboardData && event.clipboardData.items;
+    var file = null;
+    if (items && items.length) {
+        // 妫�绱㈠壀鍒囨澘items
+        for (var i = 0; i < items.length; i++) {
+            if (items[i].type.indexOf('image') !== -1) {
+                file = items[i].getAsFile();
+var filetypes=file.name.split(".");
+ 		var filetype=filetypes[filetypes.length-1];
+var fs=new Object();
+fs[0]=file;
+sayauploadfunction(upload,"attach",fs);
+                break;
+            }
+        }
+    }
+});
+}
+var oFileSpan = sayaQuery(".drop_upload_box")
+oFileSpan.on("dragenter",function(){
+sayaQuery(this).text("请松开鼠标")
+});
+oFileSpan.on("dragover",function(){
+return false;
+});
+oFileSpan.on("dragleave",function(){
+if(sayaQuery(this).attr("data-ftype")=='img'){
+sayaQuery(this).text("或拖动图片文件到此框内");
+}else{
+sayaQuery(this).text("或拖动文件到此框内");
+}
+});
+oFileSpan.on("drop",function(ev){
+ev.preventDefault();
+var fs = ev.originalEvent.dataTransfer.files;
+if(sayaQuery(this).attr("data-ftype")=="img"){
+if (typeof discuzcode === 'function') {
+discuzcode('image');
+}
+if (typeof switchImagebutton === 'function') {
+switchImagebutton('imgattachlist');
+}
+sayauploadfunction(imgUpload,"img",fs);
+sayaQuery(this).text("或拖动图片文件到此框内");
+}else{
+sayauploadfunction(upload,"attach",fs);
+sayaQuery(this).text("或拖动文件到此框内");
+}
+return false;
+});
+var imgfile=new Array();
+var attachfile=new Array();
+var attachexts=["xls","xlsx","doc","docx","ppt","pptx","pdf","zip","rar","tar","gz","bzip2","gif","jpg","jpeg","png","jpg","jpeg","gif","png"];
+function saya_uploadbutton(type,p){
+switch(type){
+case 'over':
+p.style.backgroundPosition="0px -25px";
+break;
+case 'out':
+p.style.backgroundPosition="0px 0px";
+break;
+case 'down':
+p.style.backgroundPosition="0px -50px";
+break;
+case 'up':
+p.style.backgroundPosition="0px -25px";
+break;
+}
+}
+function ProgressHandlingFunction(e, fileobj, objselect){
+var curr=e.loaded;
+var total=e.total;
+objselect.uploadProgress(fileobj,curr,total)
+}
+var saya_imgupload_id=0;
+var saya_attachupload_id=0;
+var imgexts = 'jpg, jpeg, gif, png';
+var saya_allowimgtype = imgexts.split(', ');
+
+var isIE=window.ActiveXObject || "ActiveXObject" in window;
+function sayauploadfunction(objselect,ftype,filesobj){
+
+if(isIE){
+pre_sayauploadfunction(objselect,ftype,filesobj);
+}else{
+var fileobject=new Object();
+sayaQuery.each(filesobj,function(index,fileobj){
+
+var file=fileobj;
+var filetypes=file.name.split(".");
+ var filetype=filetypes[filetypes.length-1];
+var saya_allowimgtype = imgexts.split(', ');
+ if(saya_allowimgtype.indexOf(filetype.toLowerCase())>=0 && filetype!="gif" && filetype!="bmp" && filetype!="png" ){
+var maxsize=1024000;
+maxsize=(maxsize>0?maxsize:10485760);
+ 	 if(file.size<=1024000){
+  fileobject[index]=fileobj;
+  //pre_sayauploadfunction(objselect,ftype,fileobject);
+ return true;
+ }
+ var img= new Image();
+ var reader = new FileReader(); 
+ reader.readAsDataURL(file); 
+ reader.onload=function(e){
+ img.src=this.result;
+ }
+ 
+ img.onload=function(){
+ var mime_type;
+ 	if(filetype=="png"){
+ 	mime_type = "image/png";
+ 		var pngtype=0;
+var width=img.width;
+ var height=img.height;
+ var rate=0.9;
+var size=file.size;
+
+do{
+if(pngtype){
+var cvs = document.createElement('canvas');
+ cvs.width = width;
+ cvs.height = height;
+ var ctx = cvs.getContext("2d").drawImage(img, 0, 0, cvs.width, cvs.height);
+ var newImageData = cvs.toDataURL("image/jpeg",rate);
+ let arr = newImageData.split(',');
+ let mime = arr[0].match(/:(.*?);/)[1];
+ let suffix = mime.split('/')[1];
+ let bstr = atob(arr[1]);
+ let n = bstr.length;
+ let u8arr = new Uint8Array(n);
+ while (n--) {
+ u8arr[n] = bstr.charCodeAt(n);
+ }
+    		 fileobject[index]=new File([u8arr],file.name+".jpg" , {type: mime});
+size=fileobject[index].size;
+rate=rate*rate;
+}else{
+ var cvs = document.createElement('canvas');
+ width = cvs.width = width*rate;
+ height = cvs.height = height*rate;
+ var ctx = cvs.getContext("2d").drawImage(img, 0, 0, cvs.width, cvs.height);
+ var newImageData = cvs.toDataURL(mime_type,rate);
+ let arr = newImageData.split(',');
+ let mime = arr[0].match(/:(.*?);/)[1];
+ let suffix = mime.split('/')[1];
+ let bstr = atob(arr[1]);
+ let n = bstr.length;
+ let u8arr = new Uint8Array(n);
+ while (n--) {
+ u8arr[n] = bstr.charCodeAt(n);
+ }
+    		 fileobject[index]=new File([u8arr],file.name , {type: mime});
+size=fileobject[index].size;
+}
+}while(size>maxsize);
+ 	
+  //pre_sayauploadfunction(objselect,ftype,fileobject);
+return true;
+ 	}else{
+ 	mime_type = "image/jpeg";
+
+ 	}
+ var width=img.width;
+ var height=img.height;
+ var pswitch=1;
+maxsize=1024000;
+maxsize=(maxsize>0?maxsize:10485760);
+ var size=file.size;
+ var count=1;
+ var rate=0.9;
+ do{
+ 
+ 
+ if(!pswitch){
+ 	 var cvs = document.createElement('canvas');
+ cvs.width = width;
+ cvs.height = height;
+ var ctx = cvs.getContext("2d").drawImage(img, 0, 0);
+ 
+ var newImageData = cvs.toDataURL(mime_type, rate);
+ }else{
+ var resizeRate = Math.min(1, 3072 / width, 3072 / height);
+ 	 var cvs = document.createElement('canvas');
+ cvs.width = width*resizeRate;
+ cvs.height = height*resizeRate;
+ var ctx = cvs.getContext("2d").drawImage(img, 0, 0, cvs.width, cvs.height);
+ var newImageData = cvs.toDataURL(mime_type, rate);
+ }
+ let arr = newImageData.split(',');
+ let mime = arr[0].match(/:(.*?);/)[1];
+ let suffix = mime.split('/')[1];
+ let bstr = atob(arr[1]);
+ let n = bstr.length;
+ let u8arr = new Uint8Array(n);
+ while (n--) {
+ u8arr[n] = bstr.charCodeAt(n);
+ }
+    		 fileobject[index]=new File([u8arr],file.name , {type: mime});
+ size = fileobject[index].size;
+ rate=rate*rate;
+ count++;
+}while(size>maxsize)
+  //pre_sayauploadfunction(objselect,ftype,fileobject);
+return true;
+ 
+ }
+ }else{
+ fileobject[index]=fileobj;
+ //pre_sayauploadfunction(objselect,ftype,fileobject);
+return true;
+ }
+});
+var set_Interval= setInterval(function(){
+var objKeys=Object.keys(fileobject);
+var fileskeys=Object.keys(filesobj);
+if(objKeys.length==filesobj.length || objKeys.length==fileskeys.length){
+pre_sayauploadfunction(objselect,ftype,fileobject);
+
+clearInterval(set_Interval);
+}
+},500);
+}
+
+}
+
+function pre_sayauploadfunction(objselect,ftype,filesobj){
+if(ftype=='img'){
+var saya_files=filesobj;
+var pre_id='SayaUpload_0_'
+}else{
+var saya_files=filesobj;
+var pre_id='SayaUpload_1_'
+}
+  var maxnum=4;
+
+
+  if(100<maxnum && maxnum>0) maxnum=100;
+else maxnum=100;
+
+  if(maxnum>0 && saya_files.length>maxnum){
+  objselect.fileQueueError(null,-100,maxnum);
+  return;
+  }
+  var deleteindex=new Array();
+  sayaQuery.each(saya_files,function(index,fileobj){
+ 
+  if(ftype=='img'){
+  var fileid=saya_imgupload_id;
+  saya_imgupload_id++;
+  }else{
+  var fileid=saya_attachupload_id;
+  saya_attachupload_id++;
+  }
+  fileobj.id=pre_id+fileid;
+  fileobj.index=fileid;
+  objselect.fileQueued(fileobj);
+
+  if(fileobj.size>10485760){
+  objselect.fileQueueError(fileobj,-110);
+  deleteindex.push(index);
+  return true;
+  }else if(fileobj.size==0){
+  objselect.fileQueueError(fileobj,-120);
+  deleteindex.push(index);
+  return true;
+  }
+
+  if(ftype=='img'){
+  	var filetypes=fileobj.name.split(".");
+  	var filetype=filetypes[filetypes.length-1];
+  	if(saya_allowimgtype.indexOf(filetype.toLowerCase())==-1){
+  objselect.fileQueueError(fileobj,-130);
+  deleteindex.push(index);
+  return true;
+  	}
+  }else{
+if(attachexts.length>0){
+  var filetypes=fileobj.name.split(".");
+  	var filetype=filetypes[filetypes.length-1];
+  	if(attachexts.indexOf(filetype.toLowerCase())==-1){
+  objselect.fileQueueError(fileobj,-130);
+  deleteindex.push(index);
+  return true;
+  	}
+  }	 
+  }
+  });
+  sayaQuery.each(saya_files,function(index,fileobj){
+  	  if(deleteindex.length>0){
+  	if(deleteindex.indexOf(index)>-1){
+return true;
+}
+  }
+  objselect.uploadStart(fileobj);
+  sayaQuery("#"+fileobj.id).find(".progressCancel").hide();
+  if(ftype=='img'){
+ imgfile.push(fileobj);
+  }else{
+ attachfile.push(fileobj);
+  }
+  
+  });
+startupload(ftype,objselect);
+  sayaQuery('#saya_imgselect').val("");
+  sayaQuery('#saya_attachselect').val("");
+  }
+function startupload(ftype,objselect){
+if(ftype=='img'){
+ var fileobj=imgfile.shift();
+  }else{
+ var fileobj=attachfile.shift();
+  }
+if(typeof(fileobj)=="undefined"){
+return false;
+}
+  var formData = new FormData();
+  formData.append("Filedata",fileobj);
+  for(var key in objselect.settings.post_params){
+  formData.append(key,objselect.settings.post_params[key]);
+  }
+  //formData.append("hash",objselect.settings.post_params["hash"]);
+  //formData.append("type",objselect.settings.post_params["type"]);
+  //formData.append("uid",objselect.settings.post_params["uid"]);
+  formData.append("Upload","Submit Query");
+  var filename=fileobj.name;
+
+  filename = filename.replace(/\)/g,"&#41;");
+  filename = filename.replace(/\(/g,"&#40;");
+
+  formData.append("Filename",filename);
+  var filetypes=fileobj.name.split(".");
+  var filetype=filetypes[filetypes.length-1];
+  formData.append("filetype","."+filetype);
+  var posturl=objselect.settings.upload_url;
+  sayaQuery.ajax({
+  url:posturl,
+  type:'POST',
+  data: formData,
+  contentType: false,
+  processData: false,
+  xhr: function(){
+  myXhr = sayaQuery.ajaxSettings.xhr();
+  if(myXhr.upload){
+  myXhr.upload.addEventListener('progress',function (event){ProgressHandlingFunction(event,fileobj,objselect);sayaQuery("#"+fileobj.id).find(".progressCancel").hide();}, false);
+  }
+  return myXhr;
+  },
+  success:function(serverdata){
+  if(ftype=='attach') sayaQuery("#attach_tblheader").show();
+  else{
+  if(sayaQuery("#imgattach_notice").length>0){
+  sayaQuery("#imgattach_notice").show();
+  }
+  }
+  objselect.uploadSuccess(fileobj,serverdata);
+  startupload(ftype,objselect);
+  },
+  error:function(XMLHttpRequest, textStatus, errorThrown){
+  objselect.uploadError(fileobj,XMLHttpRequest,textStatus);
+  startupload(ftype,objselect);
+  }
+  });
+}
+ 
+
+</script>
+<div id="forum_side_menu" class="shadow-md">
+<div id="forum-menu-container" class="group flex">
+<div id="forum-menu-button" class="px-px py-0 rounded-r xl:px-0 w-8px xl:w-32px xl:py-2 group-hover:rounded-none">
+<div class="xl:hidden my-8 text-white">
+&gt;
+</div>
+<div class="hidden xl:block text-center"><i class="iconfont icon-icons-menu text-sm xl:text-lg text-white"></i></div>
+<div class="hidden xl:block mt-1 mb-2 px-1 text-base text-white text-center font-semibold leading-snug">论坛导航</div>
+</div>
+</div>
+<script type="text/javascript" src=data/cache/forum_menus.js?ROu></script>
+<script type="text/javascript" src=data/cache/forum_menu_1p3a.js?ROu></script>
+</div>
+<div class="border-0 border-t border-solid border-#f2f2f2 pt-4 bg-white mb-100px">
+<footer class="container-1p3a footer-1p3a flex justify-between text-xs">
+<img src="static/image/common/logo.png" class="left" height="80px" />
+<div>
+<div class="middle flex-1 flex justify-center">
+<div>
+<strong>社区</strong>
+<a href="https://www.1point3acres.com/bbs/start.php" target="_blank">新手指南</a>
+<a href="https://www.1point3acres.com/bbs/misc.php?mod=faq" target="_blank">常见Q&A</a>
+<a href="https://www.1point3acres.com/bbs/forum.php?mod=misc&amp;action=showdarkroom" target="_blank">小黑屋</a>
+</div>
+<div>
+<strong>一亩三分地</strong>
+<a href="https://www.1point3acres.com/" target="_blank">关于我们</a>
+<a href="https://www.1point3acres.com/career" target="_blank">加入团队</a>
+<a href="https://www.1point3acres.com/contact" target="_blank">联系客服</a>
+</div>
+<div>
+<strong>解锁VIP</strong>
+<a href="https://pay.1point3acres.com/bbs/vip" target="_blank">VIP通行证</a>
+<a href="https://pay.1point3acres.com/bbs/points" target="_blank">购买蓝莓</a>
+</div>
+<div>
+<strong>商务合作</strong>
+<a href="https://pay.1point3acres.com/bbs/company" target="_blank">企业招聘广告</a>
+<a href="https://www.1point3acres.com/business" target="_blank">移民律师专栏</a>
+<a href="https://www.1point3acres.com/business" target="_blank">商务洽谈</a>
+</div>
+<div>
+<strong>其他</strong>
+<a href="https://www.1point3acres.com/terms_of_service.html" target="_blank">Terms of Service</a>
+<a href="https://www.1point3acres.com/bbs/misc.php?mod=faq&amp;action=faq&amp;id=85" target="_blank">Community Rules & FAQ</a>
+<a href="https://www.1point3acres.com/privacy_policy.html" target="_blank">Privacy Policy</a>
+</div>
+</div>
+<div class="text-center max-w-lg mt-2 text-#666 text-12px">1Point3Acres.com does not represent or guarantee the truthfulness, accuracy, or reliability of any of communications posted by users.</div>
+<div class="text-center max-w-lg mt-2 text-#666 text-12px">Copyright &copy;2009-2022 1Point3Acres.com All rights reserved. <a href="https://www.1point3acres.com/terms_of_service.html" target="_blank" class="underline">See Terms of Service.</a></div>
+</div>
+<div class="right flex flex-col items-start space-y-1">
+<strong class="font-medium">关注我们</strong>
+<div class="flex items-center h-8 pt-1">
+<div class="relative group">
+<i class=" iconfont icon-icons-wechat cursor-pointer"></i>
+<div class="invisible group-hover:visible absolute -top-44 -left-96 bg-white shadow-md flex transform">
+<div class="w-32 m-3 text-center">
+<img class="w-32 h-32 lazyload" data-src="https://oss.1point3acres.cn/static/image/common/wq_warald.jpg" />
+<figcaption>微信公众号</figcaption>
+</div>
+<div class="w-32 m-3 text-center">
+<img class="w-32 h-32 lazyload" data-src="https://oss.1point3acres.cn/static/image/common/wq_liuxue.jpg" />
+<figcaption>留学申请公众号</figcaption>
+</div>
+<div class="w-32 m-3 text-center">
+<img class="w-32 h-32 lazyload" data-src="https://oss.1point3acres.cn/static/image/common/wq_invest.jpg" />
+<figcaption>投资理财公众号</figcaption>
+</div>
+<div class="w-32 m-3 text-center">
+<img class="w-32 h-32 lazyload" data-src="https://oss.1point3acres.cn/static/image/common/wq_career.jpg" />
+<figcaption>职场求职公众号</figcaption>
+</div>
+</div>
+</div>
+<a href="https://www.youtube.com/channel/UChit-KABNK1rc2hupwhTOWA" target="_blank" class="no-underline"><i class="iconfont icon-icons-youtube"></i></a>
+<a href="https://twitter.com/Warald" target="_blank" class="no-underline"><i class="iconfont icon-icons-twitter"></i></a>
+</div>
+<div class="text-#aaa text-10px w-64">Some icons made by
+<a href="https://www.freepik.com" target="_blank" rel="noreferrer nofollow noopener" class="text-#aaa">Freepik</a>,
+<a href="https://www.flaticon.com/authors/smalllikeart" target="_blank" rel="noreferrer nofollow noopener" class="text-#aaa">smalllikeart</a>,
+<a href="https://www.flaticon.com/authors/vectors-market" target="_blank" rel="noreferrer nofollow noopener" class="text-#aaa">Vectors Market</a>,
+<a href="https://www.flaticon.com/authors/monkik" target="_blank" rel="noreferrer nofollow noopener" class="text-#aaa">monkik</a>,
+<a href="https://www.flaticon.com/authors/ultimatearm" target="_blank" rel="noreferrer nofollow noopener" class="text-#aaa">ultimatearm</a>,
+<a href="https://www.flaticon.com/authors/pixel-perfect" target="_blank" rel="noreferrer nofollow noopener" class="text-#aaa">Pixel perfect</a>,
+<a href="https://www.flaticon.com/authors/linector" target="_blank" rel="noreferrer nofollow noopener" class="text-#aaa">Linector</a>,
+<a href="https://www.flaticon.com/authors/good-ware" target="_blank" rel="noreferrer nofollow noopener" class="text-#aaa">Good Ware</a>,
+<a href="https://www.flaticon.com/authors/icongeek26" target="_blank" rel="noreferrer nofollow noopener" class="text-#aaa">Icongeek26</a>,
+<a href="https://www.flaticon.com/authors/surang" target="_blank" rel="noreferrer nofollow noopener" class="text-#aaa">surang</a>,
+<a href="https://www.flaticon.com/authors/mangsaabguru" target="_blank" rel="noreferrer nofollow noopener" class="text-#aaa">mangsaabguru</a>,
+<a href="https://www.flaticon.com/authors/becris" target="_blank" rel="noreferrer nofollow noopener" class="text-#aaa">Becris</a>,
+<a href="https://www.flaticon.com/authors/smashicons" target="_blank" rel="noreferrer nofollow noopener" class="text-#aaa">Smashicons</a>,
+<a href="https://www.flaticon.com/authors/pixelmeetup" target="_blank" rel="noreferrer nofollow noopener" class="text-#aaa">Pixelmeetup</a>,
+<a href="https://www.flaticon.com/authors/mynamepong" target="_blank" rel="noreferrer nofollow noopener" class="text-#aaa">mynamepong</a>,
+<a href="https://www.flaticon.com/authors/darius-dan" target="_blank" rel="noreferrer nofollow noopener" class="text-#aaa">Darius Dan</a>,
+<a href="https://www.flaticon.com/authors/eucalyp" target="_blank" rel="noreferrer nofollow noopener" class="text-#aaa">Eucalyp</a>,
+<a href="https://www.flaticon.com/authors/flat-icons" target="_blank" rel="noreferrer nofollow noopener" class="text-#aaa">Flat Icons</a>
+from
+<a href="https://www.flaticon.com/" target="_blank" rel="noreferrer nofollow noopener" class="text-#aaa">flaticon.com</a>
+</div>
+<div>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-7995916-7', 'auto');
+ga('set', 'userId', window.discuz_uid);
+ga('send', 'pageview');
+</script>
+
+</div>
+</div>
+</footer></div>
+<div id="scrolltop">
+<span><a href="forum.php?mod=post&amp;action=reply&amp;fid=28&amp;tid=780970&amp;extra=&amp;page=1" onclick="showWindow('reply', this.href)" class="replyfast" title="快速回复"><b>快速回复</b></a></span>
+<span hidefocus="true"><a title="返回顶部" onclick="window.scrollTo('0','0')" class="scrolltopa"><b>返回顶部</b></a></span>
+<span>
+<a href="forum-28-1.html" hidefocus="true" class="returnlist" title="返回列表"><b>返回列表</b></a>
+</span>
+</div>
+<script src="data/cache/1p3a.js?ROu" type="text/javascript"></script>
+<script type="text/javascript">
+if (!getcookie('cookie_hash')) {
+setTimeout(function () {
+Fingerprint2.get(function (components) {
+var values = components.map(function (component) { return component.value });
+var hash = Fingerprint2.x64hash128(values.join(''), 31);
+setcookie('cookie_hash', hash, 86400);
+}); 
+    	}, 500);
+}
+if (!getcookie('cuid') && 662772) {
+setcookie('cuid', '662772', 86400 * 30);
+}
+</script>
+</body>
+</html>
