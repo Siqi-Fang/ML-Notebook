@@ -1,6 +1,6 @@
 # ML-Notebook
 For my references
-
+NN and DL [book](http://neuralnetworksanddeeplearning.com/)
 ## General
 [Jupyter Guide](https://www.jianshu.com/p/91365f343585)
 
