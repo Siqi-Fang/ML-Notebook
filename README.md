@@ -1,6 +1,7 @@
 # ML-Notebook
 For my references
-NN and DL [book](http://neuralnetworksanddeeplearning.com/)
+Neural Nets and DL book [book](http://neuralnetworksanddeeplearning.com/)
+ML System Design [booklet](https://huyenchip.com/machine-learning-systems-design/toc.html)
 ## General
 [Jupyter Guide](https://www.jianshu.com/p/91365f343585)
 
